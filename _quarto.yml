@@ -1,0 +1,88 @@
+project:
+  type: book
+  output-dir: docs
+
+bibliography: references.bib
+lang: pt-BR
+
+book:
+  title: "Animações em Estatística com python"
+  subtitle: "Introdução ao manim"
+  author: 
+    - name: "Fabio A. Fajardo Molinares"
+      orcid: "0000-0002-4952-3975"
+  date: today
+  
+  sidebar: 
+    style: docked  # Estilo: 'docked' ou 'floating'
+    collapse-level: 1
+  search: true
+  repo-url: https://github.com/ffajardo64/ # Url do repositório 
+  sharing: [twitter, facebook, linkedin] # Redes que deseja compartilhar
+  reader-mode: true # Se 'true', oculta a barra lateral e o sumário
+  
+  page-footer: 
+    left: "Introdução à inferência Estatística: Exemplos e aplicações no R" # Rodapé esquerdo
+    right: "© 2024 Fabio A. Fajardo M." # Rodapé direito
+    
+  chapters:
+  - index.qmd
+  - intro.qmd
+  - part: "I. Elementos básicos"
+    chapters:
+      - p1chap01.qmd
+  - part: "II. Atributos básicos"
+    chapters:
+      - p1chap01.qmd
+  - part: "III. Amostragem e distribuições amostrais"
+    chapters: 
+      - p1chap01.qmd
+  - references.qmd
+  appendices:
+    - matematica.qmd
+   
+format:
+  html:
+    #code-fold: true
+    #code-summary: "Mostrar script"
+    #include-after-body: graph_fold.html
+    code-line-numbers: true
+    theme: 
+      light: [cosmo, theme.scss]
+      dark: slate
+      # Outros temas: https://quarto.org/docs/output-formats/html-themes.html
+    cover-image: cover.png
+    linkcolor: "#135899"
+    toc-title: Sumário
+    reference-location: margin
+    
+  pdf:
+    documentclass: scrreprt
+    include-in-header:  
+        - text: |
+            \usepackage{mathtools}
+    fig-align: center
+    fig-width: 6
+    fig-height: 5
+    fig-pos: 'h'
+    fig-cap-location: bottom
+    tbl-cap-location: top
+    pdf-engine: lualatex
+    keep-tex: true
+    linestretch: 1.5
+    toc: true
+    toc-depth: 2
+    toc-title: Contents
+    lof: true
+    lot: true
+    number-sections: true
+    number-depth: 6
+    colorlinks: true
+    cite-method: biblatex
+    csl: apa7.csl
+    callout-appearance: simple
+    callout-icon: true
+
+editor: 
+  mode: source
+
