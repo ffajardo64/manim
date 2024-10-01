@@ -22,7 +22,7 @@ book:
   reader-mode: true # Se 'true', oculta a barra lateral e o sumário
   
   page-footer: 
-    left: "Introdução à inferência Estatística: Exemplos e aplicações no R" # Rodapé esquerdo
+    left: "Animações em Estatística com python" # Rodapé esquerdo
     right: "© 2024 Fabio A. Fajardo M." # Rodapé direito
     
   chapters:
