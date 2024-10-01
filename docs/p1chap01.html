@@ -302,21 +302,8 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Sumário</h2>
-   
-  <ul>
-  <li><a href="#sec-rederizar" id="toc-sec-rederizar" class="nav-link active" data-scroll-target="#sec-rederizar"><span class="header-section-number">1.1</span> Opções para renderização</a></li>
-  <li><a href="#sec-objetos" id="toc-sec-objetos" class="nav-link" data-scroll-target="#sec-objetos"><span class="header-section-number">1.2</span> Objetos em <code>manim</code></a></li>
-  <li><a href="#sec-adicionando" id="toc-sec-adicionando" class="nav-link" data-scroll-target="#sec-adicionando"><span class="header-section-number">1.3</span> Adicionando elementos à cena</a>
-  <ul class="collapse">
-  <li><a href="#sec-add" id="toc-sec-add" class="nav-link" data-scroll-target="#sec-add"><span class="header-section-number">1.3.1</span> Método <code>Scene.add()</code></a></li>
-  <li><a href="#sec-play" id="toc-sec-play" class="nav-link" data-scroll-target="#sec-play"><span class="header-section-number">1.3.2</span> Método <code>Scene.play()</code></a></li>
-  </ul></li>
-  <li><a href="#exercícios-sugeridos" id="toc-exercícios-sugeridos" class="nav-link" data-scroll-target="#exercícios-sugeridos">Exercícios sugeridos</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -344,7 +331,7 @@ window.Quarto = {
 <div id="exm-olamundo" class="theorem example">
 <p><span class="theorem-title"><strong>Exemplo 1.1</strong></span> Crie um script com o seguinte código e salve no arquivo <code>scrip01.py</code>.</p>
 </div>
-<div id="d1d4c550" class="cell" data-execution_count="1">
+<div id="8c820f70" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">from</span> manim <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a></span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="kw">class</span> MinhaCena(Scene):</span>
@@ -355,7 +342,7 @@ window.Quarto = {
 <span id="cb1-8"><a href="#cb1-8"></a>        <span class="va">self</span>.wait()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -364,12 +351,13 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="quarto-video"><video id="video_shortcode_videojs_video1" width="920" height="80" class="video-js vjs-default-skin " controls="" preload="auto" data-setup="{}" title="Olá, mundo!"><source src="videos/MinhaCena.mp4"></video></div>
-</div>
-</div>
-</div>
+<video width="320" height="240" controls="">
+<source src="videos/MinhaCena.mp4" type="video/mp4">
+</video>
+<div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title="Olá, mundo!"><source src="videos/MinhaCena.mp4"></video></div>
+<p>:::</p>
 <p><strong>Linha 1.</strong> Importa o módulo <code>manim</code>;</p>
 <p><strong>Linha 3.</strong> Cria uma classe com o nome da cena. Para o exemplo, o nome da cena é <strong>MinhaCena</strong>. A cena é onde a animação irá acontecer;</p>
 <p><strong>Linha 4.</strong> A estrutura padrão de uma animação é definida usando o método <code>construct</code>. Nesse método serão contruidas todas as animações;</p>
@@ -377,7 +365,7 @@ window.Quarto = {
 <p><strong>Linha 7.</strong> Permite a visualização da animação do texto na tela;</p>
 <p><strong>Linha 8.</strong> Adiciona uma pausa na animação.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -386,7 +374,7 @@ Executando o script
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Para executar o script, use o comando <code>manim -p script01.py MinhaCena</code> no terminal. O resultado será um vídeo no formato MP4 com alta resolução (1920 x 1080) a 60 FPS.</p>
 <ul>
@@ -455,7 +443,7 @@ Observação
 <p>A primeira maneira é utilizando o método <code>Scene.add()</code>. Este método permite que você adicione um <strong>Mobject</strong> instantaneamente à cena, sem qualquer animação ou duração associada. Ou seja, o objeto aparecerá imediatamente no quadro, sem transições visuais ou efeitos de movimento. Essa abordagem é útil quando se deseja simplesmente inserir um elemento na tela de forma estática e direta, sem a necessidade de animações elaboradas.</p>
 <div id="exm-add" class="theorem example">
 <p><span class="theorem-title"><strong>Exemplo 1.2</strong></span> Criação de três quadrados coloridos usando o método <code>Scene.add()</code>.</p>
-<div id="5d0cc57a" class="cell" data-execution_count="2">
+<div id="8d45c52a" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">from</span> manim <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a></span>
 <span id="cb2-3"><a href="#cb2-3"></a><span class="kw">class</span> CenaFixa(Scene):</span>
@@ -482,7 +470,7 @@ Observação
 </div>
 </div>
 <div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -491,7 +479,7 @@ Observação
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div id="fig-cenafixa" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -531,7 +519,7 @@ Dica
 <p>Enquanto o <code>Scene.add()</code> é prático para situações em que a simplicidade e a rapidez são os principais objetivos, o <code>Scene.play()</code> oferece uma gama muito maior de possibilidades, permitindo a criação de animações fluidas e envolventes. Ambos os métodos têm seus usos específicos, dependendo da necessidade do projeto em questão. No decorrer deste tutorial, veremos exemplos práticos que ilustram como e quando utilizar cada um desses métodos, garantindo que você tenha o domínio necessário para criar animações eficientes e atraentes.</p>
 <div id="exm-play" class="theorem example">
 <p><span class="theorem-title"><strong>Exemplo 1.3</strong></span> Criação de três quadrados coloridos usando o método <code>Scene.play()</code>.</p>
-<div id="2e0af7df" class="cell" data-execution_count="3">
+<div id="8ebbb07e" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">from</span> manim <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a></span>
 <span id="cb3-3"><a href="#cb3-3"></a><span class="kw">class</span> CenaAnimada(Scene):</span>
@@ -559,7 +547,7 @@ Dica
 </div>
 </div>
 <div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -568,7 +556,7 @@ Dica
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div id="fig-cenaanimada" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -601,6 +589,9 @@ Figura&nbsp;1.2: Quadrados coloridos usando o método <code>Scene.play()</code>.
 
 
 </section>
+</div>
+</div>
+</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
