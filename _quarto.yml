@@ -31,6 +31,7 @@ book:
   - part: "I. Elementos básicos"
     chapters:
       - p1chap01.qmd
+      - p1chap02.qmd
   - part: "II. Atributos básicos"
     chapters:
       - p1chap01.qmd
@@ -46,7 +47,10 @@ format:
     #code-fold: true
     #code-summary: "Mostrar script"
     #include-after-body: graph_fold.html
+    code-block-border-left: "#0b256e"
+    code-block-bg: true
     code-line-numbers: true
+    highlight-style: kate
     theme: 
       light: [cosmo, theme.scss]
       dark: slate
@@ -55,7 +59,7 @@ format:
     linkcolor: "#135899"
     toc-title: Sumário
     reference-location: margin
-    
+  
   pdf:
     documentclass: scrreprt
     include-in-header:  
