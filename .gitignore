@@ -971,5 +971,10 @@ FodyWeavers.xsd
 ### VisualStudio Patch ###
 # Additional files built by Visual Studio
 
+# Ignorar pasta de images e videos
+images/
+videos/
+
+
 # End of https://www.toptal.com/developers/gitignore/api/bookdown,gitbook,git,latex,r,python,julia,visualstudio,vim
 
