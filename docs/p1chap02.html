@@ -328,6 +328,7 @@ window.Quarto = {
   <li><a href="#sec-geometry" id="toc-sec-geometry" class="nav-link active" data-scroll-target="#sec-geometry"><span class="header-section-number">2.1</span> Tipo <code>geometry</code></a>
   <ul class="collapse">
   <li><a href="#sec-retangle" id="toc-sec-retangle" class="nav-link" data-scroll-target="#sec-retangle"><span class="header-section-number">2.1.1</span> Classe <code>Retangle</code></a></li>
+  <li><a href="#sec-square" id="toc-sec-square" class="nav-link" data-scroll-target="#sec-square"><span class="header-section-number">2.1.2</span> Classe <code>Square</code></a></li>
   </ul></li>
   <li><a href="#sec-fgm" id="toc-sec-fgm" class="nav-link" data-scroll-target="#sec-fgm"><span class="header-section-number">2.2</span> Funções geradoras de momentos</a>
   <ul class="collapse">
@@ -391,9 +392,10 @@ Dica
 <li><code>grid_ystep</code> (float | None): Espaço entre linhas de grade horizontais;</li>
 <li><code>kwargs</code>: Argumentos adicionais a serem passados à classe <code>Polygon</code>.</li>
 </ul>
-<div id="exm-add" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.1</strong></span> Criação de três quadrados coloridos usando o método <code>Scene.add()</code>.</p>
-<div id="4da28ca3" class="cell" data-execution_count="1">
+<p>Para detalhes consulte a documentação da classe <a href="https://docs.manim.community/en/stable/reference/manim.mobject.geometry.polygram.Rectangle.html#manim.mobject.geometry.polygram.Rectangle">Rectangle</a>.</p>
+<div id="exm-rectangle" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 2.1</strong></span> Criação de três retângulos com diferentes formatações.</p>
+<div id="5cf4e324" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">from</span> manim <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a></span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="kw">class</span> Retangulos(Scene):</span>
@@ -439,7 +441,7 @@ Dica
 <img src="./images/Retangulos_ManimCE_v0.18.1.png" class="img-fluid figure-img" width="600">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-retangulos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;2.1: Diferentes retângulos criados em <code>manim</code>.
+Figura&nbsp;2.1: Diferentes retângulos criados com <code>manim</code>.
 </figcaption>
 </figure>
 </div>
@@ -450,24 +452,70 @@ Figura&nbsp;2.1: Diferentes retângulos criados em <code>manim</code>.
 <p><strong>Linhas 22-23</strong>. O método <code>mobject.set_stroke()</code> permite alterar as propriedades de espessura das linhas que definem o objeto. No exemplo, o método é utilizado para modificar a espessura das linhas do retângulo e da grade interior;</p>
 <p><strong>Linha 25</strong>. Atribuimos à variável <code>retangulos</code> um grupo de objetos e aplicamos o método <code>mobject.arrange()</code> para posicioná-los na cena.</p>
 </div>
-<div id="exm-momento0" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.2</strong></span> Em particular, quando <span class="math inline">\(r=1\)</span>, <span class="math inline">\(M_1'=\frac1n\sum_{i=1}^nX_i=\bar{X}_n\)</span>, i.e., o primeiro momento amostral em torno de zero é a <em>média amostral</em>. Por outra parte, quando <span class="math inline">\(r=2\)</span>, <span class="math inline">\(M_2=\frac1n\sum_{i=1}^n(X_i-\bar{X}_n)^2\)</span>.</p>
+</section>
+<section id="sec-square" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="sec-square"><span class="header-section-number">2.1.2</span> Classe <code>Square</code></h3>
+<p><code>class Square(side_length=2.0, **kwargs)</code></p>
+<p><strong>Parâmetros</strong></p>
+<ul>
+<li><code>side_length</code>: Define o comprimento dos lados do quadrado;</li>
+<li><code>kwargs</code>: Argumentos adicionais a serem passados à classe <code>Rectangle</code>.</li>
+</ul>
+<p>Para detalhes consulte a documentação da classe <a href="https://docs.manim.community/en/stable/reference/manim.mobject.geometry.polygram.Square.html#manim.mobject.geometry.polygram.Square">Square</a>.</p>
+<div id="exm-rectangle" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 2.2</strong></span> Criação de três retângulos com diferentes formatações.</p>
+<div id="313b6ed0" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">from</span> manim <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="kw">class</span> Quadrados(Scene):</span>
+<span id="cb2-4"><a href="#cb2-4"></a>    <span class="kw">def</span> construct(<span class="va">self</span>):</span>
+<span id="cb2-5"><a href="#cb2-5"></a>        quadrado1 <span class="op">=</span> Square(color<span class="op">=</span>ORANGE,</span>
+<span id="cb2-6"><a href="#cb2-6"></a>                           fill_color<span class="op">=</span>ORANGE,</span>
+<span id="cb2-7"><a href="#cb2-7"></a>                           fill_opacity<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb2-8"><a href="#cb2-8"></a>        </span>
+<span id="cb2-9"><a href="#cb2-9"></a>        quadrado2 <span class="op">=</span> quadrado1.copy().set_color(PINK).scale(<span class="fl">1.0</span>)</span>
+<span id="cb2-10"><a href="#cb2-10"></a>        quadrado3 <span class="op">=</span> quadrado1.copy().set_color(PURPLE).set_stroke(width<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb2-11"><a href="#cb2-11"></a></span>
+<span id="cb2-12"><a href="#cb2-12"></a>        <span class="cf">for</span> i <span class="kw">in</span> [<span class="fl">0.3</span>, <span class="fl">0.5</span>, <span class="fl">0.7</span>]:</span>
+<span id="cb2-13"><a href="#cb2-13"></a>            <span class="va">self</span>.add(quadrado2.copy().scale(i).move_to(DOWN))</span>
+<span id="cb2-14"><a href="#cb2-14"></a></span>
+<span id="cb2-15"><a href="#cb2-15"></a>        quadrados <span class="op">=</span> Group(quadrado1, quadrado2, quadrado3).arrange(buff<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb2-16"><a href="#cb2-16"></a>        <span class="va">self</span>.add(quadrados)</span>
+<span id="cb2-17"><a href="#cb2-17"></a></span>
+<span id="cb2-18"><a href="#cb2-18"></a>        <span class="cf">for</span> i <span class="kw">in</span> [<span class="fl">0.3</span>, <span class="fl">0.5</span>, <span class="fl">0.7</span>]:</span>
+<span id="cb2-19"><a href="#cb2-19"></a>            <span class="va">self</span>.add(quadrado3.copy().move_to(quadrado3.get_center()).scale(i))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-default callout-proof no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Observação
+<em>Resultado</em>
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Seguindo a <span class="quarto-unresolved-ref">?def-estatistica</span>, podemos concluir que os momentos amostrais são exemplos de <strong>Estatísticas</strong> e podem ser utilizados para estimar os parâmetros da população.</p>
+<div id="fig-quadrados" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-quadrados-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/Quadrados_ManimCE_v0.18.1.png" class="img-fluid figure-img" width="600">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-quadrados-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.2: Diferentes quadrados criados com <code>manim</code>.
+</figcaption>
+</figure>
 </div>
 </div>
-<div id="exm-momentos_chisq" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.3</strong></span> Calcule <span class="math inline">\(\mathbb{E}\left[(M'_1-\mu)^3\right]\)</span> e <span class="math inline">\(\mathbb{E}\left[(M'_1-\mu)^4\right]\)</span>, onde <span class="math inline">\(M'_1=\bar{X}_n\)</span>.</p>
+</div>
+</div>
+<p><strong>Linhas 6-7</strong>. O parâmetro <code>fill_color</code> permite definir a cor de preenchimento do objeto e <code>fill_opacity</code> define a transparência da cor de preechimento. Caso não seja definida uma cor de preechimento, o padrão é a mesma cor do objeto. O parâmetro <code>fill_opacity</code> é definido com um valor entre 0 e 1. Quanto mais próximo de 1, mais sólida a cor;</p>
+<p><strong>Linhas 22-23</strong>. O método <code>mobject.set_stroke()</code> permite alterar as propriedades de espessura das linhas que definem o objeto. No exemplo, o método é utilizado para modificar a espessura das linhas do retângulo e da grade interior;</p>
+<p><strong>Linha 25</strong>. Atribuimos à variável <code>retangulos</code> um grupo de objetos e aplicamos o método <code>mobject.arrange()</code> para posicioná-los na cena.</p>
+</div>
+<div id="exm-curtose_chisq" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 2.3</strong></span> Seja <span class="math inline">\(X_1,X_2, \ldots, X_n\)</span> uma sequência de variáveis aleatórias independentes função de distribuição <span class="math inline">\(F_i(x_i)\)</span>, com <span class="math inline">\(i=1,2,3,,\ldots,k\)</span>. Considere a variável aleatória <span class="math inline">\(Z=-2\sum_{i=1}^k\log\left(1-F_i(X_i)\right)\)</span>. Qual o valor da curtose de <span class="math inline">\(Z\)</span>?</p>
 </div>
 <div class="callout callout-style-default callout-proof no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
@@ -481,70 +529,7 @@ Observação
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Para calcular os momentos centrais de terceira e quarta ordem de <span class="math inline">\(M'_1=\bar{X}_n\)</span>, temos que</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  \mathbb{E}\left[(M'_1-\mu)^3\right]&amp;=\mathbb{E}\left[(\bar{X}_n-\mu)^3\right]
-  =\frac{1}{n^3}\sum_{i=1}^n\mathbb{E}[(X_i-\mu)^3]=\frac{\mu_3}{n^2}. \quad\checkmark
-\end{align*}\]</span>
-</div>
-<p>Por outro lado, temos que</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  \mathbb{E}\left[(M'_1-\mu)^4\right]&amp;=\mathbb{E}\left[(\bar{X}_n-\mu)^4\right]
-  =\frac{1}{n^4}\sum_{i=1}^n\mathbb{E}[(X_i-\mu)^4]+\frac{6}{n^4}+\underset{i\ne j}{\sum_{i=1}^n\sum_{j=1}^n}\mathbb{E}\left[(X_i-\mu)^2(X_j-\mu)^2\right]\\
-  &amp;=\frac{\mu_4}{n^3}+3\frac{(n-1)\mu_2^2}{n^3}. \quad\checkmark
-\end{align*}\]</span>
-</div>
-</div>
-</div>
-</div>
-<div id="exm-r_momento_chisq" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.4</strong></span> Seja <span class="math inline">\(X\)</span> uma variável aleatória de uma população com distribuição qui-quadrado com <span class="math inline">\(k\)</span> graus de liberdade. Encontre uma expressão para o <span class="math inline">\(r\)</span>-ésimo momento para a distribuição de <span class="math inline">\(X\)</span>. O <span class="math inline">\(r\)</span>-ésimo momento existe para todos os valores de <span class="math inline">\(r\)</span>?</p>
-</div>
-<div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<em>Solução.</em>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Sabemos que, se a distribuição de <span class="math inline">\(X\)</span> é qui-quadrado, então <span class="math display">\[f(x)=\frac{1}{\Gamma\left(\frac{k}{2}\right)}\left(\frac12\right)^{k/2}x^{k/2-1}e^{-\frac12x}\mathbb{I}_{(0,\infty)}(x).\]</span> Dessa forma, temos que</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  \mathbb{E}[X^r]&amp;=\int_0^\infty x^r\frac{1}{\Gamma\left(\frac{k}{2}\right)}\left(\frac12\right)^{k/2}x^{k/2-1}e^{-\frac12x}\,dx
-  =\frac{1}{\Gamma\left(\frac{k}{2}\right)}\left(\frac12\right)^{k/2}\int_0^\infty x^rx^{k/2-1}e^{-\frac12x}\,dx\\
-  &amp;=\frac{1}{\Gamma\left(\frac{k}{2}\right)}\left(\frac12\right)^{k/2}\frac{\Gamma\left(\frac{k}{2}+r\right)}{\left(\frac12\right)^{k/2+r}}\,dx, \quad r&gt;-\frac{k}{2}\\
-  &amp;=\frac{\Gamma\left(\frac{k}{2}+r\right)}{\Gamma\left(\frac{k}{2}\right)}2^r. \quad\checkmark
-\end{align*}\]</span>
-</div>
-<blockquote class="blockquote">
-<p>A última integral é resultado de <span class="math inline">\(\int_0^\infty\frac{1}{\Gamma(\alpha)}\beta^\alpha x^{\alpha-1}e^{-\beta x}\,dx=1\)</span> ou <span class="math inline">\(\int_0^\infty x^{\alpha-1}e^{-\beta x}\,dx=\frac{\Gamma(\alpha)}{\beta^\alpha}\)</span>. Essa identidade não é mais do que a densidade de uma variável aleatória com distribuição gama com parâmetros <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\beta\)</span>.</p>
-</blockquote>
-</div>
-</div>
-</div>
-<div id="exm-curtose_chisq" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.5</strong></span> Seja <span class="math inline">\(X_1,X_2, \ldots, X_n\)</span> uma sequência de variáveis aleatórias independentes função de distribuição <span class="math inline">\(F_i(x_i)\)</span>, com <span class="math inline">\(i=1,2,3,,\ldots,k\)</span>. Considere a variável aleatória <span class="math inline">\(Z=-2\sum_{i=1}^k\log\left(1-F_i(X_i)\right)\)</span>. Qual o valor da curtose de <span class="math inline">\(Z\)</span>?</p>
-</div>
-<div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<em>Solução.</em>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Seja <span class="math inline">\(U_i=F_i(X_i)\)</span> e considere <span class="math inline">\(k=1\)</span>, então <span class="math inline">\(Z=-2\log(1-U_1)\)</span>. Dessa forma, temos que <span class="math display">\[F_Z(z)=\mathbb{P}[Z\le z]=\mathbb{P}\left[-2\log(1-U_1)\le z\right]=\mathbb{P}\left[U_1\le 1-e^{-\frac12z}\right]=1-e^{-\frac12z}.\]</span> Do <a href="#exm-r_momento_chisq" class="quarto-xref">Exemplo&nbsp;<span>2.4</span></a>, sabemos que <span class="math inline">\(Z\)</span> é uma variável aleatória de uma população com distribuição qui-quadrado com <span class="math inline">\(2\)</span> graus de liberdade, i.e., <span class="math inline">\(\chi^2_{(2)}\)</span>. Portanto, <span class="math inline">\(Z=-2\sum_{i=1}^k\log\left(1-U_i\right)\)</span> segue uma distribuição <span class="math inline">\(\chi^2_{(2k)}\)</span>.</p>
+<p>Seja <span class="math inline">\(U_i=F_i(X_i)\)</span> e considere <span class="math inline">\(k=1\)</span>, então <span class="math inline">\(Z=-2\log(1-U_1)\)</span>. Dessa forma, temos que <span class="math display">\[F_Z(z)=\mathbb{P}[Z\le z]=\mathbb{P}\left[-2\log(1-U_1)\le z\right]=\mathbb{P}\left[U_1\le 1-e^{-\frac12z}\right]=1-e^{-\frac12z}.\]</span> Do <span class="quarto-unresolved-ref">?exm-r_momento_chisq</span>, sabemos que <span class="math inline">\(Z\)</span> é uma variável aleatória de uma população com distribuição qui-quadrado com <span class="math inline">\(2\)</span> graus de liberdade, i.e., <span class="math inline">\(\chi^2_{(2)}\)</span>. Portanto, <span class="math inline">\(Z=-2\sum_{i=1}^k\log\left(1-U_i\right)\)</span> segue uma distribuição <span class="math inline">\(\chi^2_{(2k)}\)</span>.</p>
 <p>Por outra parte, sabemos que a curtose é definida como <span class="math inline">\(C=\dfrac{\mathbb{E}\left[Z-\mathbb{E}Z\right]^4}{\left(\mathbb{E}\left[Z-\mathbb{E}Z\right]^2\right)^2}=\dfrac{\mathbb{E}\left[Z-\mathbb{E}Z\right]^4}{\left(\mathrm{var}[Z]\right)^2}\)</span>. Desse modo,</p>
 <div class="math">
 <span class="math display">\[\begin{align*}
@@ -571,10 +556,10 @@ Observação
 </div>
 </div>
 <div id="exm-r_momento_normal" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.6</strong></span> Seja <span class="math inline">\(X\)</span> uma variável aleatória de uma população com distribuição normal com média <span class="math inline">\(\mu\)</span> e variância <span class="math inline">\(1\)</span>. Mostre que o <span class="math inline">\(r+1\)</span>-ésimo momento da distribuição de <span class="math inline">\(X\)</span> é dado por <span class="math display">\[\mathbb{E}X^{r+1}=\mu\mathbb{E}X^r-\frac{\partial}{\partial\mu}\mathbb{E}X^r.\]</span></p>
+<p><span class="theorem-title"><strong>Exemplo 2.4</strong></span> Seja <span class="math inline">\(X\)</span> uma variável aleatória de uma população com distribuição normal com média <span class="math inline">\(\mu\)</span> e variância <span class="math inline">\(1\)</span>. Mostre que o <span class="math inline">\(r+1\)</span>-ésimo momento da distribuição de <span class="math inline">\(X\)</span> é dado por <span class="math display">\[\mathbb{E}X^{r+1}=\mu\mathbb{E}X^r-\frac{\partial}{\partial\mu}\mathbb{E}X^r.\]</span></p>
 </div>
 <div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -583,7 +568,7 @@ Observação
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Sabemos que <span class="math display">\[\mathbb{E}X^r=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty x^re^{-\frac12(x-\mu)^2}\,dx.\]</span> Daí,</p>
 <div class="math">
@@ -603,7 +588,7 @@ Observação
 </div>
 </div>
 <div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -612,7 +597,7 @@ Observação
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Para provar o resultado do <a href="#thm-esperado_momentos" class="quarto-xref">Teorema&nbsp;<span>2.1</span></a>, sabemos da <span class="quarto-unresolved-ref">?def-momento_amostral0</span> que <span class="math inline">\(M_r'=\frac1n\sum_{i=1}^nX_i^r\)</span>. Daí, <span class="math display">\[\mathbb{E}M_r'=\mathbb{E}\left[\frac1n\sum_{i=1}^nX_i^r\right]=\frac1n\sum_{i=1}^n\mathbb{E}X_i^r=\mu_r'.\]</span> Por outro lado, <span class="math display">\[\mathrm{Var}[M_r']=\mathrm{Var}\left[\frac1n\sum_{i=1}^nX_i^r\right]=\frac{1}{n^2}\sum_{i=1}^n\mathrm{Var}[X_i^r]=\frac1n\left[\mathbb{E}X^{2r}-\left(\mathbb{E}X^r\right)^2\right]. \quad \blacksquare\]</span></p>
 </div>
@@ -640,10 +625,10 @@ Observação
 </div>
 </div>
 <div id="exm-s2" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.7</strong></span> Mostre que <span class="math inline">\(S_n^{2}=\frac{1}{2n(n-1)} \sum_{i=1}^{n}\sum_{j=1}^{n} (X_{i} - X_{j})^2\)</span>, para <span class="math inline">\(n&gt;1\)</span>.</p>
+<p><span class="theorem-title"><strong>Exemplo 2.5</strong></span> Mostre que <span class="math inline">\(S_n^{2}=\frac{1}{2n(n-1)} \sum_{i=1}^{n}\sum_{j=1}^{n} (X_{i} - X_{j})^2\)</span>, para <span class="math inline">\(n&gt;1\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -652,7 +637,7 @@ Observação
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Sabemos que, <span class="math inline">\(S_n^2=\frac{1}{n-1}\sum_{i=1}^n(X_i-\bar{X}_n)^2\)</span>, para <span class="math inline">\(n&gt;1\)</span>. Dessa forma, para algum <span class="math inline">\(X_j\)</span>, temos que</p>
 <div class="math">
@@ -685,7 +670,7 @@ Observação
 </div>
 </div>
 <div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -694,7 +679,7 @@ Observação
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Primeiramente, note que</p>
 <div class="math">
@@ -802,7 +787,7 @@ Observação
 </div>
 </div>
 <div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -811,7 +796,7 @@ Observação
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Pela expansão em série de Taylor da função exponencial (vide <a href="matematica.html" class="quarto-xref"><span>Apêndice A</span></a>), temos que <span class="math display">\[e^x=1+x+\frac{1}{2!}x^2+\frac{1}{3!}x^3+\frac{1}{4!}x^4+\cdots.\]</span></p>
 <p>Por outra parte, pela <a href="#def-fgm" class="quarto-xref">Definição&nbsp;<span>2.2</span></a>, temos que <span class="math inline">\(M_X(t)=\mathbb{E}\left[e^{tX}\right]\)</span>, então</p>
@@ -838,10 +823,10 @@ Observação
 </div>
 </div>
 <div id="exm-FGM_gamma" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.8</strong></span> Seja <span class="math inline">\(X\)</span> uma variável aleatória de uma população com distribuição gama com parâmetros <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\beta\)</span>, i.e. <span class="math display">\[f(x; \alpha, \beta)=\frac{1}{\Gamma(\alpha)}\beta^\alpha x^{\alpha-1}e^{-\beta x}\mathbb{I}_{(0,\infty)}(x).\]</span> Utilize a FGM para calcular a variância de <span class="math inline">\(X\)</span>.</p>
+<p><span class="theorem-title"><strong>Exemplo 2.6</strong></span> Seja <span class="math inline">\(X\)</span> uma variável aleatória de uma população com distribuição gama com parâmetros <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\beta\)</span>, i.e. <span class="math display">\[f(x; \alpha, \beta)=\frac{1}{\Gamma(\alpha)}\beta^\alpha x^{\alpha-1}e^{-\beta x}\mathbb{I}_{(0,\infty)}(x).\]</span> Utilize a FGM para calcular a variância de <span class="math inline">\(X\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -850,7 +835,7 @@ Observação
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Pela definição <a href="#def-fgm" class="quarto-xref">Definição&nbsp;<span>2.2</span></a>, sabemos que <span class="math inline">\(M_X(t)=\mathbb{E}\left[e^{tX}\right]\)</span>, para todo <span class="math inline">\(t\)</span>, tal que <span class="math inline">\(|t|&lt;h\)</span>, para algum <span class="math inline">\(h&gt;0\)</span>. Dessa forma,</p>
 <div class="math">
@@ -899,10 +884,10 @@ Observação
 </div>
 </div>
 <div id="exm-r_momento_cor" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.9</strong></span> Seja <span class="math inline">\(X_1,X_2\)</span> uma amostra aleatória de uma população com densidade conjunta dada por <span class="math display">\[f(x; a)=a^2e^{-ax_2}, \quad 0&lt;x_1&lt;x_2&lt;\infty, \quad a&gt;0.\]</span> Encontre <span class="math inline">\(\mathbb{E}X^r_1\)</span>, <span class="math inline">\(\mathbb{E}X^r_2\)</span>, para <span class="math inline">\(r=1,2,3,\ldots\)</span>, e <span class="math inline">\(\mathrm{Corr}[X_1,X_2]\)</span>.</p>
+<p><span class="theorem-title"><strong>Exemplo 2.7</strong></span> Seja <span class="math inline">\(X_1,X_2\)</span> uma amostra aleatória de uma população com densidade conjunta dada por <span class="math display">\[f(x; a)=a^2e^{-ax_2}, \quad 0&lt;x_1&lt;x_2&lt;\infty, \quad a&gt;0.\]</span> Encontre <span class="math inline">\(\mathbb{E}X^r_1\)</span>, <span class="math inline">\(\mathbb{E}X^r_2\)</span>, para <span class="math inline">\(r=1,2,3,\ldots\)</span>, e <span class="math inline">\(\mathrm{Corr}[X_1,X_2]\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -911,7 +896,7 @@ Observação
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Temos que,</p>
 <div class="math">
@@ -951,10 +936,10 @@ Observação
 </div>
 </div>
 <div id="exm-FGM_geometrica" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.10</strong></span> Seja <span class="math inline">\(X\)</span> uma variável aleatória de uma população com distribuição geométrica com parâmetro <span class="math inline">\(p\)</span>, i.e.. <span class="math inline">\(\mathbb{P}[X=x]=p(1-p)^x\mathbb{I}_{\{0,1,2,\ldots\}}(x)\)</span>. Apresente uma forma analítica para calcula o <span class="math inline">\(r\)</span>-ésimo momento da distribuição de <span class="math inline">\(X\)</span>.</p>
+<p><span class="theorem-title"><strong>Exemplo 2.8</strong></span> Seja <span class="math inline">\(X\)</span> uma variável aleatória de uma população com distribuição geométrica com parâmetro <span class="math inline">\(p\)</span>, i.e.. <span class="math inline">\(\mathbb{P}[X=x]=p(1-p)^x\mathbb{I}_{\{0,1,2,\ldots\}}(x)\)</span>. Apresente uma forma analítica para calcula o <span class="math inline">\(r\)</span>-ésimo momento da distribuição de <span class="math inline">\(X\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -963,7 +948,7 @@ Observação
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>A FGM é dada por</p>
 <div class="math">
@@ -993,10 +978,10 @@ Observação
 </div>
 </div>
 <div id="exm-fgm_pareto" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.11</strong></span> Seja <span class="math inline">\(X\)</span> uma variável aleatória de uma população com distribuição Pareto com parâmetros <span class="math inline">\(\alpha&gt;0\)</span> e <span class="math inline">\(\beta&gt;0\)</span>, i.e. <span class="math display">\[f(x;\alpha,\beta)=\beta\frac{\alpha^\beta}{x^{\beta+1}}\mathbb{I}_{[\alpha,\infty)}(x).\]</span> Utilize a FGM da distribuição de <span class="math inline">\(X\)</span> para calcular a sua variância.</p>
+<p><span class="theorem-title"><strong>Exemplo 2.9</strong></span> Seja <span class="math inline">\(X\)</span> uma variável aleatória de uma população com distribuição Pareto com parâmetros <span class="math inline">\(\alpha&gt;0\)</span> e <span class="math inline">\(\beta&gt;0\)</span>, i.e. <span class="math display">\[f(x;\alpha,\beta)=\beta\frac{\alpha^\beta}{x^{\beta+1}}\mathbb{I}_{[\alpha,\infty)}(x).\]</span> Utilize a FGM da distribuição de <span class="math inline">\(X\)</span> para calcular a sua variância.</p>
 </div>
 <div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1005,7 +990,7 @@ Observação
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Pela <a href="#def-fgm" class="quarto-xref">Definição&nbsp;<span>2.2</span></a>, temos que</p>
 <div class="math">
@@ -1047,10 +1032,10 @@ Dica
 </div>
 </div>
 <div id="exm-fgm_uniforme" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.12</strong></span> Seja <span class="math inline">\(X\)</span> uma variável aleatória de uma população com distribuição uniforme no intervalo <span class="math inline">\((0,1)\)</span>, i.e.&nbsp;<span class="math inline">\(f(x)=\mathbb{I}_{(0,1)}(x)\)</span>. Seja <span class="math inline">\(y=(b-a)X+a\)</span>, onde <span class="math inline">\(a,b\)</span> são constantes, tal que <span class="math inline">\(b&gt;a\)</span>. Encontre a FGM da distribuição de <span class="math inline">\(Y\)</span>.</p>
+<p><span class="theorem-title"><strong>Exemplo 2.10</strong></span> Seja <span class="math inline">\(X\)</span> uma variável aleatória de uma população com distribuição uniforme no intervalo <span class="math inline">\((0,1)\)</span>, i.e.&nbsp;<span class="math inline">\(f(x)=\mathbb{I}_{(0,1)}(x)\)</span>. Seja <span class="math inline">\(y=(b-a)X+a\)</span>, onde <span class="math inline">\(a,b\)</span> são constantes, tal que <span class="math inline">\(b&gt;a\)</span>. Encontre a FGM da distribuição de <span class="math inline">\(Y\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1059,7 +1044,7 @@ Dica
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>A FGM da distribuição de <span class="math inline">\(X\)</span> é dada por</p>
 <p><span class="math display">\[M_X(t)=\mathbb{E}[e^{tX}]=\int_0^1e^{tx}\,dx=\frac{e^t-1}{t}, \quad t\ne0.\]</span> Então, a FGM da distribuição de <span class="math inline">\(Y\)</span> é dada por</p>
@@ -1098,7 +1083,7 @@ Problema dos momentos
 </div>
 </div>
 <div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1107,7 +1092,7 @@ Problema dos momentos
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>O resultado é consequência da <a href="#def-fgm" class="quarto-xref">Definição&nbsp;<span>2.2</span></a> e do fato que as variáveis aleatórias <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span> são independentes e identicamente distribuídas. Assim,</p>
 <div class="math">
@@ -1124,10 +1109,10 @@ Problema dos momentos
 </div>
 </div>
 <div id="exm-FGM_xbar_normal" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.13</strong></span> Seja <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span> uma amostra aleatória de uma população com distribuição normal com média <span class="math inline">\(\mu\)</span> e variância <span class="math inline">\(\sigma^2\)</span>. Mostre que <span class="math inline">\(\bar{X}_n\)</span> tem distribuição normal com média <span class="math inline">\(\mu\)</span> e variância <span class="math inline">\(\frac{\sigma^2}{n}\)</span>.</p>
+<p><span class="theorem-title"><strong>Exemplo 2.11</strong></span> Seja <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span> uma amostra aleatória de uma população com distribuição normal com média <span class="math inline">\(\mu\)</span> e variância <span class="math inline">\(\sigma^2\)</span>. Mostre que <span class="math inline">\(\bar{X}_n\)</span> tem distribuição normal com média <span class="math inline">\(\mu\)</span> e variância <span class="math inline">\(\frac{\sigma^2}{n}\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1136,7 +1121,7 @@ Problema dos momentos
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Aplicando o resultado do <a href="#thm-fgm_independencia" class="quarto-xref">Teorema&nbsp;<span>2.5</span></a>, temos que</p>
 <div class="math">
@@ -1151,10 +1136,10 @@ Problema dos momentos
 </div>
 </div>
 <div id="exm-FGMF_poisson" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.14</strong></span> Seja <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span> uma amostra aleatória de uma população com distribuição Poisson com parâmetro <span class="math inline">\(\lambda\)</span>, i.e. <span class="math inline">\(\mathbb{P}[X=x]=\frac{e^{-\lambda}\lambda^x}{x!}\mathbb{I}_{\{0,1,2,\ldots\}}(x)\)</span>. Calcule a FGM da distribuição de <span class="math inline">\(Y=\sum_{i=1}^nX_i\)</span>.</p>
+<p><span class="theorem-title"><strong>Exemplo 2.12</strong></span> Seja <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span> uma amostra aleatória de uma população com distribuição Poisson com parâmetro <span class="math inline">\(\lambda\)</span>, i.e. <span class="math inline">\(\mathbb{P}[X=x]=\frac{e^{-\lambda}\lambda^x}{x!}\mathbb{I}_{\{0,1,2,\ldots\}}(x)\)</span>. Calcule a FGM da distribuição de <span class="math inline">\(Y=\sum_{i=1}^nX_i\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1163,7 +1148,7 @@ Problema dos momentos
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>A FGM é dada por</p>
 <div class="math">
@@ -1189,7 +1174,7 @@ Problema dos momentos
 </div>
 </div>
 <div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1198,7 +1183,7 @@ Problema dos momentos
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Seja <span class="math inline">\(Z_i=\frac{X_i-\mu_i}{\sigma_i}\)</span>. Dessa forma, a sequência <span class="math inline">\(Z_1,Z_2,\ldots,Z_n\)</span> configura uma amostra aleatória de uma população com distribuição normal padrão. Daí,</p>
 <div class="math">
@@ -1215,7 +1200,7 @@ Problema dos momentos
   M_U(t)&amp;=\left(\frac{1}{\sqrt{1-2t}}\right)^k, \quad t&lt;\frac12. \quad\checkmark
 \end{align*}\]</span>
 </div>
-<p>Seguindo o resultado do <a href="#exm-FGM_gamma" class="quarto-xref">Exemplo&nbsp;<span>2.8</span></a>, se <span class="math inline">\(\alpha=\frac{k}{2}\)</span> e <span class="math inline">\(\beta=\frac12\)</span>, então <span class="math display">\[M_X(t)=\left(1-2t\right)^{-\frac{k}{2}}, \quad t&lt;\frac12.\]</span> Sendo a FGM de uma variável aleatória com distribuição <span class="math inline">\(\chi^2_{(k)}\)</span>. Dessa forma, pelo <a href="#thm-fgm_unicidade" class="quarto-xref">Teorema&nbsp;<span>2.4</span></a>, a distribuição da variável aleatória <span class="math inline">\(U\)</span> é <span class="math inline">\(\chi^2_{(k)}\)</span>.</p>
+<p>Seguindo o resultado do <a href="#exm-FGM_gamma" class="quarto-xref">Exemplo&nbsp;<span>2.6</span></a>, se <span class="math inline">\(\alpha=\frac{k}{2}\)</span> e <span class="math inline">\(\beta=\frac12\)</span>, então <span class="math display">\[M_X(t)=\left(1-2t\right)^{-\frac{k}{2}}, \quad t&lt;\frac12.\]</span> Sendo a FGM de uma variável aleatória com distribuição <span class="math inline">\(\chi^2_{(k)}\)</span>. Dessa forma, pelo <a href="#thm-fgm_unicidade" class="quarto-xref">Teorema&nbsp;<span>2.4</span></a>, a distribuição da variável aleatória <span class="math inline">\(U\)</span> é <span class="math inline">\(\chi^2_{(k)}\)</span>.</p>
 </div>
 </div>
 </div>
@@ -1225,10 +1210,10 @@ Problema dos momentos
 </div>
 </div>
 <div id="exm-dist_s2" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.15</strong></span> Seja <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span> uma amostra aleatória de uma população com distribuição normal com média <span class="math inline">\(\mu\)</span> e variância <span class="math inline">\(\sigma^2\)</span>. Sejam <span class="math inline">\(\bar{X}_n=\frac1n\sum_{i=1}^nX_i\)</span> e <span class="math inline">\(S^2_n=\frac{1}{n-1}\sum_{i=1}^n(X_i-\bar{X}_n)^2\)</span>. Mostre que <span class="math inline">\(\frac{(n-1)S^2_n}{\sigma^2}\)</span> segue uma distribuição <span class="math inline">\(\chi^2_{(n-1)}\)</span>.</p>
+<p><span class="theorem-title"><strong>Exemplo 2.13</strong></span> Seja <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span> uma amostra aleatória de uma população com distribuição normal com média <span class="math inline">\(\mu\)</span> e variância <span class="math inline">\(\sigma^2\)</span>. Sejam <span class="math inline">\(\bar{X}_n=\frac1n\sum_{i=1}^nX_i\)</span> e <span class="math inline">\(S^2_n=\frac{1}{n-1}\sum_{i=1}^n(X_i-\bar{X}_n)^2\)</span>. Mostre que <span class="math inline">\(\frac{(n-1)S^2_n}{\sigma^2}\)</span> segue uma distribuição <span class="math inline">\(\chi^2_{(n-1)}\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1237,7 +1222,7 @@ Problema dos momentos
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Sabemos que <span class="math inline">\(S^2_n=\frac{1}{n-1}\sum_{i=1}^n(X_i-\bar{X}_n)^2\)</span>, daí</p>
 <div class="math">
@@ -1285,7 +1270,7 @@ Problema dos momentos
 </div>
 </div>
 <div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1294,14 +1279,14 @@ Problema dos momentos
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol>
 <li>
-Vide <a href="#thm-esperado_momentos" class="quarto-xref">Teorema&nbsp;<span>2.1</span></a> e <a href="#exm-FGM_xbar_normal" class="quarto-xref">Exemplo&nbsp;<span>2.13</span></a>;
+Vide <a href="#thm-esperado_momentos" class="quarto-xref">Teorema&nbsp;<span>2.1</span></a> e <a href="#exm-FGM_xbar_normal" class="quarto-xref">Exemplo&nbsp;<span>2.11</span></a>;
 </li>
 <li>
-Vide <a href="#exm-dist_s2" class="quarto-xref">Exemplo&nbsp;<span>2.15</span></a>;
+Vide <a href="#exm-dist_s2" class="quarto-xref">Exemplo&nbsp;<span>2.13</span></a>;
 </li>
 <li>
 <p>Note que</p>
@@ -1377,10 +1362,10 @@ Dica
 </div>
 </div>
 <div id="exm-FGMF_binomial" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.16</strong></span> Seja <span class="math inline">\(X\)</span> uma variável aleatória de uma população com distribuição Binomial com parâmetros <span class="math inline">\(n\)</span> e <span class="math inline">\(p\)</span>, i.e., <span class="math inline">\(\mathbb{P}[X=x]=\binom{n}{x}p^x(1-p)^{n-x}\mathbb{I}_{\{0,1,2,\ldots,n\}}(x)\)</span>. Utilize a FGMF para calcular o <span class="math inline">\(r\)</span>-ésimo momento fatorial da distribuição de <span class="math inline">\(X\)</span>.</p>
+<p><span class="theorem-title"><strong>Exemplo 2.14</strong></span> Seja <span class="math inline">\(X\)</span> uma variável aleatória de uma população com distribuição Binomial com parâmetros <span class="math inline">\(n\)</span> e <span class="math inline">\(p\)</span>, i.e., <span class="math inline">\(\mathbb{P}[X=x]=\binom{n}{x}p^x(1-p)^{n-x}\mathbb{I}_{\{0,1,2,\ldots,n\}}(x)\)</span>. Utilize a FGMF para calcular o <span class="math inline">\(r\)</span>-ésimo momento fatorial da distribuição de <span class="math inline">\(X\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1389,7 +1374,7 @@ Dica
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-27" class="callout-27-contents callout-collapse collapse">
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>A FGMF é dada por</p>
 <div class="math">
@@ -1413,7 +1398,7 @@ Dica
 <p>Seja <span class="math inline">\(X\)</span> uma variável aleatória de uma população com distribuição Poisson com parâmetro <span class="math inline">\(\lambda\)</span>, i.e. <span class="math inline">\(\mathbb{P}[X=x]=\frac{e^{-\lambda}\lambda^x}{x!}\mathbb{I}_{\{0,1,2,\ldots\}}(x)\)</span>. Utilize a FGMF para calcular o <span class="math inline">\(r\)</span>-ésimo momento fatorial da distribuição de <span class="math inline">\(X\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1422,7 +1407,7 @@ Dica
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-28" class="callout-28-contents callout-collapse collapse">
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>A FGMF é dada por</p>
 <div class="math">
@@ -1443,10 +1428,10 @@ Dica
 </div>
 </div>
 <div id="exm-FGMF_binomial_negativa" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.17</strong></span> Seja <span class="math inline">\(X\)</span> uma variável aleatória de uma população com distribuição Binomial negativa com parâmetros <span class="math inline">\(n\)</span> e <span class="math inline">\(p\)</span>, i.e., <span class="math inline">\(\mathbb{P}[X=x]=\binom{x+n-1}{x}p^n(1-p)^{x}\mathbb{I}_{\{0,1,2,\ldots\}}(x)\)</span>. Calcule a FGMF da distribuição de <span class="math inline">\(X\)</span>.</p>
+<p><span class="theorem-title"><strong>Exemplo 2.15</strong></span> Seja <span class="math inline">\(X\)</span> uma variável aleatória de uma população com distribuição Binomial negativa com parâmetros <span class="math inline">\(n\)</span> e <span class="math inline">\(p\)</span>, i.e., <span class="math inline">\(\mathbb{P}[X=x]=\binom{x+n-1}{x}p^n(1-p)^{x}\mathbb{I}_{\{0,1,2,\ldots\}}(x)\)</span>. Calcule a FGMF da distribuição de <span class="math inline">\(X\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1455,7 +1440,7 @@ Dica
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>A FGMF é dada por</p>
 <div class="math">
@@ -1483,10 +1468,10 @@ Observação
 </div>
 </div>
 <div id="exm-FGP_binomial" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.18</strong></span> Considere o cenário do <a href="#exm-FGMF_binomial" class="quarto-xref">Exemplo&nbsp;<span>2.16</span></a>. Utilize a FGP da distribuição de <span class="math inline">\(X\)</span> para calcular a <span class="math inline">\(r\)</span>-ésima probabilidade de massa.</p>
+<p><span class="theorem-title"><strong>Exemplo 2.16</strong></span> Considere o cenário do <a href="#exm-FGMF_binomial" class="quarto-xref">Exemplo&nbsp;<span>2.14</span></a>. Utilize a FGP da distribuição de <span class="math inline">\(X\)</span> para calcular a <span class="math inline">\(r\)</span>-ésima probabilidade de massa.</p>
 </div>
 <div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1495,9 +1480,9 @@ Observação
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-31" class="callout-31-contents callout-collapse collapse">
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Pelo <a href="#exm-FGMF_binomial" class="quarto-xref">Exemplo&nbsp;<span>2.16</span></a>, sabemos que a FGP é dada por <span class="math inline">\(\mathcal{M}_X(t)=[(1-p)+tp]^n\)</span>. Daí,</p>
+<p>Pelo <a href="#exm-FGMF_binomial" class="quarto-xref">Exemplo&nbsp;<span>2.14</span></a>, sabemos que a FGP é dada por <span class="math inline">\(\mathcal{M}_X(t)=[(1-p)+tp]^n\)</span>. Daí,</p>
 <div class="math">
 <span class="math display">\[\begin{align*}
   \mathbb{P}\left[X=0\right]&amp;=[(1-p)+tp]^n\Biggr|_{t=0}=(1-p)^n; \\ \\
@@ -1533,10 +1518,10 @@ Dica
 </div>
 </div>
 <div id="exm-fgc_independentes" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.19</strong></span> Sejam <span class="math inline">\(X_1,X_2\)</span> variáveis aleatórias independentes. Mostre que <span class="math display">\[K_{X+Y}(t)=K_X(t)+K_Y(t).\]</span></p>
+<p><span class="theorem-title"><strong>Exemplo 2.17</strong></span> Sejam <span class="math inline">\(X_1,X_2\)</span> variáveis aleatórias independentes. Mostre que <span class="math display">\[K_{X+Y}(t)=K_X(t)+K_Y(t).\]</span></p>
 </div>
 <div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1545,7 +1530,7 @@ Dica
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-33" class="callout-33-contents callout-collapse collapse">
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Aplicando a <a href="#def-fgc" class="quarto-xref">Definição&nbsp;<span>2.4</span></a>, temos que</p>
 <div class="math">
@@ -1559,10 +1544,10 @@ Dica
 </div>
 </div>
 <div id="exm-fgc_bernoulli" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.20</strong></span> Seja <span class="math inline">\(X\)</span> uma variável aleatória de uma população com distribuição Bernoulli com parâmetro <span class="math inline">\(p\)</span>. Utilize a FGC para calcular o <span class="math inline">\(r\)</span>-ésimo cumulante da distribuição de <span class="math inline">\(X\)</span>.</p>
+<p><span class="theorem-title"><strong>Exemplo 2.18</strong></span> Seja <span class="math inline">\(X\)</span> uma variável aleatória de uma população com distribuição Bernoulli com parâmetro <span class="math inline">\(p\)</span>. Utilize a FGC para calcular o <span class="math inline">\(r\)</span>-ésimo cumulante da distribuição de <span class="math inline">\(X\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1571,9 +1556,9 @@ Dica
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-34" class="callout-34-contents callout-collapse collapse">
+<div id="callout-32" class="callout-32-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Pela <a href="#def-fgmf" class="quarto-xref">Definição&nbsp;<span>2.3</span></a>, sabemos que <span class="math inline">\(\mathcal{M}_X(t)=M_X(\log t)\)</span>. Pelo <a href="#exm-FGMF_binomial" class="quarto-xref">Exemplo&nbsp;<span>2.16</span></a>, sabemos que a FGMF de uma variável aleatória com distribuição binomial é dada por <span class="math inline">\(\mathcal{M}_X(t)=[(1-p)+tp]^n\)</span>, com <span class="math inline">\(t\in\mathbb{R}\)</span>. Assim, a FGM de uma variável aleatória com distribuição Bernoulli é dada por <span class="math inline">\(M_X(t)=(1-p)+e^tp\)</span>, com <span class="math inline">\(t\in\mathbb{R}\)</span>. Daí, <span class="math inline">\(K_{X}(t)=\log M_X(t)=\log[(1-p)+e^tp]\)</span>.</p>
+<p>Pela <a href="#def-fgmf" class="quarto-xref">Definição&nbsp;<span>2.3</span></a>, sabemos que <span class="math inline">\(\mathcal{M}_X(t)=M_X(\log t)\)</span>. Pelo <a href="#exm-FGMF_binomial" class="quarto-xref">Exemplo&nbsp;<span>2.14</span></a>, sabemos que a FGMF de uma variável aleatória com distribuição binomial é dada por <span class="math inline">\(\mathcal{M}_X(t)=[(1-p)+tp]^n\)</span>, com <span class="math inline">\(t\in\mathbb{R}\)</span>. Assim, a FGM de uma variável aleatória com distribuição Bernoulli é dada por <span class="math inline">\(M_X(t)=(1-p)+e^tp\)</span>, com <span class="math inline">\(t\in\mathbb{R}\)</span>. Daí, <span class="math inline">\(K_{X}(t)=\log M_X(t)=\log[(1-p)+e^tp]\)</span>.</p>
 <p>Dessa forma,</p>
 <div class="math">
 <span class="math display">\[\begin{align*}
@@ -1644,12 +1629,12 @@ Observação
 <p><span class="math display">\[H=[-h_1,h_1]\times[-h_2,h_2]\times\cdots\times[-h_n,h_n]\subset\mathbb{R}^n,\]</span> com <span class="math inline">\(h_i&gt;0\)</span> para todo <span class="math inline">\(i=1,2,3,\ldots, n\)</span>.</p>
 </div>
 <div id="exm-fgmc_exponencial" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.21</strong></span> Seja <span class="math inline">\(\mathbf{X}=(X_1,X_2)\)</span> um vetor aleatório de uma população com função de densidade conjunta dada por</p>
+<p><span class="theorem-title"><strong>Exemplo 2.19</strong></span> Seja <span class="math inline">\(\mathbf{X}=(X_1,X_2)\)</span> um vetor aleatório de uma população com função de densidade conjunta dada por</p>
 <p><span class="math display">\[f(x_1,x_2)=e^{-(x_1+x_2)}, \quad x_1&gt;0, x_2&gt;0.\]</span></p>
 <p>Calcule a FGMC da distribuição de <span class="math inline">\(\mathbf{X}=(X_1,X_2)\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1658,7 +1643,7 @@ Observação
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-36" class="callout-36-contents callout-collapse collapse">
+<div id="callout-34" class="callout-34-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Pela <a href="#def-fgm_conjunta" class="quarto-xref">Definição&nbsp;<span>2.5</span></a>, sabemos que</p>
 <div class="math">
@@ -1674,10 +1659,10 @@ Observação
 </div>
 </div>
 <div id="exm-fgmc_chisq" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.22</strong></span> Seja <span class="math inline">\(X_1,X_2\)</span> uma amostra aleatória de uma população com distribuição normal padrão. Encontre as distribuições de <span class="math inline">\(2X_1X_2\)</span> e <span class="math inline">\(X_2^2-X_1^2\)</span>.</p>
+<p><span class="theorem-title"><strong>Exemplo 2.20</strong></span> Seja <span class="math inline">\(X_1,X_2\)</span> uma amostra aleatória de uma população com distribuição normal padrão. Encontre as distribuições de <span class="math inline">\(2X_1X_2\)</span> e <span class="math inline">\(X_2^2-X_1^2\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1686,7 +1671,7 @@ Observação
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-37" class="callout-37-contents callout-collapse collapse">
+<div id="callout-35" class="callout-35-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Sabemos que <span class="math inline">\(X_1\)</span> e <span class="math inline">\(X_2\)</span> são variáveis aleatórias independentes e identicamente distribuidas com distribuição <span class="math inline">\(N(0,1)\)</span>. Dessa forma, <span class="math inline">\(2X_1X_2\)</span> tem distribuição <span class="math inline">\(2\chi_{(1)}^2\)</span>, ou seja <span class="math inline">\(Gama\left(\frac12,\frac14\right)\)</span>.</p>
 <p>Seja <span class="math inline">\(U=2X_1X_2\)</span>, então</p>
@@ -1713,10 +1698,10 @@ Observação
 </div>
 </div>
 <div id="exm-fgmc_normalp" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.23</strong></span> Seja <span class="math inline">\(X_1,X_2\)</span> uma amostra aleatória de uma população com distribuição normal padrão. Calcule a FGMC do vetor <span class="math inline">\((Y,Z)\)</span>, onde <span class="math inline">\(Y=X_1+X_2\)</span> e <span class="math inline">\(Z=X_1^2+X_2^2\)</span>. As variáveis <span class="math inline">\(Y\)</span> e <span class="math inline">\(Z\)</span> são correlacionadas?</p>
+<p><span class="theorem-title"><strong>Exemplo 2.21</strong></span> Seja <span class="math inline">\(X_1,X_2\)</span> uma amostra aleatória de uma população com distribuição normal padrão. Calcule a FGMC do vetor <span class="math inline">\((Y,Z)\)</span>, onde <span class="math inline">\(Y=X_1+X_2\)</span> e <span class="math inline">\(Z=X_1^2+X_2^2\)</span>. As variáveis <span class="math inline">\(Y\)</span> e <span class="math inline">\(Z\)</span> são correlacionadas?</p>
 </div>
 <div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1725,7 +1710,7 @@ Observação
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-38" class="callout-38-contents callout-collapse collapse">
+<div id="callout-36" class="callout-36-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Sabemos que,</p>
 <div class="math">
