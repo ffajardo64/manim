@@ -54,27 +54,7 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -261,7 +241,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
- <span class="menu-text">II. Atributos básicos</span></a>
+ <span class="menu-text">II. Animações I</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Alternar seção">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -278,7 +258,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
- <span class="menu-text">III. Amostragem e distribuições amostrais</span></a>
+ <span class="menu-text">III. Animações II</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Alternar seção">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -329,13 +309,12 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#sec-retangle" id="toc-sec-retangle" class="nav-link" data-scroll-target="#sec-retangle"><span class="header-section-number">2.1.1</span> Classe <code>Retangle</code></a></li>
   <li><a href="#sec-square" id="toc-sec-square" class="nav-link" data-scroll-target="#sec-square"><span class="header-section-number">2.1.2</span> Classe <code>Square</code></a></li>
+  <li><a href="#sec-triangle" id="toc-sec-triangle" class="nav-link" data-scroll-target="#sec-triangle"><span class="header-section-number">2.1.3</span> Classe <code>Triangle</code></a></li>
+  <li><a href="#sec-polygon" id="toc-sec-polygon" class="nav-link" data-scroll-target="#sec-polygon"><span class="header-section-number">2.1.4</span> Classe <code>Polygon</code></a></li>
+  <li><a href="#sec-polygonreg" id="toc-sec-polygonreg" class="nav-link" data-scroll-target="#sec-polygonreg"><span class="header-section-number">2.1.5</span> Classe <code>RegularPolygon</code></a></li>
+  <li><a href="#sec-polygram" id="toc-sec-polygram" class="nav-link" data-scroll-target="#sec-polygram"><span class="header-section-number">2.1.6</span> Classe <code>Polygram</code></a></li>
+  <li><a href="#sec-polygramreg" id="toc-sec-polygramreg" class="nav-link" data-scroll-target="#sec-polygramreg"><span class="header-section-number">2.1.7</span> Classe <code>RegularPolygram</code></a></li>
   </ul></li>
-  <li><a href="#sec-fgm" id="toc-sec-fgm" class="nav-link" data-scroll-target="#sec-fgm"><span class="header-section-number">2.2</span> Funções geradoras de momentos</a>
-  <ul class="collapse">
-  <li><a href="#momentos-fatoriais" id="toc-momentos-fatoriais" class="nav-link" data-scroll-target="#momentos-fatoriais"><span class="header-section-number">2.2.1</span> Momentos fatoriais</a></li>
-  <li><a href="#cumulantes" id="toc-cumulantes" class="nav-link" data-scroll-target="#cumulantes"><span class="header-section-number">2.2.2</span> Cumulantes</a></li>
-  </ul></li>
-  <li><a href="#função-geradora-de-momentos-conjunta" id="toc-função-geradora-de-momentos-conjunta" class="nav-link" data-scroll-target="#função-geradora-de-momentos-conjunta"><span class="header-section-number">2.3</span> Função geradora de momentos conjunta</a></li>
   <li><a href="#exercícios-sugeridos" id="toc-exercícios-sugeridos" class="nav-link" data-scroll-target="#exercícios-sugeridos">Exercícios sugeridos</a></li>
   </ul>
 </nav>
@@ -379,7 +358,7 @@ Dica
 </div>
 <section id="sec-geometry" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="sec-geometry"><span class="header-section-number">2.1</span> Tipo <code>geometry</code></h2>
-<p>No tipo <code>geometry</code> encontram-se vários <strong>Mobjetos</strong> geométricos úteis para criar as nossas animações. Temos por exemplo:</p>
+<p>No tipo <code>geometry</code> encontram-se vários <strong>Mobjects</strong> geométricos úteis para criar as nossas animações. Temos por exemplo:</p>
 <section id="sec-retangle" class="level3" data-number="2.1.1">
 <h3 data-number="2.1.1" class="anchored" data-anchor-id="sec-retangle"><span class="header-section-number">2.1.1</span> Classe <code>Retangle</code></h3>
 <p><code>class Rectangle(color=ManimColor('#FFFFFF'), height=2.0, width=4.0, grid_xstep=None, grid_ystep=None, **kwargs)</code></p>
@@ -395,23 +374,45 @@ Dica
 <p>Para detalhes consulte a documentação da classe <a href="https://docs.manim.community/en/stable/reference/manim.mobject.geometry.polygram.Rectangle.html#manim.mobject.geometry.polygram.Rectangle">Rectangle</a>.</p>
 <div id="exm-rectangle" class="theorem example">
 <p><span class="theorem-title"><strong>Exemplo 2.1</strong></span> Criação de três retângulos com diferentes formatações.</p>
-<div id="5cf4e324" class="cell" data-execution_count="1">
+<div id="fig-retangulos" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-retangulos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/Retangulos_ManimCE_v0.18.1.png" class="img-fluid figure-img" width="600">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-retangulos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.1: Diferentes retângulos criados com <code>manim</code>.
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-proof no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<em>Código</em>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="6634d313" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">from</span> manim <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a></span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="kw">class</span> Retangulos(Scene):</span>
 <span id="cb1-4"><a href="#cb1-4"></a>    <span class="kw">def</span> construct(<span class="va">self</span>):</span>
-<span id="cb1-5"><a href="#cb1-5"></a>        retangulo1 <span class="op">=</span> Rectangle(color<span class="op">=</span>ORANGE,</span>
-<span id="cb1-6"><a href="#cb1-6"></a>                               fill_color<span class="op">=</span>BLUE,</span>
+<span id="cb1-5"><a href="#cb1-5"></a>        retangulo1 <span class="op">=</span> Rectangle(color<span class="op">=</span>PURE_RED,</span>
+<span id="cb1-6"><a href="#cb1-6"></a>                               fill_color<span class="op">=</span>PURE_BLUE,</span>
 <span id="cb1-7"><a href="#cb1-7"></a>                               fill_opacity<span class="op">=</span><span class="fl">0.3</span></span>
 <span id="cb1-8"><a href="#cb1-8"></a>                            )</span>
 <span id="cb1-9"><a href="#cb1-9"></a>        </span>
-<span id="cb1-10"><a href="#cb1-10"></a>        retangulo2 <span class="op">=</span> Rectangle(color<span class="op">=</span>TEAL,</span>
+<span id="cb1-10"><a href="#cb1-10"></a>        retangulo2 <span class="op">=</span> Rectangle(color<span class="op">=</span>ORANGE,</span>
 <span id="cb1-11"><a href="#cb1-11"></a>                          width<span class="op">=</span><span class="fl">1.0</span>, </span>
 <span id="cb1-12"><a href="#cb1-12"></a>                          height<span class="op">=</span><span class="fl">4.0</span>,</span>
 <span id="cb1-13"><a href="#cb1-13"></a>                          grid_xstep<span class="op">=</span><span class="fl">0.5</span>, </span>
 <span id="cb1-14"><a href="#cb1-14"></a>                          grid_ystep<span class="op">=</span><span class="fl">0.5</span>)</span>
 <span id="cb1-15"><a href="#cb1-15"></a>        </span>
-<span id="cb1-16"><a href="#cb1-16"></a>        retangulo3 <span class="op">=</span> Rectangle(color<span class="op">=</span>PURPLE,</span>
+<span id="cb1-16"><a href="#cb1-16"></a>        retangulo3 <span class="op">=</span> Rectangle(color<span class="op">=</span>PURE_GREEN,</span>
 <span id="cb1-17"><a href="#cb1-17"></a>                          width<span class="op">=</span><span class="fl">2.0</span>, </span>
 <span id="cb1-18"><a href="#cb1-18"></a>                          height<span class="op">=</span><span class="fl">2.0</span>, </span>
 <span id="cb1-19"><a href="#cb1-19"></a>                          grid_xstep<span class="op">=</span><span class="fl">1.0</span>, </span>
@@ -423,34 +424,71 @@ Dica
 <span id="cb1-25"><a href="#cb1-25"></a>        retangulos <span class="op">=</span> Group(retangulo1, retangulo2, retangulo3).arrange(buff<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb1-26"><a href="#cb1-26"></a>        <span class="va">self</span>.add(retangulos)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p><strong>Linhas 6-7</strong>. O parâmetro <code>fill_color</code> permite definir a cor de preenchimento do objeto e <code>fill_opacity</code> define a transparência da cor de preechimento. Caso não seja definida uma cor de preechimento, o padrão é a mesma cor do objeto. O parâmetro <code>fill_opacity</code> é definido com um valor entre 0 e 1. Quanto mais próximo de 1, mais sólida a cor;</p>
+<p><strong>Linhas 22-23</strong>. O método <code>mobject.set_stroke()</code> permite alterar as propriedades de espessura das linhas que definem o objeto. No exemplo, o método é utilizado para modificar a espessura das linhas do retângulo e da grade interior;</p>
+<p><strong>Linha 25</strong>. Atribuimos à variável <code>retangulos</code> um grupo de objetos e aplicamos o método <code>mobject.arrange()</code> para posicioná-los na cena.</p>
+</div>
+</div>
+</div>
+</div>
+<p>Se tiver interesse em retângulos com cantos arredondados, <code>manim</code> disponibiliza a classe <code>RoundedRectangle</code>:</p>
+<p><code>class RoundedRectangle(corner_radius=0.5, **kwargs)</code></p>
+<p><strong>Parâmetros</strong></p>
+<ul>
+<li><code>corner_radius</code> (float | list[float]) : Define a curvatura dos cantos do retângulo;</li>
+<li><code>kwargs</code>: Argumentos adicionais a serem passados à classe <code>Rectangle</code>.</li>
+</ul>
+<p>Para detalhes consulte a documentação da classe <a href="https://docs.manim.community/en/stable/reference/manim.mobject.geometry.polygram.RoundedRectangle.html#manim.mobject.geometry.polygram.RoundedRectangle">RoundedRectangle</a>.</p>
+<div id="exm-rounded_rectangle" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 2.2</strong></span> Criação de três retângulos com diferentes formatações.</p>
+<div id="fig-retangulo_arredondado" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-retangulo_arredondado-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/retangulo_arredondado_ManimCE_v0.18.1.png" class="img-fluid figure-img" width="600">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-retangulo_arredondado-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.2: Uma aplicação de retângulos arredondados criados com <code>manim</code>.
+</figcaption>
+</figure>
+</div>
 <div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<em>Resultado</em>
+<em>Código</em>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="fig-retangulos" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-retangulos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="./images/Retangulos_ManimCE_v0.18.1.png" class="img-fluid figure-img" width="600">
+<div id="102ae04b" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">from</span> manim <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="kw">class</span> retangulo_arredondado(Scene):</span>
+<span id="cb2-4"><a href="#cb2-4"></a>    <span class="kw">def</span> construct(<span class="va">self</span>):</span>
+<span id="cb2-5"><a href="#cb2-5"></a>        txt <span class="op">=</span> Text(<span class="st">"Introdução ao manim"</span>, </span>
+<span id="cb2-6"><a href="#cb2-6"></a>                  gradient<span class="op">=</span>[PURE_RED, YELLOW],</span>
+<span id="cb2-7"><a href="#cb2-7"></a>                  font <span class="op">=</span> <span class="st">"Bebas Neue"</span>, </span>
+<span id="cb2-8"><a href="#cb2-8"></a>                  font_size <span class="op">=</span> <span class="dv">70</span></span>
+<span id="cb2-9"><a href="#cb2-9"></a>                  )</span>
+<span id="cb2-10"><a href="#cb2-10"></a>                </span>
+<span id="cb2-11"><a href="#cb2-11"></a>        retangulo <span class="op">=</span> RoundedRectangle(corner_radius <span class="op">=</span> <span class="fl">0.5</span>,</span>
+<span id="cb2-12"><a href="#cb2-12"></a>                              height<span class="op">=</span><span class="fl">2.0</span>, </span>
+<span id="cb2-13"><a href="#cb2-13"></a>                              width<span class="op">=</span><span class="fl">12.0</span>, </span>
+<span id="cb2-14"><a href="#cb2-14"></a>                              color <span class="op">=</span> PINK, </span>
+<span id="cb2-15"><a href="#cb2-15"></a>                              fill_opacity <span class="op">=</span> <span class="fl">0.5</span>, </span>
+<span id="cb2-16"><a href="#cb2-16"></a>                              sheen_factor <span class="op">=</span> <span class="op">-</span><span class="fl">0.7</span>,</span>
+<span id="cb2-17"><a href="#cb2-17"></a>                              )</span>
+<span id="cb2-18"><a href="#cb2-18"></a>        </span>
+<span id="cb2-19"><a href="#cb2-19"></a>        <span class="va">self</span>.add(retangulo, txt)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-retangulos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;2.1: Diferentes retângulos criados com <code>manim</code>.
-</figcaption>
-</figure>
+<p><strong>Linhas 7-8</strong>. Permitem definir a fonte e o tamanho da mesma;</p>
+<p><strong>Linha 16</strong>. O <code>sheen_factor</code> é nivel de brilho do objeto.</p>
 </div>
 </div>
 </div>
-</div>
-<p><strong>Linhas 6-7</strong>. O parâmetro <code>fill_color</code> permite definir a cor de preenchimento do objeto e <code>fill_opacity</code> define a transparência da cor de preechimento. Caso não seja definida uma cor de preechimento, o padrão é a mesma cor do objeto. O parâmetro <code>fill_opacity</code> é definido com um valor entre 0 e 1. Quanto mais próximo de 1, mais sólida a cor;</p>
-<p><strong>Linhas 22-23</strong>. O método <code>mobject.set_stroke()</code> permite alterar as propriedades de espessura das linhas que definem o objeto. No exemplo, o método é utilizado para modificar a espessura das linhas do retângulo e da grade interior;</p>
-<p><strong>Linha 25</strong>. Atribuimos à variável <code>retangulos</code> um grupo de objetos e aplicamos o método <code>mobject.arrange()</code> para posicioná-los na cena.</p>
 </div>
 </section>
 <section id="sec-square" class="level3" data-number="2.1.2">
@@ -462,60 +500,17 @@ Figura&nbsp;2.1: Diferentes retângulos criados com <code>manim</code>.
 <li><code>kwargs</code>: Argumentos adicionais a serem passados à classe <code>Rectangle</code>.</li>
 </ul>
 <p>Para detalhes consulte a documentação da classe <a href="https://docs.manim.community/en/stable/reference/manim.mobject.geometry.polygram.Square.html#manim.mobject.geometry.polygram.Square">Square</a>.</p>
-<div id="exm-rectangle" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.2</strong></span> Criação de três retângulos com diferentes formatações.</p>
-<div id="313b6ed0" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">from</span> manim <span class="im">import</span> <span class="op">*</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="kw">class</span> Quadrados(Scene):</span>
-<span id="cb2-4"><a href="#cb2-4"></a>    <span class="kw">def</span> construct(<span class="va">self</span>):</span>
-<span id="cb2-5"><a href="#cb2-5"></a>        quadrado1 <span class="op">=</span> Square(color<span class="op">=</span>ORANGE,</span>
-<span id="cb2-6"><a href="#cb2-6"></a>                           fill_color<span class="op">=</span>ORANGE,</span>
-<span id="cb2-7"><a href="#cb2-7"></a>                           fill_opacity<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb2-8"><a href="#cb2-8"></a>        </span>
-<span id="cb2-9"><a href="#cb2-9"></a>        quadrado2 <span class="op">=</span> quadrado1.copy().set_color(PINK).scale(<span class="fl">1.0</span>)</span>
-<span id="cb2-10"><a href="#cb2-10"></a>        quadrado3 <span class="op">=</span> quadrado1.copy().set_color(PURPLE).set_stroke(width<span class="op">=</span><span class="dv">10</span>)</span>
-<span id="cb2-11"><a href="#cb2-11"></a></span>
-<span id="cb2-12"><a href="#cb2-12"></a>        <span class="cf">for</span> i <span class="kw">in</span> [<span class="fl">0.3</span>, <span class="fl">0.5</span>, <span class="fl">0.7</span>]:</span>
-<span id="cb2-13"><a href="#cb2-13"></a>            <span class="va">self</span>.add(quadrado2.copy().scale(i).move_to(DOWN))</span>
-<span id="cb2-14"><a href="#cb2-14"></a></span>
-<span id="cb2-15"><a href="#cb2-15"></a>        quadrados <span class="op">=</span> Group(quadrado1, quadrado2, quadrado3).arrange(buff<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb2-16"><a href="#cb2-16"></a>        <span class="va">self</span>.add(quadrados)</span>
-<span id="cb2-17"><a href="#cb2-17"></a></span>
-<span id="cb2-18"><a href="#cb2-18"></a>        <span class="cf">for</span> i <span class="kw">in</span> [<span class="fl">0.3</span>, <span class="fl">0.5</span>, <span class="fl">0.7</span>]:</span>
-<span id="cb2-19"><a href="#cb2-19"></a>            <span class="va">self</span>.add(quadrado3.copy().move_to(quadrado3.get_center()).scale(i))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<em>Resultado</em>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+<div id="exm-square" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 2.3</strong></span> Sequência de muitos quadrados coloridos.</p>
 <div id="fig-quadrados" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-quadrados-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="./images/Quadrados_ManimCE_v0.18.1.png" class="img-fluid figure-img" width="600">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-quadrados-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;2.2: Diferentes quadrados criados com <code>manim</code>.
+Figura&nbsp;2.3: Diferentes quadrados criados com <code>manim</code>.
 </figcaption>
 </figure>
-</div>
-</div>
-</div>
-</div>
-<p><strong>Linhas 6-7</strong>. O parâmetro <code>fill_color</code> permite definir a cor de preenchimento do objeto e <code>fill_opacity</code> define a transparência da cor de preechimento. Caso não seja definida uma cor de preechimento, o padrão é a mesma cor do objeto. O parâmetro <code>fill_opacity</code> é definido com um valor entre 0 e 1. Quanto mais próximo de 1, mais sólida a cor;</p>
-<p><strong>Linhas 22-23</strong>. O método <code>mobject.set_stroke()</code> permite alterar as propriedades de espessura das linhas que definem o objeto. No exemplo, o método é utilizado para modificar a espessura das linhas do retângulo e da grade interior;</p>
-<p><strong>Linha 25</strong>. Atribuimos à variável <code>retangulos</code> um grupo de objetos e aplicamos o método <code>mobject.arrange()</code> para posicioná-los na cena.</p>
-</div>
-<div id="exm-curtose_chisq" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.3</strong></span> Seja <span class="math inline">\(X_1,X_2, \ldots, X_n\)</span> uma sequência de variáveis aleatórias independentes função de distribuição <span class="math inline">\(F_i(x_i)\)</span>, com <span class="math inline">\(i=1,2,3,,\ldots,k\)</span>. Considere a variável aleatória <span class="math inline">\(Z=-2\sum_{i=1}^k\log\left(1-F_i(X_i)\right)\)</span>. Qual o valor da curtose de <span class="math inline">\(Z\)</span>?</p>
 </div>
 <div class="callout callout-style-default callout-proof no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
@@ -523,40 +518,72 @@ Figura&nbsp;2.2: Diferentes quadrados criados com <code>manim</code>.
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<em>Solução.</em>
+<em>Código</em>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Seja <span class="math inline">\(U_i=F_i(X_i)\)</span> e considere <span class="math inline">\(k=1\)</span>, então <span class="math inline">\(Z=-2\log(1-U_1)\)</span>. Dessa forma, temos que <span class="math display">\[F_Z(z)=\mathbb{P}[Z\le z]=\mathbb{P}\left[-2\log(1-U_1)\le z\right]=\mathbb{P}\left[U_1\le 1-e^{-\frac12z}\right]=1-e^{-\frac12z}.\]</span> Do <span class="quarto-unresolved-ref">?exm-r_momento_chisq</span>, sabemos que <span class="math inline">\(Z\)</span> é uma variável aleatória de uma população com distribuição qui-quadrado com <span class="math inline">\(2\)</span> graus de liberdade, i.e., <span class="math inline">\(\chi^2_{(2)}\)</span>. Portanto, <span class="math inline">\(Z=-2\sum_{i=1}^k\log\left(1-U_i\right)\)</span> segue uma distribuição <span class="math inline">\(\chi^2_{(2k)}\)</span>.</p>
-<p>Por outra parte, sabemos que a curtose é definida como <span class="math inline">\(C=\dfrac{\mathbb{E}\left[Z-\mathbb{E}Z\right]^4}{\left(\mathbb{E}\left[Z-\mathbb{E}Z\right]^2\right)^2}=\dfrac{\mathbb{E}\left[Z-\mathbb{E}Z\right]^4}{\left(\mathrm{var}[Z]\right)^2}\)</span>. Desse modo,</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  \mathbb{E}[Z]&amp;=k\\
-  \mathbb{E}\left[Z^2\right]&amp;=k(k+2)\\
-  \mathbb{E}\left[Z^3\right]&amp;=2k(k+2)\left(\frac{k}{2}+2\right)=k(k+2)(k+4)\\
-  \mathbb{E}\left[Z^4\right]&amp;=2k(k+2)(k+4)\left(\frac{k}{2}+3\right)=k(k+2)(k+4)(k+6).
-\end{align*}\]</span>
+<div id="9e57722d" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">from</span> manim <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="kw">class</span> Quadrados(Scene):</span>
+<span id="cb3-4"><a href="#cb3-4"></a>    <span class="kw">def</span> construct(<span class="va">self</span>):</span>
+<span id="cb3-5"><a href="#cb3-5"></a>        quadrado1 <span class="op">=</span> Square(color<span class="op">=</span>PURE_RED,</span>
+<span id="cb3-6"><a href="#cb3-6"></a>                           fill_color<span class="op">=</span>PURE_RED,</span>
+<span id="cb3-7"><a href="#cb3-7"></a>                           fill_opacity<span class="op">=</span><span class="fl">0.1</span>,</span>
+<span id="cb3-8"><a href="#cb3-8"></a>                           )</span>
+<span id="cb3-9"><a href="#cb3-9"></a>        </span>
+<span id="cb3-10"><a href="#cb3-10"></a>        quadrados <span class="op">=</span> Group()</span>
+<span id="cb3-11"><a href="#cb3-11"></a></span>
+<span id="cb3-12"><a href="#cb3-12"></a>        <span class="cf">for</span> i <span class="kw">in</span> [x <span class="op">/</span> <span class="fl">10.0</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">20</span>,<span class="dv">2</span>)]:</span>
+<span id="cb3-13"><a href="#cb3-13"></a>            quadrados <span class="op">=</span> quadrados.add(quadrado1.copy().scale(i))</span>
+<span id="cb3-14"><a href="#cb3-14"></a>        </span>
+<span id="cb3-15"><a href="#cb3-15"></a>        <span class="va">self</span>.add(quadrados.copy()</span>
+<span id="cb3-16"><a href="#cb3-16"></a>                 .set_color(PURE_BLUE)</span>
+<span id="cb3-17"><a href="#cb3-17"></a>                 .align_on_border(DOWN, buff<span class="op">=</span><span class="fl">0.1</span>)</span>
+<span id="cb3-18"><a href="#cb3-18"></a>                 )</span>
+<span id="cb3-19"><a href="#cb3-19"></a>        <span class="va">self</span>.add(quadrados.copy()</span>
+<span id="cb3-20"><a href="#cb3-20"></a>                 .set_color(LIGHT_PINK)</span>
+<span id="cb3-21"><a href="#cb3-21"></a>                 .move_to([<span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">0</span>])</span>
+<span id="cb3-22"><a href="#cb3-22"></a>                 )</span>
+<span id="cb3-23"><a href="#cb3-23"></a>        <span class="va">self</span>.add(quadrados.copy()</span>
+<span id="cb3-24"><a href="#cb3-24"></a>                 .set_color(PURE_GREEN)</span>
+<span id="cb3-25"><a href="#cb3-25"></a>                 .align_on_border(UP, buff<span class="op">=</span><span class="fl">0.1</span>)</span>
+<span id="cb3-26"><a href="#cb3-26"></a>                 )</span>
+<span id="cb3-27"><a href="#cb3-27"></a>        <span class="va">self</span>.add(quadrados.copy()</span>
+<span id="cb3-28"><a href="#cb3-28"></a>                 .set_color(YELLOW)</span>
+<span id="cb3-29"><a href="#cb3-29"></a>                 .move_to([<span class="op">-</span><span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">0</span>])</span>
+<span id="cb3-30"><a href="#cb3-30"></a>                 )</span>
+<span id="cb3-31"><a href="#cb3-31"></a>        <span class="va">self</span>.add(quadrados)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Seguindo os resultados acima, temos que <span class="math inline">\(\mathrm{var}[Z]=\mathbb{E}Z^2-\left[\mathbb{E}Z\right]^2=k(k+2)-k^2=2k\)</span>. Ainda,</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  \mathbb{E}\left[Z-\mathbb{E}Z\right]^4&amp;=\mathbb{E}\left[Z-k\right]^4
-  =\mathbb{E}Z^4-4k\mathbb{E}Z^3+6k^2\mathbb{E}Z^2-4k^3\mathbb{E}Z+k^4\\
-  &amp;=k(k+2)(k+4)(k+6)-4k^2(k+2)(k+4)+6k^2k(k+2)-3k^4\\
-  &amp;=-3k(k^2-4)(k+4)+3k^3(k+4)=12k(k+4).
-\end{align*}\]</span>
-</div>
-<p>Assim, <span class="math display">\[C=\dfrac{\mathbb{E}\left[Z-\mathbb{E}Z\right]^4}{\left(\mathrm{var}[Z]\right)^2}=\dfrac{12k(k+4)}{4k^2}=3+\frac{12}{k}.  \quad\checkmark\]</span></p>
-<blockquote class="blockquote">
-<p>Para mostrar que <span class="math inline">\(Z=-2\sum_{i=1}^k\log\left(1-U_i\right)\)</span> segue uma distribuição <span class="math inline">\(\chi^2_{(2k)}\)</span>, o leitor pode aplicar o <a href="#thm-fgm_independencia" class="quarto-xref">Teorema&nbsp;<span>2.5</span></a>.</p>
-</blockquote>
+<p><strong>Linha 10</strong>. Criamos um grupo de objetos. Assim podemos manipular vários objetos ao mesmo tempo. Discutiremos esse tipo de <strong>Mobject</strong> com mais detalhe nas próximas seções;</p>
+<p><strong>Linha 21</strong>. O método <code>mobject.move_to()</code> permite posicionar um objeto na tela. Este método requer um arranjo tridimensional, cujos elementos definem as coordenadas <span class="math inline">\((x,y,z)\)</span> de um objeto na tela, usando sempre o centro da câmera como referência. Lembre-se que se as coordenadas estão fora dos limites da câmera então não ficará visível em sua animação. No exemplo, <code>DOWN</code> representa <code>np.array([-1, 0, 0])</code>;</p>
+<p><strong>Linha 17</strong>. O método <code>mobject.align_on_border()</code> permite alinhar um objeto com a borda da câmera. O método recebe dois parâmetros: <code>direction</code> e <code>buff</code>. O primeiro indica a direção, que O segundo, também chamado de <em>buffer</em>, indica um espaçamento entre a borda e o objeto, por padrão o valor deste buffer é 0.5 unidades.</p>
 </div>
 </div>
 </div>
-<div id="exm-r_momento_normal" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.4</strong></span> Seja <span class="math inline">\(X\)</span> uma variável aleatória de uma população com distribuição normal com média <span class="math inline">\(\mu\)</span> e variância <span class="math inline">\(1\)</span>. Mostre que o <span class="math inline">\(r+1\)</span>-ésimo momento da distribuição de <span class="math inline">\(X\)</span> é dado por <span class="math display">\[\mathbb{E}X^{r+1}=\mu\mathbb{E}X^r-\frac{\partial}{\partial\mu}\mathbb{E}X^r.\]</span></p>
+</div>
+</section>
+<section id="sec-triangle" class="level3" data-number="2.1.3">
+<h3 data-number="2.1.3" class="anchored" data-anchor-id="sec-triangle"><span class="header-section-number">2.1.3</span> Classe <code>Triangle</code></h3>
+<p><code>class Triangle(**kwargs)</code></p>
+<p><strong>Parâmetros</strong></p>
+<ul>
+<li><code>kwargs</code>: Argumentos adicionais a serem passados à classe <code>RegularPolygon</code>.</li>
+</ul>
+<p>Para detalhes consulte a documentação da classe <a href="https://docs.manim.community/en/stable/reference/manim.mobject.geometry.polygram.Triangle.html#manim.mobject.geometry.polygram.Triangle">Triangle</a>.</p>
+<div id="exm-triangle" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 2.4</strong></span> Criação de uma sequência de triângulos com diferentes cores e tamanhos.</p>
+<div id="fig-triangulos" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-triangulos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/Triangulos_ManimCE_v0.18.1.png" class="img-fluid figure-img" width="600">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-triangulos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.4: Sequência de triângulos criados com <code>Triangle</code>.
+</figcaption>
+</figure>
 </div>
 <div class="callout callout-style-default callout-proof no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
@@ -564,28 +591,58 @@ Figura&nbsp;2.2: Diferentes quadrados criados com <code>manim</code>.
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<em>Solução.</em>
+<em>Código</em>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Sabemos que <span class="math display">\[\mathbb{E}X^r=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty x^re^{-\frac12(x-\mu)^2}\,dx.\]</span> Daí,</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-    \frac{\partial}{\partial \mu}\mathbb{E}X^r&amp;=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty \frac{\partial}{\partial\mu}\left(x^re^{-\frac12(x-\mu)^2}\right)\,dx
-    =\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty x^re^{-\frac12(x-\mu)^2}(\mu-x)\,dx\\
-    &amp;=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty \mu x^re^{-\frac12(x-\mu)^2}\,dx-\underbrace{\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty x^{r+1}e^{-\frac12(x-\mu)^2}\,dx}_{\mathbb{E}X^{r+1}}.
-  \end{align*}\]</span>
+<div id="258ec01b" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">from</span> manim <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="kw">class</span> Triangulos(Scene):</span>
+<span id="cb4-4"><a href="#cb4-4"></a>    <span class="kw">def</span> construct(<span class="va">self</span>):</span>
+<span id="cb4-5"><a href="#cb4-5"></a>        triangulo <span class="op">=</span> Triangle(fill_opacity<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb4-6"><a href="#cb4-6"></a></span>
+<span id="cb4-7"><a href="#cb4-7"></a>        t <span class="op">=</span> Group()</span>
+<span id="cb4-8"><a href="#cb4-8"></a></span>
+<span id="cb4-9"><a href="#cb4-9"></a>        <span class="cf">for</span> i <span class="kw">in</span> [x <span class="op">/</span> <span class="fl">10.0</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">18</span>,<span class="dv">2</span>)]:</span>
+<span id="cb4-10"><a href="#cb4-10"></a>            t <span class="op">=</span> t.add(triangulo.copy().scale(i))</span>
+<span id="cb4-11"><a href="#cb4-11"></a>        </span>
+<span id="cb4-12"><a href="#cb4-12"></a>        <span class="va">self</span>.add(t</span>
+<span id="cb4-13"><a href="#cb4-13"></a>                 .set_color_by_gradient(GREEN_E, YELLOW, PURE_RED, PURE_BLUE)</span>
+<span id="cb4-14"><a href="#cb4-14"></a>                 .arrange(buff<span class="op">=</span><span class="fl">0.1</span>, aligned_edge<span class="op">=</span>DOWN)</span>
+<span id="cb4-15"><a href="#cb4-15"></a>                 )</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Portanto, <span class="math display">\[\mathbb{E}X^{r+1}=\mu\mathbb{E}X^r-\frac{\partial}{\partial\mu}\mathbb{E}X^r.\quad\checkmark\]</span></p>
+<p><strong>Linha 5</strong>. Instanciamos um objeto da classe <code>Triangle()</code> e atribuimos à variável <code>triangulo</code>. Em palavras mais simples, criamos um triângulo equilátero;</p>
+<p><strong>Linha 10</strong>. Criamos um grupo de objetos. Assim podemos manipular vários objetos ao mesmo tempo. Discutiremos esse tipo de <strong>Mobject</strong> com mais detalhe nas próximas seções;</p>
+<p><strong>Linha 21</strong>. O método <code>mobject.move_to()</code> permite posicionar um objeto na tela. Este método requer um arranjo tridimensional, cujos elementos definem as coordenadas <span class="math inline">\((x,y,z)\)</span> de um objeto na tela, usando sempre o centro da câmera como referência. Lembre-se que se as coordenadas estão fora dos limites da câmera então não ficará visível em sua animação. No exemplo, <code>DOWN</code> representa <code>np.array([-1, 0, 0])</code>;</p>
+<p><strong>Linha 17</strong>. O método <code>mobject.align_on_border()</code> permite alinhar um objeto com a borda da câmera. O método recebe dois parâmetros: <code>direction</code> e <code>buff</code>. O primeiro indica a direção, que O segundo, também chamado de <em>buffer</em>, indica um espaçamento entre a borda e o objeto, por padrão o valor deste buffer é 0.5 unidades.</p>
 </div>
 </div>
 </div>
-<div class="box">
-<div id="thm-esperado_momentos" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 2.1</strong></span> Seja <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span> uma amostra aleatória de uma população com distribuição que envolve um parâmetro <span class="math inline">\(\theta\)</span>. O valor esperado do <span class="math inline">\(r\)</span>-ésimo momento amostral, em torno de zero, é igual ao <span class="math inline">\(r\)</span>-ésimo momento populacional (se existe), i.e., <span class="math display">\[\mathbb{E}[M_r']=\mu_r'=\mathbb{E}X^r.\]</span> Ainda, <span class="math display">\[\mathrm{Var}[M_r']=\frac1n\left[\mathbb{E}X^{2r}-\left(\mathbb{E}X^r\right)^2\right].\]</span></p>
 </div>
+</section>
+<section id="sec-polygon" class="level3" data-number="2.1.4">
+<h3 data-number="2.1.4" class="anchored" data-anchor-id="sec-polygon"><span class="header-section-number">2.1.4</span> Classe <code>Polygon</code></h3>
+<p><code>class Polygon(*vertices, **kwargs)</code></p>
+<p><strong>Parâmetros</strong></p>
+<ul>
+<li><code>vertices</code> (Point3D): Os vértices do polígono;</li>
+<li><code>kwargs</code>: Argumentos adicionais a serem passados à classe <code>Polygon</code>.</li>
+</ul>
+<p>Para detalhes consulte a documentação da classe <a href="https://docs.manim.community/en/stable/reference/manim.mobject.geometry.polygram.Polygon.html#manim.mobject.geometry.polygram.Polygon">Polygon</a>.</p>
+<div id="exm-polygon" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 2.5</strong></span> Desenhando figuras geométricas com polígonos.</p>
+<div id="fig-poligonos" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-poligonos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/Poligono_ManimCE_v0.18.1.png" class="img-fluid figure-img" width="600">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-poligonos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.5: Triângulo retângulo e estrelas coloridas com <code>Polygon</code>.
+</figcaption>
+</figure>
 </div>
 <div class="callout callout-style-default callout-proof no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
@@ -593,39 +650,129 @@ Figura&nbsp;2.2: Diferentes quadrados criados com <code>manim</code>.
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<em>Prova.</em>
+<em>Código</em>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Para provar o resultado do <a href="#thm-esperado_momentos" class="quarto-xref">Teorema&nbsp;<span>2.1</span></a>, sabemos da <span class="quarto-unresolved-ref">?def-momento_amostral0</span> que <span class="math inline">\(M_r'=\frac1n\sum_{i=1}^nX_i^r\)</span>. Daí, <span class="math display">\[\mathbb{E}M_r'=\mathbb{E}\left[\frac1n\sum_{i=1}^nX_i^r\right]=\frac1n\sum_{i=1}^n\mathbb{E}X_i^r=\mu_r'.\]</span> Por outro lado, <span class="math display">\[\mathrm{Var}[M_r']=\mathrm{Var}\left[\frac1n\sum_{i=1}^nX_i^r\right]=\frac{1}{n^2}\sum_{i=1}^n\mathrm{Var}[X_i^r]=\frac1n\left[\mathbb{E}X^{2r}-\left(\mathbb{E}X^r\right)^2\right]. \quad \blacksquare\]</span></p>
+<div id="e1de2424" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="im">from</span> manim <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="kw">class</span> Poligono(Scene):</span>
+<span id="cb5-4"><a href="#cb5-4"></a>    <span class="kw">def</span> construct(<span class="va">self</span>):</span>
+<span id="cb5-5"><a href="#cb5-5"></a>        t_retangulo <span class="op">=</span> Polygon([<span class="op">-</span><span class="dv">5</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>], </span>
+<span id="cb5-6"><a href="#cb5-6"></a>                              [<span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>], </span>
+<span id="cb5-7"><a href="#cb5-7"></a>                              [<span class="op">-</span><span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">0</span>],</span>
+<span id="cb5-8"><a href="#cb5-8"></a>                              color<span class="op">=</span>PURE_GREEN, </span>
+<span id="cb5-9"><a href="#cb5-9"></a>                              fill_opacity<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb5-10"><a href="#cb5-10"></a>        a <span class="op">=</span> Tex(<span class="st">"$a$"</span>).move_to([<span class="op">-</span><span class="fl">5.3</span>,<span class="fl">0.5</span>,<span class="dv">0</span>]).set_color(PURE_RED)</span>
+<span id="cb5-11"><a href="#cb5-11"></a>        b <span class="op">=</span> Tex(<span class="st">"$b$"</span>).move_to([<span class="op">-</span><span class="fl">2.8</span>,<span class="op">-</span><span class="fl">1.5</span>,<span class="dv">0</span>]).set_color(PURE_RED)</span>
+<span id="cb5-12"><a href="#cb5-12"></a>        c <span class="op">=</span> Tex(<span class="st">"$\sqrt{a^2+b^2}$"</span>).move_to([<span class="op">-</span><span class="fl">1.5</span>,<span class="fl">1.0</span>,<span class="dv">0</span>]).set_color(PURE_RED)</span>
+<span id="cb5-13"><a href="#cb5-13"></a></span>
+<span id="cb5-14"><a href="#cb5-14"></a>        position_list <span class="op">=</span> [</span>
+<span id="cb5-15"><a href="#cb5-15"></a>            [ <span class="fl">3.0</span>,  <span class="fl">3.0</span>, <span class="dv">0</span>],  <span class="co"># primeiro vertice</span></span>
+<span id="cb5-16"><a href="#cb5-16"></a>            [ <span class="fl">4.0</span>,  <span class="fl">1.0</span>, <span class="dv">0</span>],  <span class="co"># segundo vertice</span></span>
+<span id="cb5-17"><a href="#cb5-17"></a>            [ <span class="fl">6.0</span>,  <span class="fl">1.0</span>, <span class="dv">0</span>],  <span class="co"># terceiro vertice</span></span>
+<span id="cb5-18"><a href="#cb5-18"></a>            [ <span class="fl">4.5</span>, <span class="op">-</span><span class="fl">0.5</span>, <span class="dv">0</span>],  <span class="co"># quarto vertice</span></span>
+<span id="cb5-19"><a href="#cb5-19"></a>            [ <span class="fl">5.0</span>, <span class="op">-</span><span class="fl">2.8</span>, <span class="dv">0</span>],  <span class="co"># quinto vertice</span></span>
+<span id="cb5-20"><a href="#cb5-20"></a>            [ <span class="fl">3.0</span>, <span class="op">-</span><span class="fl">1.5</span>, <span class="dv">0</span>],  <span class="co"># sexto vertice</span></span>
+<span id="cb5-21"><a href="#cb5-21"></a>            [ <span class="fl">1.1</span>, <span class="op">-</span><span class="fl">2.8</span>, <span class="dv">0</span>],  <span class="co"># setimo vertice</span></span>
+<span id="cb5-22"><a href="#cb5-22"></a>            [ <span class="fl">1.5</span>, <span class="op">-</span><span class="fl">0.5</span>, <span class="dv">0</span>],  <span class="co"># oitavo vertice</span></span>
+<span id="cb5-23"><a href="#cb5-23"></a>            [ <span class="fl">0.0</span>,  <span class="fl">1.0</span>, <span class="dv">0</span>],  <span class="co"># nono vertice</span></span>
+<span id="cb5-24"><a href="#cb5-24"></a>            [ <span class="fl">2.0</span>,  <span class="fl">1.0</span>, <span class="dv">0</span>]   <span class="co"># decimo vertice          </span></span>
+<span id="cb5-25"><a href="#cb5-25"></a>        ]</span>
+<span id="cb5-26"><a href="#cb5-26"></a>        estrela <span class="op">=</span> Polygon(<span class="op">*</span>position_list)</span>
+<span id="cb5-27"><a href="#cb5-27"></a></span>
+<span id="cb5-28"><a href="#cb5-28"></a>        t <span class="op">=</span> Group()</span>
+<span id="cb5-29"><a href="#cb5-29"></a></span>
+<span id="cb5-30"><a href="#cb5-30"></a>        <span class="cf">for</span> i <span class="kw">in</span> [x <span class="op">/</span> <span class="fl">10.0</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]:</span>
+<span id="cb5-31"><a href="#cb5-31"></a>            t <span class="op">=</span> t.add(estrela.copy().scale(i))</span>
+<span id="cb5-32"><a href="#cb5-32"></a></span>
+<span id="cb5-33"><a href="#cb5-33"></a>        <span class="va">self</span>.add(t_retangulo, a,b,c, </span>
+<span id="cb5-34"><a href="#cb5-34"></a>                 t.set_color_by_gradient(GREEN_E, YELLOW, PURE_RED, PURE_BLUE))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
-<div class="box">
-<div id="cor-thm-esperado_momentos" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corolário 2.1</strong></span> Seja <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span> uma amostra aleatória de uma população com distribuição com média <span class="math inline">\(\mu\)</span> e variância <span class="math inline">\(\sigma^2\)</span>. Seja <span class="math inline">\(\bar{X}_n=\frac1n\sum_{i=1}^nX_i\)</span> a <strong>média amostral</strong>, então <span class="math inline">\(\mathbb{E}\bar{X}_n=\mu\)</span> e <span class="math inline">\(\mathrm{Var}[\bar{X}_n]=\frac{\sigma^2}{n}\)</span>.</p>
 </div>
 </div>
-<div id="def-variancia_amostral" class="theorem definition">
-<p><span class="theorem-title"><strong>Definição 2.1</strong></span> Seja <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span> uma amostra aleatória de uma população com distribuição que envolve um parâmetro <span class="math inline">\(\theta\)</span>. A <strong>variância amostral</strong> define-se como: <span class="math display">\[S_n^2=\frac{1}{n-1}\sum_{i=1}^n(X_i-\bar{X}_n)^2, \quad n&gt;1.\]</span></p>
+</section>
+<section id="sec-polygonreg" class="level3" data-number="2.1.5">
+<h3 data-number="2.1.5" class="anchored" data-anchor-id="sec-polygonreg"><span class="header-section-number">2.1.5</span> Classe <code>RegularPolygon</code></h3>
+<p><code>class RegularPolygon(n=6, **kwargs)</code></p>
+<p><strong>Parâmetros</strong></p>
+<ul>
+<li><code>n</code> (int): Número de lados do polígono regular;</li>
+<li><code>kwargs</code>: Argumentos adicionais a serem passados à classe <code>RegularPolygon</code>.</li>
+</ul>
+<p>Para detalhes consulte a documentação da classe <a href="https://docs.manim.community/en/stable/reference/manim.mobject.geometry.polygram.RegularPolygon.html#manim.mobject.geometry.polygram.RegularPolygon">RegularPolygon</a>.</p>
+<div id="exm-Rpolygon" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 2.6</strong></span> Desenhando figuras geométricas com polígonos regulares.</p>
+<div id="fig-poligonosreg" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-poligonosreg-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/PoligonoRegular_ManimCE_v0.18.1.png" class="img-fluid figure-img" width="600">
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-poligonosreg-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.6: Triângulo retângulo e estrelas coloridas com <code>Polygon</code>.
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-proof no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Observação
+<em>Código</em>
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Em particular, <span class="math inline">\(M_2=\frac1n\sum_{i=1}^n(X_i-\bar{X}_n)^2\)</span> também é considerada uma medida para quantificar a dispersão. A longo do texto, <span class="math inline">\(S_n^2\)</span> será considerada a <em>variância amostral</em> porque seu valor esperado é a variância populacional. É importante saber que, quando o tamanho de amostra é suficientemente grande, as propriedades estatísticas de <span class="math inline">\(M_2\)</span> e <span class="math inline">\(S^2\)</span> são equivalentes.</p>
+<div id="14320b19" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="im">from</span> manim <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="kw">class</span> PoligonoRegular(Scene):</span>
+<span id="cb6-4"><a href="#cb6-4"></a>    <span class="kw">def</span> construct(<span class="va">self</span>):</span>
+<span id="cb6-5"><a href="#cb6-5"></a></span>
+<span id="cb6-6"><a href="#cb6-6"></a>        txt <span class="op">=</span> <span class="kw">lambda</span> lados, poly : MathTex(<span class="ss">f"n = </span><span class="sc">{</span>lados<span class="sc">}</span><span class="ss">"</span>).next_to(poly, DOWN)</span>
+<span id="cb6-7"><a href="#cb6-7"></a></span>
+<span id="cb6-8"><a href="#cb6-8"></a>        colors <span class="op">=</span> [GREEN_E, YELLOW, PURE_RED, PURE_BLUE]</span>
+<span id="cb6-9"><a href="#cb6-9"></a></span>
+<span id="cb6-10"><a href="#cb6-10"></a>        grupo <span class="op">=</span> Group()</span>
+<span id="cb6-11"><a href="#cb6-11"></a>        </span>
+<span id="cb6-12"><a href="#cb6-12"></a>        <span class="cf">for</span> l <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">6</span>,<span class="dv">12</span>):</span>
+<span id="cb6-13"><a href="#cb6-13"></a>            grupo.add(Group(RegularPolygon(n<span class="op">=</span>l), txt(l,RegularPolygon(n<span class="op">=</span>l))))</span>
+<span id="cb6-14"><a href="#cb6-14"></a></span>
+<span id="cb6-15"><a href="#cb6-15"></a>        <span class="va">self</span>.add(grupo.set_color_by_gradient(<span class="op">*</span>colors).arrange())</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="exm-s2" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.5</strong></span> Mostre que <span class="math inline">\(S_n^{2}=\frac{1}{2n(n-1)} \sum_{i=1}^{n}\sum_{j=1}^{n} (X_{i} - X_{j})^2\)</span>, para <span class="math inline">\(n&gt;1\)</span>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-polygram" class="level3" data-number="2.1.6">
+<h3 data-number="2.1.6" class="anchored" data-anchor-id="sec-polygram"><span class="header-section-number">2.1.6</span> Classe <code>Polygram</code></h3>
+<p><code>class Polygram(*vertex_groups, color=ManimColor('#58C4DD'), **kwargs)</code></p>
+<p><strong>Parâmetros</strong></p>
+<ul>
+<li><code>vertex_groups</code> (Point3D): Os grupos de vértices que compõem o <code>Polygram</code>. O primeiro vértice de cada grupo é repetido para fechar a forma. Cada ponto deve ser um arranjo tridimensional <code>[x,y,z]</code>;</li>
+<li><code>color</code> (ParsableManimColor): A cor do <code>Polygram</code>;</li>
+<li><code>kwargs</code>: Argumentos adicionais a serem passados à classe <code>Polygram</code>.</li>
+</ul>
+<p>Para detalhes consulte a documentação da classe <a href="https://docs.manim.community/en/stable/reference/manim.mobject.geometry.polygram.Polygram.html#manim.mobject.geometry.polygram.Polygram">Polygram</a>.</p>
+<div id="exm-polygram" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 2.7</strong></span> Desenhando muitas estrelas coloridas com <code>Polygram</code>.</p>
+<div id="fig-poligrama" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-poligrama-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/Poligramas_ManimCE_v0.18.1.png" class="img-fluid figure-img" width="600">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-poligrama-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.7: Estrelas coloridas com <code>Polygram</code>.
+</figcaption>
+</figure>
 </div>
 <div class="callout callout-style-default callout-proof no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
@@ -633,41 +780,68 @@ Observação
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<em>Solução.</em>
+<em>Código</em>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Sabemos que, <span class="math inline">\(S_n^2=\frac{1}{n-1}\sum_{i=1}^n(X_i-\bar{X}_n)^2\)</span>, para <span class="math inline">\(n&gt;1\)</span>. Dessa forma, para algum <span class="math inline">\(X_j\)</span>, temos que</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-    (n-1)S_n^2&amp;=\sum_{i=1}^n(X_i-\bar{X}_n)^2=\sum_{i=1}^n(X_i-X_j+X_j-\bar{X}_n)^2\\
-    &amp;=\sum_{i=1}^n\left[(X_i-X_j)^2+(X_j-\bar{X}_n)^2+2(X_i-X_j)(X_j-\bar{X}_n)\right].
-  \end{align*}\]</span>
+<div id="e3176b6a" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="im">import</span> random</span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="im">from</span> manim <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="kw">class</span> Poligramas(Scene):</span>
+<span id="cb7-5"><a href="#cb7-5"></a>    <span class="kw">def</span> construct(<span class="va">self</span>):</span>
+<span id="cb7-6"><a href="#cb7-6"></a></span>
+<span id="cb7-7"><a href="#cb7-7"></a>        estrela <span class="op">=</span> Polygram(</span>
+<span id="cb7-8"><a href="#cb7-8"></a>            [[<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">0</span>], </span>
+<span id="cb7-9"><a href="#cb7-9"></a>             [<span class="op">-</span>np.sqrt(<span class="dv">3</span>), <span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>], </span>
+<span id="cb7-10"><a href="#cb7-10"></a>             [np.sqrt(<span class="dv">3</span>), <span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>]],</span>
+<span id="cb7-11"><a href="#cb7-11"></a>            [[<span class="op">-</span>np.sqrt(<span class="dv">3</span>), <span class="dv">1</span>, <span class="dv">0</span>], </span>
+<span id="cb7-12"><a href="#cb7-12"></a>             [<span class="dv">0</span>, <span class="op">-</span><span class="dv">2</span>, <span class="dv">0</span>], </span>
+<span id="cb7-13"><a href="#cb7-13"></a>             [np.sqrt(<span class="dv">3</span>), <span class="dv">1</span>, <span class="dv">0</span>]],</span>
+<span id="cb7-14"><a href="#cb7-14"></a>             color<span class="op">=</span>YELLOW_E, </span>
+<span id="cb7-15"><a href="#cb7-15"></a>             fill_opacity<span class="op">=</span><span class="dv">1</span></span>
+<span id="cb7-16"><a href="#cb7-16"></a>             ).scale(<span class="fl">0.1</span>)</span>
+<span id="cb7-17"><a href="#cb7-17"></a>        </span>
+<span id="cb7-18"><a href="#cb7-18"></a>        colors <span class="op">=</span> [GREEN_E, YELLOW_C, PURE_RED, PURE_BLUE]</span>
+<span id="cb7-19"><a href="#cb7-19"></a></span>
+<span id="cb7-20"><a href="#cb7-20"></a>        grupo <span class="op">=</span> Group()</span>
+<span id="cb7-21"><a href="#cb7-21"></a></span>
+<span id="cb7-22"><a href="#cb7-22"></a>        <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">50</span>):</span>
+<span id="cb7-23"><a href="#cb7-23"></a>            grupo.add(estrela.copy().move_to([random.uniform(<span class="op">-</span><span class="dv">6</span>,<span class="dv">6</span>),random.uniform(<span class="op">-</span><span class="fl">3.5</span>,<span class="fl">3.5</span>),<span class="dv">0</span>]))</span>
+<span id="cb7-24"><a href="#cb7-24"></a>        </span>
+<span id="cb7-25"><a href="#cb7-25"></a>        <span class="va">self</span>.add(grupo.set_color_by_gradient(<span class="op">*</span>colors))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Somando com respeito a <span class="math inline">\(j\)</span>, temos que:</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-    \sum_{j=1}^n(n-1)S_n^2&amp;=n(n-1)S_n^2=\sum_{j=1}^n\sum_{i=1}^n\left[(X_i-X_j)^2+(X_j-\bar{X}_n)^2+2(X_i-X_j)(X_j-\bar{X}_n)\right]\\
-    &amp;=\sum_{j=1}^n\sum_{i=1}^n(X_i-X_j)^2+\underbrace{\sum_{j=1}^n\sum_{i=1}^n(X_j-\bar{X}_n)^2}_{n(n-1)S_n^2}+2\sum_{j=1}^n\sum_{i=1}^n(X_i-X_j)(X_j-\bar{X}_n).
-  \end{align*}\]</span>
-</div>
-<p>Daí,</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-    \sum_{i=1}^n\sum_{j=1}^n(X_i-X_j)^2&amp;=-2\sum_{i=1}^n\sum_{j=1}^n(X_i-X_j)(X_j-\bar{X}_n)
-    = 2 \sum_{i=1}^{n} \sum_{j=1}^{n} (X_{j} - \bar{X}_n + \bar{X}_n - X_{i})(X_{j} - \bar{X}_n) \\
-    &amp;= 2 \sum_{i=1}^{n} \sum_{j=1}^{n} (X_{j} - \bar{X}_n)^{2} + 2 \sum_{i=1}^{n} (\bar{X}_n - X_{i}) \underbrace{\sum_{j=1}^{n} (X_{j} - \bar{X}_n)}_{0} = 2n(n - 1)S_n^{2}. \quad \checkmark
-  \end{align*}\]</span>
+<p><strong>Linha 1</strong>. Importa a biblioteca <code>random</code>. A biblioteca disponibiliza um módulo para gerar valores pseudo-aleatórios uniformes em um intervalo. Esse último é usado para gerar as coordenadas das estrelas na cena;</p>
 </div>
 </div>
 </div>
 </div>
-<div class="box">
-<div id="thm-esperado_s2" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 2.2</strong></span> Seja <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span> uma amostra aleatória de uma população com distribuição com média <span class="math inline">\(\mu\)</span> e variância <span class="math inline">\(\sigma^2\)</span>. Considere <span class="math inline">\(S_n^2\)</span>, como na <a href="#def-variancia_amostral" class="quarto-xref">Definição&nbsp;<span>2.1</span></a>. Então, <span class="math inline">\(\mathbb{E}S_n^2=\sigma^2\)</span> e <span class="math inline">\(\mathrm{Var}[S_n^2]=\frac1n\left(\mu_4-\frac{n-3}{n-1}\sigma^4\right)\)</span>, para <span class="math inline">\(n&gt;1\)</span>, onde <span class="math inline">\(\mu_4=\mathbb{E}(X_i-\mu)^4\)</span> e <span class="math inline">\(\mathbb{E}X_i=\mu\)</span>, para <span class="math inline">\(i=1,2,3,\ldots,n\)</span>.</p>
+</section>
+<section id="sec-polygramreg" class="level3" data-number="2.1.7">
+<h3 data-number="2.1.7" class="anchored" data-anchor-id="sec-polygramreg"><span class="header-section-number">2.1.7</span> Classe <code>RegularPolygram</code></h3>
+<p><code>class RegularPolygram(num_vertices, *, density=2, radius=1, start_angle=None, **kwargs)</code></p>
+<p><strong>Parâmetros</strong></p>
+<ul>
+<li><code>num_vertices</code> (int): Número de vértices;</li>
+<li><code>density</code> (int): Densidade do <code>RegularPolygram</code>. Pode ser considerado quantos vértices devem ser saltados para traçar uma linha entre eles. Cada vértice de densidade está conectado;</li>
+<li><code>radius</code> (float): O raio do círculo em que os vértices são colocados;</li>
+<li><code>start_angle</code> (float | None): Ângulo em que os vértices começam; a rotação do <code>RegularPolygram</code>;</li>
+<li><code>kwargs</code>: Argumentos adicionais a serem passados à classe <code>RegularPolygram</code>.</li>
+</ul>
+<p>Para detalhes consulte a documentação da classe <a href="https://docs.manim.community/en/stable/reference/manim.mobject.geometry.polygram.RegularPolygram.html#manim.mobject.geometry.polygram.RegularPolygram">RegularPolygram</a>.</p>
+<div id="exm-polygram" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 2.8</strong></span> Desenhando muitas estrelas coloridas com <code>RegularPolygram</code>.</p>
+<div id="fig-poligramareg" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-poligramareg-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/PoligramaRegular_ManimCE_v0.18.1.png" class="img-fluid figure-img" width="600">
 </div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-poligramareg-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.8: Vários desenhos coloridos com <code>RegularPolygram</code>.
+</figcaption>
+</figure>
 </div>
 <div class="callout callout-style-default callout-proof no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
@@ -675,1083 +849,46 @@ Observação
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<em>Prova.</em>
+<em>Código</em>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Primeiramente, note que</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  \sum_{i=1}^n(X_i-\mu)^2&amp;=\sum_{i=1}^n(X_i-\bar{X}_n+\bar{X}_n-\mu)^2=
-  \sum_{i=1}^n(X_i-\bar{X}_n)^2+\sum_{i=1}^n(\bar{X}_n-\mu)^2+2\sum_{i=1}^n(X_i-\bar{X}_n)(\bar{X}_n-\mu)\\
-  &amp;=\sum_{i=1}^n(X_i-\bar{X}_n)^2+n(\bar{X}_n-\mu)^2+2(\bar{X}_n-\mu)\underbrace{\sum_{i=1}^n(X_i-\bar{X}_n)}_{0}\\
-  &amp;=\sum_{i=1}^n(X_i-\bar{X}_n)^2+n(\bar{X}_n-\mu)^2.
-\end{align*}\]</span>
+<div id="cd2f837f" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="im">import</span> random</span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="im">from</span> manim <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a></span>
+<span id="cb8-4"><a href="#cb8-4"></a></span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="kw">class</span> PoligramaRegular(Scene):</span>
+<span id="cb8-6"><a href="#cb8-6"></a>    <span class="kw">def</span> construct(<span class="va">self</span>):</span>
+<span id="cb8-7"><a href="#cb8-7"></a></span>
+<span id="cb8-8"><a href="#cb8-8"></a>        poligono <span class="op">=</span> RegularPolygram(<span class="dv">10</span>,radius<span class="op">=</span><span class="dv">1</span>, </span>
+<span id="cb8-9"><a href="#cb8-9"></a>                                  color<span class="op">=</span>YELLOW_E, </span>
+<span id="cb8-10"><a href="#cb8-10"></a>                                  fill_opacity<span class="op">=</span><span class="dv">1</span>,</span>
+<span id="cb8-11"><a href="#cb8-11"></a>                                  density<span class="op">=</span><span class="dv">4</span></span>
+<span id="cb8-12"><a href="#cb8-12"></a>                                  )</span>
+<span id="cb8-13"><a href="#cb8-13"></a>        </span>
+<span id="cb8-14"><a href="#cb8-14"></a>        colors <span class="op">=</span> [GREEN_E, YELLOW_C, PURE_RED, PURE_BLUE]</span>
+<span id="cb8-15"><a href="#cb8-15"></a></span>
+<span id="cb8-16"><a href="#cb8-16"></a>        grupo <span class="op">=</span> Group()</span>
+<span id="cb8-17"><a href="#cb8-17"></a></span>
+<span id="cb8-18"><a href="#cb8-18"></a>        <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">50</span>):</span>
+<span id="cb8-19"><a href="#cb8-19"></a>            grupo.add(RegularPolygram(<span class="dv">10</span>,radius<span class="op">=</span><span class="fl">0.5</span>,</span>
+<span id="cb8-20"><a href="#cb8-20"></a>                                  density<span class="op">=</span>i</span>
+<span id="cb8-21"><a href="#cb8-21"></a>                                  )</span>
+<span id="cb8-22"><a href="#cb8-22"></a>                                  .copy()</span>
+<span id="cb8-23"><a href="#cb8-23"></a>                                  .move_to([random.uniform(<span class="op">-</span><span class="dv">6</span>,<span class="dv">6</span>),random.uniform(<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>),<span class="dv">0</span>]))</span>
+<span id="cb8-24"><a href="#cb8-24"></a>        </span>
+<span id="cb8-25"><a href="#cb8-25"></a>        <span class="va">self</span>.add(grupo.set_color_by_gradient(<span class="op">*</span>colors))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Linha 20</strong>. Na criação dos objetos, consideramos diferentes valores para o parâmetro <code>density</code>. Dessa forma, temos diferentes figuras na cena.</p>
 </div>
-<p>Dessa forma, temos que</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-\mathbb{E}S_n^2&amp;=\mathbb{E}\left[\frac{1}{n-1}\sum_{i=1}^n(X_i-\bar{X}_n)^2\right]
-=\frac{1}{n-1}\mathbb{E}\left[\sum_{i=1}^n(X_i-\mu)^2-n(\bar{X}_n-\mu)^2\right]\\
-&amp;=\frac{1}{n-1}\left\{\sum_{i=1}^n\mathbb{E}(X_i-\mu)^2-n\mathbb{E}(\bar{X}_n-\mu)^2\right\}=
-\frac{1}{n-1}\left\{\sum_{i=1}^n\sigma^2-n\frac1n\sigma^2\right\}\\
-&amp;=\frac{1}{n-1}\left\{n\sigma^2-\sigma^2\right\}=\sigma^2, \quad n&gt;1. \quad \checkmark
-\end{align*}\]</span>
-</div>
-<p>Por outra parte, para mostrar <span class="math inline">\(\mathrm{Var}[S_n^2]=\frac1n\left(\mu_4-\frac{n-3}{n-1}\sigma^4\right)\)</span> considere <span class="math inline">\(Z_i=X_i-\mu\)</span>, para <span class="math inline">\(i=1,2,\ldots,n\)</span>. A sequência <span class="math inline">\(Z_1,Z_2,\ldots,Z_n\)</span> representa uma amostra aleatória, tal que, para <span class="math inline">\(i\ne j\ne k\ne l\)</span>, temos:</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  \mathbb{E}[Z_i]&amp;=0; &amp; \mathbb{E}[Z_iZ_j]&amp;=0; &amp; \mathbb{E}[Z_i^3Z_j]&amp;=0; &amp; \mathbb{E}[Z_i^2Z_jZ_k]&amp;=0;\\
-  \mathbb{E}[Z_i^2]&amp;=\sigma^2; &amp;\mathbb{E}[Z_i^4]&amp;=\mu_4; &amp; \mathbb{E}[Z_i^2Z_j^2]&amp;=\mu_2^2; &amp; \mathbb{E}[Z_iZ_jZ_k,Z_l]&amp;=0.
-\end{align*}\]</span>
-</div>
-<p>Por outro lado, de acordo com o resultado da <a href="matematica.html#sec-somas" class="quarto-xref"><span>Seção A.1</span></a> do <a href="matematica.html" class="quarto-xref"><span>Apêndice A</span></a>, temos que:</p>
-<ul>
-<li><p>O segundo momento de <span class="math inline">\(\sum_{i=1}^nZ_i^2\)</span> é dado por</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-\mathbb{E}\left[\sum_{i=1}^nZ_i^2\right]^2&amp;=\mathrm{Var}\left[\sum_{i=1}^nZ_i^2\right]+\left(\mathbb{E}\left[\sum_{i=1}^nZ_i^2\right]\right)^2=\sum_{i=1}^n\mathrm{Var}\left[Z_i^2\right]+\left(\sum_{i=1}^n\mathbb{E}\left[Z_i^2\right]\right)^2\\
-&amp;=\sum_{i=1}^n\mathbb{E}\left[Z_i^4\right]-\sum_{i=1}^n\left(\mathbb{E}\left[Z_i^2\right]\right)^2+\left(\sum_{i=1}^n\mathrm{Var}\left[Z_i\right]+\sum_{i=1}^n\left(\mathbb{E}[Z_i]\right)^2\right)^2\\
-&amp;=n\mu_4-\sum_{i=1}^n\left(\mathrm{Var}[Z_i]\right)^2+\left(\sum_{i=1}^n\mu_2\right)^2=n\mu_4-n\mu_2^2+n^2\mu_2^2=n\mu_4+n(n-1)\mu_2^2.  \quad \checkmark
-\end{align*}\]</span>
-</div></li>
-<li><p>Também temos que,</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-\mathbb{E}\left[\sum_{i=1}^nZ_i\right]^4&amp;=\mathbb{E}\left[\sum_{i=1}^n\sum_{j=1}^nZ_iZ_j\right]^2=\mathbb{E}\left[\sum_{i=1}^n\sum_{j=1}^n\sum_{k=1}^n\sum_{l=1}^nZ_iZ_jZ_kZ_l\right].
-\end{align*}\]</span>
-</div>
-<p>Para calcular a soma, devemos avaliar todos os casos possíveis onde os índices <span class="math inline">\((i,j,k,l)\)</span> podem tomar diferentes valores:</p>
-<ul>
-<li><p>Se houver algum índice diferente de todos os outros índices, e.g, <span class="math inline">\(i\ne j=k=l\)</span>, então o valor esperado é zero;</p></li>
-<li><p>Se todos os índices forem iguais, i.e.&nbsp;<span class="math inline">\(i=j=k=l\)</span>, então <span class="math inline">\(\mathbb{E}Z_i^4=\mu_4\)</span>. Ressaltando que existem <span class="math inline">\(n\)</span> maneiras de isso acontecer;</p></li>
-<li><p>Se tiver dois pares distintos de índices iguais, e.g, <span class="math inline">\(i=j\ne k=l\)</span>, nesse caso, suponha que <span class="math inline">\(i=j\)</span> e <span class="math inline">\(k=l\)</span>, com <span class="math inline">\(i&lt;k\)</span>, então <span class="math display">\[\mathbb{E}[Z_i^2Z_k^2]=\mathbb{E}[Z_i^2]\mathbb{E}[Z_k^2]=\mu_2^2.\]</span> Ressaltando que existem <span class="math inline">\(\binom{n}{2}\binom{4}{2}=\frac{n!}{(n-2)!2!}\frac{4!}{2!2!}=3n(n-1)\)</span> maneiras de acontecer dois pares de índices iguais.</p></li>
-</ul>
-<p>Dessa forma, temos que</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-\mathbb{E}\left[\sum_{i=1}^nZ_i\right]^4&amp;=\mathbb{E}\left[\sum_{i=1}^n\sum_{j=1}^nZ_iZ_j\right]^2=n\mu_4+3n(n-1)\mu_2^2. \quad \checkmark
-\end{align*}\]</span>
-</div></li>
-<li><p>Ainda, temos que</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-\mathbb{E}\left[\left(\sum_{i=1}^nZ_i^2\right)\left(\sum_{i=1}^nZ_i\right)^2\right]&amp;=\mathbb{E}\left[\left(\sum_{i=1}^nZ_i^2\right)\left(\sum_{i=1}^n\sum_{j=1}^nZ_iZ_j\right)\right]=\mathbb{E}\left[\sum_{i=1}^n\sum_{j=1}^n\sum_{k=1}^nZ_i^2Z_jZ_k\right].
-\end{align*}\]</span>
-</div>
-<p>De igual forma que no caso anterior, devem ser avaliados os casos onde os índices <span class="math inline">\((i,j,k)\)</span> podem tomar valores diferentes:</p>
-<ul>
-<li>Para <span class="math inline">\(j\ne k\)</span>, o valor esperado é <span class="math inline">\(0\)</span>;</li>
-<li>Quando <span class="math inline">\(i=j=k\)</span>, então <span class="math inline">\(\mathbb{E}Z_i^4=\mu_4\)</span> e isso acontece de <span class="math inline">\(n\)</span> maneiras;</li>
-<li>Quando <span class="math inline">\(i\ne j=k\)</span>, o valor esperado é <span class="math inline">\(\mu_2^2\)</span>, mas note que agora a ordem <span class="math inline">\(i,j\)</span> importa, então, temos <span class="math inline">\(n(n-1)\)</span> formas de obter esse valor esperado.</li>
-</ul>
-<p>Por tanto,</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-\mathbb{E}\left[\left(\sum_{i=1}^nZ_i^2\right)\left(\sum_{i=1}^nZ_i\right)^2\right]&amp;=\mathbb{E}\left[\sum_{i=1}^n\sum_{j=1}^n\sum_{k=1}^nZ_i^2Z_jZ_k\right]=n\mu_4+n(n-1)\mu_2^2. \quad \checkmark
-\end{align*}\]</span>
-</div></li>
-</ul>
-<p>Finalmente, para calcular a variância de <span class="math display">\[S_n^2=\frac{1}{n-1}\sum_{i=1}^n(X_i-\bar{X}_n)^2=\frac{n\sum_{i=1}^nZ_i^2-\left(\sum_{i=1}^nZ_i\right)^2}{n(n-1)},\]</span> sabemos que <span class="math inline">\(\mathrm{Var}[S_n^2]=\mathbb{E}S_n^4-\left(\mathbb{E}S_n^2\right)^2=\mathbb{E}S_n^4-\mu_2^2\)</span>, onde</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-\mathbb{E}\left[S_n^4\right]&amp;=\frac{n^2\mathbb{E}\left(\sum_{i=1}^nZ_i^2\right)^2-2n\mathbb{E}\left[\left(\sum_{i=1}^nZ_i^2\right)\left(\sum_{i=1}^nZ_i\right)^2\right]+\mathbb{E}\left[\sum_{i=1}^nZ_i\right]^4}{n^2(n-1)^2}\\
-&amp;=\frac{n^2(n\mu_4+n(n-1)\mu_2^2)-2n(n\mu_4+n(n-1)\mu_2^2)+n\mu_4+3n(n-1)\mu_2^2}{n^2(n-1)^2}\\
-&amp;=\frac{(n^3-2n^2+n)\mu_4+(n^3(n-1)-2n^2(n-1)+3n(n-1))\mu_2^2}{n^2(n-1)^2}\\
-&amp;=\frac{n(n-1)^2\mu_4+n(n-1)(n^2-2n+3)\mu_2^2}{n^2(n-1)^2}=\frac{(n-1)\mu_4+(n^2-2n+3)\mu_2^2}{n(n-1)}.
-\end{align*}\]</span>
-</div>
-<p>Daí,</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-\mathrm{Var}\left[S_n^2\right]&amp;=\frac{(n-1)\mu_4+(n^2-2n+3)\mu_2^2}{n(n-1)}-\mu_2^2=\frac{(n-1)\mu_4+(n^2-2n+3)\mu_2^2-n(n-1)\mu_2^2}{n(n-1)}\\
-&amp;=\frac{(n-1)\mu_4-(n-3)\mu_2^2}{n(n-1)}=\frac1n\left\{\mu_4-\frac{n-3}{n-1}\mu_2^2\right\}. \quad\blacksquare
-\end{align*}\]</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="sec-fgm" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="sec-fgm"><span class="header-section-number">2.2</span> Funções geradoras de momentos</h2>
-<div id="def-fgm" class="theorem definition">
-<p><span class="theorem-title"><strong>Definição 2.2 (Função geradora de momentos)</strong></span> Seja <span class="math inline">\(X\)</span> uma variável aleatória de uma população com função de distribuição <span class="math inline">\(F_X\)</span>. A <em>função geradora de momentos</em> (FGM) de <span class="math inline">\(F_X\)</span>, define-se como <span class="math display">\[M_X(t)=\mathbb{E}\left[e^{tX}\right],\]</span> se existe para todo <span class="math inline">\(t\)</span>, tal que <span class="math inline">\(-h&lt;t&lt;h\)</span>, para algum <span class="math inline">\(h&gt;0\)</span>.</p>
-</div>
-<div class="box">
-<div id="thm-r_momento" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 2.3</strong></span> Seja <span class="math inline">\(M_X(t)\)</span> a FGM de uma distribuição <span class="math inline">\(F_X\)</span>. Se existe <span class="math inline">\(M_X(t)\)</span> para todo <span class="math inline">\(|t|&lt;h\)</span>, para algum <span class="math inline">\(h&gt;0\)</span>, então <span class="math inline">\(\mathbb{E}X^r\)</span>, <span class="math inline">\(r=1,2,\ldots\)</span>, existe e</p>
-<p><span class="math display">\[\mathbb{E}X^r=M_X^{(r)}(0)=\frac{\partial^r}{\partial t^r}M_X(t)\Biggr|_{t=0}.\]</span></p>
-</div>
-</div>
-<div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<em>Prova.</em>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Pela expansão em série de Taylor da função exponencial (vide <a href="matematica.html" class="quarto-xref"><span>Apêndice A</span></a>), temos que <span class="math display">\[e^x=1+x+\frac{1}{2!}x^2+\frac{1}{3!}x^3+\frac{1}{4!}x^4+\cdots.\]</span></p>
-<p>Por outra parte, pela <a href="#def-fgm" class="quarto-xref">Definição&nbsp;<span>2.2</span></a>, temos que <span class="math inline">\(M_X(t)=\mathbb{E}\left[e^{tX}\right]\)</span>, então</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  M_X(t)&amp;=\mathbb{E}\left[e^{tX}\right]=\mathbb{E}\left[\sum_{j=0}^\infty\frac{1}{j!}(tX)^j\right]
-  =\sum_{j=0}^\infty\frac{t^j}{j!}\mathbb{E}\left[X^j\right].
-\end{align*}\]</span>
-</div>
-<p>Por hipóteses, <span class="math inline">\(\mathbb{E}X^r\)</span>, <span class="math inline">\(r=1,2,\ldots\)</span>, existem para todo <span class="math inline">\(|t|&lt;h\)</span>, para algum <span class="math inline">\(h&gt;0\)</span>.</p>
-<p>Diferenciando em ambos os lados da igualdade e avaliando em <span class="math inline">\(t=0\)</span>, temos que</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  M'_X(0)&amp;=\left(0+\mathbb{E}X+\mathbb{E}X^2t+\cdots+\mathbb{E}\left[X^r\right]\frac{t^{r-1}}{(r-1)!}\right)\Biggr|_{t=0}=\mathbb{E}X. \quad\checkmark
-\end{align*}\]</span>
-</div>
-<p>Em geral,</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  M_X^{(r)}(0)&amp;=\frac{\partial^r}{\partial t}M_x(t)\Biggr|_{t=0}=\mathbb{E}\left[\frac{\partial}{\partial t}\frac{\partial^{r-1}}{\partial t^{r-1}}e^{tX}\right]\Biggr|_{t=0}=\mathbb{E}\left[X^re^{tX}\right]\Biggr|_{t=0}=\mathbb{E}X^r. \quad\blacksquare
-\end{align*}\]</span>
-</div>
-</div>
-</div>
-</div>
-<div id="exm-FGM_gamma" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.6</strong></span> Seja <span class="math inline">\(X\)</span> uma variável aleatória de uma população com distribuição gama com parâmetros <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\beta\)</span>, i.e. <span class="math display">\[f(x; \alpha, \beta)=\frac{1}{\Gamma(\alpha)}\beta^\alpha x^{\alpha-1}e^{-\beta x}\mathbb{I}_{(0,\infty)}(x).\]</span> Utilize a FGM para calcular a variância de <span class="math inline">\(X\)</span>.</p>
-</div>
-<div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<em>Solução.</em>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Pela definição <a href="#def-fgm" class="quarto-xref">Definição&nbsp;<span>2.2</span></a>, sabemos que <span class="math inline">\(M_X(t)=\mathbb{E}\left[e^{tX}\right]\)</span>, para todo <span class="math inline">\(t\)</span>, tal que <span class="math inline">\(|t|&lt;h\)</span>, para algum <span class="math inline">\(h&gt;0\)</span>. Dessa forma,</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  M_X(t)&amp;=\int_0^\infty e^{tx}\frac{1}{\Gamma(\alpha)}\beta^\alpha x^{\alpha-1}e^{-\beta x}\,dx
-  =\frac{1}{\Gamma(\alpha)}\beta^\alpha\int_0^\infty x^{\alpha-1}e^{-(\beta-t)x}\,dx.
-\end{align*}\]</span>
-</div>
-<p>Para avaliar a existência da integral, consideremos os seguintes casos:</p>
-<ul>
-<li>Se <span class="math inline">\(t=\beta\)</span>,</li>
-</ul>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  M_X(t)&amp;=\frac{1}{\Gamma(\alpha)}\beta^\alpha\int_0^\infty x^{\alpha-1}e^{-(\beta-t)x}\,dx=\frac{\beta^\alpha}{\Gamma(\alpha)}\lim_{a\to\infty}\int_0^a x^{\alpha-1}\,dx=\frac{\beta^\alpha}{\alpha\Gamma(\alpha)}\lim_{a\to\infty} a^{\alpha}.
-\end{align*}\]</span>
-</div>
-<p>Para <span class="math inline">\(\alpha&gt;0\)</span>, <span class="math inline">\(\lim_{a\to\infty} a^{\alpha}\)</span> é infinito. Dessa forma, <span class="math inline">\(M_X(t)\)</span> não está definida.</p>
-<ul>
-<li><p>Se <span class="math inline">\(t&gt;\beta\)</span>, a quantidade <span class="math inline">\(-(\beta-t)&gt;0\)</span>, então <span class="math inline">\(e^{-(\beta-t)x}&gt;x^{\alpha-1}\)</span>. Assim, a integral é divergente e, por conseguinte, a FGM não existe.</p></li>
-<li><p>Se <span class="math inline">\(t&lt;\beta\)</span>,</p></li>
-</ul>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  M_X(t)&amp;=\frac{1}{\Gamma(\alpha)}\beta^\alpha\int_0^\infty x^{\alpha-1}e^{-(\beta-t)x}\,dx
-  =\frac{\beta^\alpha}{\Gamma(\alpha)}\frac{1}{(\beta-t)^\alpha}\int_0^\infty u^{\alpha-1}e^{-u}\,du, \quad u=(\beta-t)x\\
-  &amp;=\frac{\beta^\alpha}{\Gamma(\alpha)}\frac{1}{(\beta-t)^\alpha}\Gamma(\alpha)
-  =\frac{\beta^\alpha}{(\beta-t)^\alpha}=\left(1-\frac{t}{\beta}\right)^{-\alpha}. \quad\checkmark
-\end{align*}\]</span>
-</div>
-<p>Para calcular a variância, utilizamos o resultado do <a href="#thm-r_momento" class="quarto-xref">Teorema&nbsp;<span>2.3</span></a>. Daí</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  M'_X(0)&amp;=\frac{\alpha}{\beta}\left(1-\frac{t}{\beta}\right)^{-\alpha-1}\Biggr|_{t=0}=\frac{\alpha}{\beta}\\
-  M''_X(0)&amp;=\frac{\alpha(\alpha+1)}{(\beta-x)^2}\left(1-\frac{t}{\beta}\right)^{-\alpha}\Biggr|_{t=0}
-  =\frac{\alpha(\alpha+1)}{\beta^2}.
-\end{align*}\]</span>
-</div>
-<p>Dessa forma,</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  \mathrm{Var}[X]&amp;=\mathbb{E}X^2-\left(\mathbb{E}X\right)^2=\frac{\alpha(\alpha+1)}{\beta^2}-\left(\frac{\alpha}{\beta}\right)^2=\frac{\alpha}{\beta^2}.\quad\checkmark
-\end{align*}\]</span>
-</div>
-</div>
-</div>
-</div>
-<div id="exm-r_momento_cor" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.7</strong></span> Seja <span class="math inline">\(X_1,X_2\)</span> uma amostra aleatória de uma população com densidade conjunta dada por <span class="math display">\[f(x; a)=a^2e^{-ax_2}, \quad 0&lt;x_1&lt;x_2&lt;\infty, \quad a&gt;0.\]</span> Encontre <span class="math inline">\(\mathbb{E}X^r_1\)</span>, <span class="math inline">\(\mathbb{E}X^r_2\)</span>, para <span class="math inline">\(r=1,2,3,\ldots\)</span>, e <span class="math inline">\(\mathrm{Corr}[X_1,X_2]\)</span>.</p>
-</div>
-<div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<em>Solução.</em>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Temos que,</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  \mathbb{E}X^r_1&amp;=\int_0^\infty\int_0^{x_2}x_1^ra^2e^{-ax_2}\,dx_1dx_2
-  =\int_0^\infty a^2e^{-ax_2}\int_0^{x_2}x_1^r\,dx_1dx_2\\
-  &amp;=\int_0^\infty a^2e^{-ax_2}\frac{x_1^{r+1}}{r+1}\Biggr|_{0}^{x_2}\,dx_2
-  =\int_0^\infty a^2e^{-ax_2}\frac{x_2^{r+1}}{r+1}\,dx_2\\
-  &amp;=\frac{\Gamma(r+1)}{a^r}=\frac{r!}{a^r}, \quad r=1,2,\ldots. \quad\checkmark
-\end{align*}\]</span>
-</div>
-<p>Por outro lado, temos que</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  \mathbb{E}X^r_2&amp;=\int_0^\infty\int_0^{x_2}x_2^ra^2e^{-ax_2}\,dx_1dx_2
-  =\int_0^\infty a^2x_2^re^{-ax_2}\int_0^{x_2}\,dx_1dx_2\\
-  &amp;=\int_0^\infty a^2x_2^{r+1}e^{-ax_2}\,dx_2=\frac{\Gamma(r+2)}{a^r}=\frac{(r+1)!}{a^r}, \quad r=1,2,\ldots. \quad\checkmark
-\end{align*}\]</span>
-</div>
-<p>O momento cruzado é calculado como</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  \mathbb{E}X_1X_2&amp;=\int_0^\infty\int_0^{x_2}x_1x_2a^2e^{-ax_2}\,dx_1dx_2
-  =\int_0^\infty a^2x_2e^{-ax_2}\int_0^{x_2}x_1\,dx_1dx_2\\
-  &amp;=\frac{a^2}{2}\int_0^\infty x_2^3e^{-ax_2}dx_2
-  =\frac{\Gamma(4)}{2a^2}\int_0^\infty \frac{a^4}{\Gamma(4)}x_2^3e^{-ax_2}dx_2=\frac{3}{a^2}. \quad\checkmark
-\end{align*}\]</span>
-</div>
-<p>Dessa forma, a correlação é dada por</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  \mathrm{Corr}[X_1,X_2]&amp;=\frac{\mathbb{E}X_1X_2-\mathbb{E}X_1\mathbb{E}X_2}{\sqrt{\mathrm{Var}[X_1]\mathrm{Var}[X_2]}}
-  =\frac{\frac{3}{a^2}-\frac1a\frac2a}{\sqrt{\frac{1}{a^2}\frac{2}{a^2}}}=\frac{1}{\sqrt{2}}. \quad\checkmark
-\end{align*}\]</span>
-</div>
-</div>
-</div>
-</div>
-<div id="exm-FGM_geometrica" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.8</strong></span> Seja <span class="math inline">\(X\)</span> uma variável aleatória de uma população com distribuição geométrica com parâmetro <span class="math inline">\(p\)</span>, i.e.. <span class="math inline">\(\mathbb{P}[X=x]=p(1-p)^x\mathbb{I}_{\{0,1,2,\ldots\}}(x)\)</span>. Apresente uma forma analítica para calcula o <span class="math inline">\(r\)</span>-ésimo momento da distribuição de <span class="math inline">\(X\)</span>.</p>
-</div>
-<div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<em>Solução.</em>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>A FGM é dada por</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  M_X(t)&amp;=\mathbb{E}\left[e^{tX}\right]=\sum_{x=0}^\infty e^{tx}p(1-p)^x=p\sum_{x=0}^\infty \left(e^{t}(1-p)\right)^x=\frac{p}{1-(1-p)e^t}.
-\end{align*}\]</span>
-</div>
-<p>A última soma pode ser tratada como uma série geométrica. Nesse caso, a soma converge quando <span class="math inline">\((1-p)e^t&lt;1\)</span> ou <span class="math inline">\(t&lt;-\log(1-p)\)</span>.</p>
-<p>Daí,</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  \mathbb{E}\left[X\right]&amp;=\frac{p(1-p)e^t}{(1-(1-p)e^t)^2}\Biggr|_{t=0}=\frac{1-p}{p};\\ \\
-  \mathbb{E}\left[X^2\right]&amp;=\frac{p(1-p)e^t(1+(1-p)e^t)}{(1-(1-p)e^t)^3}\Biggr|_{t=0}=\frac{(1-p)(2-p)}{p^2}.
-\end{align*}\]</span>
-</div>
-<p>A variância é dada por <span class="math inline">\(\mathrm{Var}[X]=\mathbb{E}X^2-(\mathbb{E}X)^2=\dfrac{(1-p)(2-p)}{p^2}-\dfrac{(1-p)^2}{p^2}=\dfrac{1-p}{p^2}\)</span>.</p>
-<p>O cálculo das derivadas de ordem superior tornam trabalhoso o uso dessa estratégia. Uma forma analítica para o <span class="math inline">\(r\)</span>-ésimo momento pode ser obtida como</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  \mathbb{E}\left[X^r\right]&amp;=\sum_{x=0}^\infty x^r(1-q)q^x=\sum_{x=0}^\infty x^{r-1}(1-q)qxq^{x-1}=(1-q)q\sum_{x=0}^\infty x^{r-1}xq^{x-1}\\
-  &amp;=(1-q)q\sum_{x=0}^\infty x^{r-1}\frac{\partial}{\partial q}q^{x}=(1-q)q\frac{\partial}{\partial q}\left[\sum_{x=0}^\infty x^{r-1}q^{x}\right]=(1-q)q\frac{\partial}{\partial q}\left[\frac{1}{1-q}\sum_{x=0}^\infty x^{r-1}(1-q)q^{x}\right]\\
-  &amp;=(1-q)q\frac{\partial}{\partial q}\left[\frac{1}{1-q}\mathbb{E}X^{r-1}\right],
-\end{align*}\]</span>
-</div>
-<p>onde <span class="math inline">\(q=1-p\)</span> e <span class="math inline">\(r=1, 2, \ldots\)</span>. <span class="math inline">\(\quad\checkmark\)</span></p>
-</div>
-</div>
-</div>
-<div id="exm-fgm_pareto" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.9</strong></span> Seja <span class="math inline">\(X\)</span> uma variável aleatória de uma população com distribuição Pareto com parâmetros <span class="math inline">\(\alpha&gt;0\)</span> e <span class="math inline">\(\beta&gt;0\)</span>, i.e. <span class="math display">\[f(x;\alpha,\beta)=\beta\frac{\alpha^\beta}{x^{\beta+1}}\mathbb{I}_{[\alpha,\infty)}(x).\]</span> Utilize a FGM da distribuição de <span class="math inline">\(X\)</span> para calcular a sua variância.</p>
-</div>
-<div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<em>Solução.</em>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Pela <a href="#def-fgm" class="quarto-xref">Definição&nbsp;<span>2.2</span></a>, temos que</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  M_X(t)&amp;=\beta\alpha^\beta\int_\alpha^\infty\frac{e^{tx}}{x^{\beta+1}}\,dx.
-\end{align*}\]</span>
-</div>
-<p>Note que, quando <span class="math inline">\(x\to\infty\)</span>, <span class="math inline">\(\frac{e^{tx}}{x^{\beta+1}}\to\infty\)</span> fazendo com que a FGM não exista.</p>
-<p>No entanto, pode-se observar que para alguns valores específicos de <span class="math inline">\(\beta\)</span>, alguns momentos da distribuição de <span class="math inline">\(X\)</span> podem existir. Por exemplo, considere-se o caso <span class="math inline">\(\beta&gt;r\)</span>, daí</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  \mathbb{E}X^r&amp;=\beta\alpha^\beta\int_\alpha^\infty \frac{x^r}{x^{\beta+1}}\,dx
-  =\beta\alpha^\beta\int_\alpha^\infty x^{r-\beta-1}\,dx\\
-  &amp;=-\beta\alpha^\beta\frac{x^{-\beta+r}}{\beta-r}\Biggr|_\alpha^\infty=\frac{\beta\alpha^r}{\beta-r}. \quad\checkmark
-\end{align*}\]</span>
-</div>
-<p>Em particular, se <span class="math inline">\(\beta&gt;2\)</span>, temos que</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  \mathbb{E}X&amp;=\frac{\beta\alpha}{\beta-1} &amp; &amp;\mathrm{ e } &amp;  \mathbb{E}X^2&amp;=\frac{\beta\alpha^2}{\beta-2}.
-\end{align*}\]</span>
-</div>
-<p>A variância de <span class="math inline">\(X\)</span> é dada por</p>
-<p><span class="math display">\[\mathrm{Var}[X]=\frac{\beta\alpha^2}{\beta-2}-\left(\frac{\beta\alpha}{\beta-1}\right)^2=\frac{\alpha\beta^2}{(\beta-1)^2(\beta-2)}. \quad\checkmark\]</span></p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Dica
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Seja <span class="math inline">\(Y=a+bX\)</span>, onde <span class="math inline">\(X\)</span> é uma variável aleatória, <span class="math inline">\(a\)</span> e <span class="math inline">\(b\)</span> constantes, então <span class="math inline">\(M_Y(t)=\mathbb{E}\left[e^{at}e^{btX}\right]=e^{at}\mathbb{E}\left[e^{btX}\right]=e^{at}M_X(bt)\)</span>, com <span class="math inline">\(|t|&lt;\frac{h}{|b|}\)</span>, <span class="math inline">\(h&gt;0\)</span>.</p>
-</div>
-</div>
-<div id="exm-fgm_uniforme" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.10</strong></span> Seja <span class="math inline">\(X\)</span> uma variável aleatória de uma população com distribuição uniforme no intervalo <span class="math inline">\((0,1)\)</span>, i.e.&nbsp;<span class="math inline">\(f(x)=\mathbb{I}_{(0,1)}(x)\)</span>. Seja <span class="math inline">\(y=(b-a)X+a\)</span>, onde <span class="math inline">\(a,b\)</span> são constantes, tal que <span class="math inline">\(b&gt;a\)</span>. Encontre a FGM da distribuição de <span class="math inline">\(Y\)</span>.</p>
-</div>
-<div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<em>Solução.</em>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>A FGM da distribuição de <span class="math inline">\(X\)</span> é dada por</p>
-<p><span class="math display">\[M_X(t)=\mathbb{E}[e^{tX}]=\int_0^1e^{tx}\,dx=\frac{e^t-1}{t}, \quad t\ne0.\]</span> Então, a FGM da distribuição de <span class="math inline">\(Y\)</span> é dada por</p>
-<p><span class="math display">\[M_Y(t)=e^{at}\frac{e^{(b-a)t}-1}{(b-a)t}=\frac{e^{bt}-e^{at}}{(b-a)t}, \quad t\ne0. \quad\checkmark\]</span></p>
-<blockquote class="blockquote">
-<p><span class="math inline">\(Y\)</span> é uma variável aleatória de uma população com distribuição uniforme no intervalo <span class="math inline">\((a,b)\)</span>. O <span class="math inline">\(r\)</span>-ésimo momento da distribuição de <span class="math inline">\(Y\)</span> é dado por <span class="math display">\[\mathbb{E}Y^r=\int_a^b\frac{y^r}{b-a}\,dy=\frac{b^{r+1}-a^{r+1}}{(n+1)(b-a)}.\]</span></p>
-</blockquote>
-</div>
-</div>
-</div>
-<div class="box">
-<div id="thm-fgm_unicidade" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 2.4</strong></span> Sejam <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> duas variáveis aleatórias com FGM <span class="math inline">\(M_{X}(t)\)</span> e <span class="math inline">\(M_{Y}(t)\)</span>, respectivamente. Se existe <span class="math inline">\(h&gt;0\)</span>, tal que <span class="math inline">\(M_{X}(t)=M_{Y}(t)\)</span>, para todo <span class="math inline">\(|t|&lt;h\)</span>, então <span class="math inline">\(F_X(u)=F_Y(u)\)</span> para todo <span class="math inline">\(u\in\mathbb{R}\)</span>.</p>
-</div>
-</div>
-<blockquote class="blockquote">
-<p>A prova do <a href="#thm-fgm_unicidade" class="quarto-xref">Teorema&nbsp;<span>2.4</span></a> requer alguns conceitos que extrapolam o nivel do conteúdo. Para os detalhes sugere-se, e.g., <span class="citation" data-cites="billingsley:1986">Billingsley (<a href="references.html#ref-billingsley:1986" role="doc-biblioref">1986</a>)</span> e <span class="citation" data-cites="curtiss:1942">Curtiss (<a href="references.html#ref-curtiss:1942" role="doc-biblioref">1942</a>)</span>.</p>
-</blockquote>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Problema dos momentos
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><em>Seja</em> <span class="math inline">\(X\)</span> uma variável aleatória de uma população com distribuição <span class="math inline">\(F(x)\)</span>. Suponha que todos os momentos de <span class="math inline">\(F(x)\)</span> existem, i.e. <span class="math inline">\(\mathbb{E}X\)</span>, <span class="math inline">\(\mathbb{E}X^2\)</span>, <span class="math inline">\(\mathbb{E}X^3\ldots\)</span> existem. A distribuição de <span class="math inline">\(X\)</span> pode ser determinada de forma única pelos seus momentos?</p>
-<p>Muitas vezes refere-se a esse questionamento como <em>Problema dos momentos de Hausdorff</em>, em honor ao matemático alemão Felix Hausdorff (1868-1942). Em <span class="math inline">\(1921\)</span>, Hausdorff mostrou as condições necessárias e suficientes para determinar de forma única a distribuição de uma variável aleatória a partir dos seus momentos populacionais em torno de zero. Na literatura, muitos autores discutem amplamente os detalhes desse problema e as propostas para sua solução. Sugere-se a leitura, e.g., <span class="citation" data-cites="dudewicz:mishra:1988">Dudewicz e Mishra (<a href="references.html#ref-dudewicz:mishra:1988" role="doc-biblioref">1988</a>)</span> [pp.&nbsp;261], <span class="citation" data-cites="shohat:tamarkin:1970">Shohat e Tamarkin (<a href="references.html#ref-shohat:tamarkin:1970" role="doc-biblioref">1970</a>)</span> e <span class="citation" data-cites="feller:1971">Feller (<a href="references.html#ref-feller:1971" role="doc-biblioref">1971</a>, pp.&nbsp;224)</span>.</p>
-</div>
-</div>
-<div class="box">
-<div id="thm-fgm_independencia" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 2.5</strong></span> Seja <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span> uma amostra aleatória de uma população com função de distribuição <span class="math inline">\(F\)</span>. Seja <span class="math inline">\(Y=\sum_{i=1}^na_iX_i\)</span>, com <span class="math inline">\(a_1,a_2,\ldots,a_n\)</span> constantes. A FGM da distribuição de <span class="math inline">\(Y\)</span> é dada por <span class="math display">\[M_{Y}(t)=\prod_{i=1}^nM_{X_1}(a_it),\]</span> para todo <span class="math inline">\(|t|&lt;h\)</span>, , para algum <span class="math inline">\(h&gt;0\)</span>.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<em>Prova</em>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-18" class="callout-18-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>O resultado é consequência da <a href="#def-fgm" class="quarto-xref">Definição&nbsp;<span>2.2</span></a> e do fato que as variáveis aleatórias <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span> são independentes e identicamente distribuídas. Assim,</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  M_Y(t)&amp;=\mathbb{E}\left[e^{tY}\right]=\mathbb{E}\left[e^{t\sum_{i=1}^na_iX_i}\right]
-  =\mathbb{E}\left[\prod_{i=1}^ne^{a_itX_i}\right]
-  =\prod_{i=1}^n\mathbb{E}\left[e^{a_itX_i}\right]=\prod_{i=1}^nM_{X_1}(a_it).\quad\blacksquare
-\end{align*}\]</span>
-</div>
-<blockquote class="blockquote">
-<p>Se <span class="math inline">\(a_1=a_2=\cdots=a_n\)</span>, então <span class="math inline">\(M_Y(t)=\left[M_{X_1}(a_it)\right]^n\)</span>.</p>
-</blockquote>
-</div>
-</div>
-</div>
-<div id="exm-FGM_xbar_normal" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.11</strong></span> Seja <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span> uma amostra aleatória de uma população com distribuição normal com média <span class="math inline">\(\mu\)</span> e variância <span class="math inline">\(\sigma^2\)</span>. Mostre que <span class="math inline">\(\bar{X}_n\)</span> tem distribuição normal com média <span class="math inline">\(\mu\)</span> e variância <span class="math inline">\(\frac{\sigma^2}{n}\)</span>.</p>
-</div>
-<div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<em>Solução.</em>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-19" class="callout-19-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Aplicando o resultado do <a href="#thm-fgm_independencia" class="quarto-xref">Teorema&nbsp;<span>2.5</span></a>, temos que</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  M_{\bar{X}_n}(t)&amp;=\mathbb{E}\left[e^{t\frac1n\sum_{i=1}^nX_i}\right]
-  =\left[M_{X_1}\left(\frac{t}{n}\right)\right]^n
-  =\left[\exp\left\{\frac{\mu}{n}t+\frac12\left(\frac{\sigma t}{n}\right)^2\right\}\right]^n
-  =\exp\left\{\mu t+\frac{1}{2n}\left(\sigma t\right)^2\right\}, t\in\mathbb{R}.\quad\checkmark
-\end{align*}\]</span>
-</div>
-</div>
-</div>
-</div>
-<div id="exm-FGMF_poisson" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.12</strong></span> Seja <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span> uma amostra aleatória de uma população com distribuição Poisson com parâmetro <span class="math inline">\(\lambda\)</span>, i.e. <span class="math inline">\(\mathbb{P}[X=x]=\frac{e^{-\lambda}\lambda^x}{x!}\mathbb{I}_{\{0,1,2,\ldots\}}(x)\)</span>. Calcule a FGM da distribuição de <span class="math inline">\(Y=\sum_{i=1}^nX_i\)</span>.</p>
-</div>
-<div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<em>Solução.</em>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-20" class="callout-20-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>A FGM é dada por</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  M_X(t)&amp;=\mathbb{E}\left[e^{tX}\right]=\sum_{x=0}^\infty e^{tx} \frac{e^{-\lambda}\lambda^x}{\lambda!}=e^{-\lambda}\sum_{x=0}^\infty  \frac{(\lambda e^t)^x}{\lambda!}=e^{-\lambda}e^{\lambda e^{t}}=e^{\lambda(e^t-1)}, \quad t\in\mathbb{R}.
-\end{align*}\]</span>
-</div>
-<p>Daí, pelo <a href="#thm-fgm_independencia" class="quarto-xref">Teorema&nbsp;<span>2.5</span></a>, temos que</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  M_Y(t)&amp;=\left(e^{\lambda(e^t-1)}\right)^n, \quad t\in\mathbb{R}.
-\end{align*}\]</span>
-</div>
-<blockquote class="blockquote">
-<p>Dessa forma, <span class="math inline">\(Y\)</span> é uma variável aleatória de uma população com distribuição Poisson com parâmetro <span class="math inline">\(n\lambda\)</span>.</p>
-</blockquote>
-</div>
-</div>
-</div>
-<div class="box">
-<div id="thm-fgm_distr_chisq" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 2.6</strong></span> Seja <span class="math inline">\(X_1,X_2,\ldots,X_k\)</span> uma sequência de variáveis aleatórias independentes com distribuição normal com média <span class="math inline">\(\mu_i\)</span> e variância <span class="math inline">\(\sigma^2_i\)</span>, para <span class="math inline">\(i=1,2,\ldots, k\)</span>. Então <span class="math display">\[U=\sum_{i=1}^k\left(\frac{X_i-\mu_i}{\sigma_i}\right)^2,\]</span> segue uma distribuição <span class="math inline">\(\chi^2_{(k)}\)</span>.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<em>Prova.</em>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-21" class="callout-21-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Seja <span class="math inline">\(Z_i=\frac{X_i-\mu_i}{\sigma_i}\)</span>. Dessa forma, a sequência <span class="math inline">\(Z_1,Z_2,\ldots,Z_n\)</span> configura uma amostra aleatória de uma população com distribuição normal padrão. Daí,</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  \mathbb{E}\left[e^{tZ^2_1}\right]&amp;=\int_{-\infty}^\infty e^{tz^2}\frac{1}{\sqrt{2\pi}}e^{-\frac12z^2}\,dz
-  = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty e^{-\frac12(1-2t)z^2}\,dz\\
-  &amp;= \frac{1}{\sqrt{2\pi}}\frac{\sqrt{1-2t}}{\sqrt{1-2t}}\int_{-\infty}^\infty e^{-\frac12(1-2t)z^2}\,dz
-  = \frac{1}{\sqrt{1-2t}}, \quad t&lt;\frac12.
-\end{align*}\]</span>
-</div>
-<p>Pelo <a href="#thm-fgm_independencia" class="quarto-xref">Teorema&nbsp;<span>2.5</span></a>, a FGM da distribuição de <span class="math inline">\(U\)</span> é dada por</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  M_U(t)&amp;=\left(\frac{1}{\sqrt{1-2t}}\right)^k, \quad t&lt;\frac12. \quad\checkmark
-\end{align*}\]</span>
-</div>
-<p>Seguindo o resultado do <a href="#exm-FGM_gamma" class="quarto-xref">Exemplo&nbsp;<span>2.6</span></a>, se <span class="math inline">\(\alpha=\frac{k}{2}\)</span> e <span class="math inline">\(\beta=\frac12\)</span>, então <span class="math display">\[M_X(t)=\left(1-2t\right)^{-\frac{k}{2}}, \quad t&lt;\frac12.\]</span> Sendo a FGM de uma variável aleatória com distribuição <span class="math inline">\(\chi^2_{(k)}\)</span>. Dessa forma, pelo <a href="#thm-fgm_unicidade" class="quarto-xref">Teorema&nbsp;<span>2.4</span></a>, a distribuição da variável aleatória <span class="math inline">\(U\)</span> é <span class="math inline">\(\chi^2_{(k)}\)</span>.</p>
-</div>
-</div>
-</div>
-<div class="box">
-<div id="cor-thm-fgm_distr_chisq" class="theorem corollary">
-<p><span class="theorem-title"><strong>Corolário 2.2</strong></span> Seja <span class="math inline">\(X_1,X_2,\ldots,X_k\)</span> uma amostra aleatória de uma população com distribuição normal com média <span class="math inline">\(\mu\)</span> e variância <span class="math inline">\(\sigma^2\)</span>. Então, <span class="math display">\[U=\sum_{i=1}^k\left(\frac{X_i-\mu}{\sigma}\right)^2\]</span> é uma variável aleatória de uma população com distribição <span class="math inline">\(\chi^2_{(k)}\)</span>.</p>
-</div>
-</div>
-<div id="exm-dist_s2" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.13</strong></span> Seja <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span> uma amostra aleatória de uma população com distribuição normal com média <span class="math inline">\(\mu\)</span> e variância <span class="math inline">\(\sigma^2\)</span>. Sejam <span class="math inline">\(\bar{X}_n=\frac1n\sum_{i=1}^nX_i\)</span> e <span class="math inline">\(S^2_n=\frac{1}{n-1}\sum_{i=1}^n(X_i-\bar{X}_n)^2\)</span>. Mostre que <span class="math inline">\(\frac{(n-1)S^2_n}{\sigma^2}\)</span> segue uma distribuição <span class="math inline">\(\chi^2_{(n-1)}\)</span>.</p>
-</div>
-<div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<em>Solução.</em>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-22" class="callout-22-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Sabemos que <span class="math inline">\(S^2_n=\frac{1}{n-1}\sum_{i=1}^n(X_i-\bar{X}_n)^2\)</span>, daí</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  (n-1)S^2_n&amp;=\sum_{i=1}^n(X_i-\bar{X}_n)^2=\sum_{i=1}^{n-1}(X_i-\bar{X}_n)^2+(X_n-\bar{X}_n)^2\\
-  &amp;=\sum_{i=1}^{n-1}(X_i-\bar{X}_{n-1}+\bar{X}_{n-1}-\bar{X}_n)^2+(X_n-\bar{X}_n)^2\\
-  &amp;=\sum_{i=1}^{n-1}(X_i-\bar{X}_{n-1})^2+\sum_{i=1}^{n-1}(\bar{X}_{n-1}-\bar{X}_n)^2+2(\bar{X}_{n-1}-\bar{X}_n)\underbrace{\sum_{i=1}^{n-1}(X_i-\bar{X}_{n-1})}_{0}+(X_n-\bar{X}_n)^2\\
-  &amp;=\sum_{i=1}^{n-1}(X_i-\bar{X}_{n-1})^2+(n-1)(\bar{X}_{n-1}-\bar{X}_n)^2+(X_n-\bar{X}_n)^2\\
-  &amp;=(n-2)S^2_{n-1}+(n-1)\left(\frac{n}{n(n-1)}\sum_{i=1}^{n-1}X_i-\frac{n-1}{n(n-1)}\sum_{i=1}^{n}X_i\right)^2+(X_n-\bar{X}_n)^2\\
-    &amp;=(n-2)S^2_{n-1}+\frac{1}{n^2(n-1)}\left(nX_n-\sum_{i=1}^{n}X_i\right)^2+(X_n-\bar{X}_n)^2\\
-    &amp;=(n-2)S^2_{n-1}+\frac{1}{n-1}\left(X_n-\bar{X}_n\right)^2+(X_n-\bar{X}_n)^2
-    =(n-2)S^2_{n-1}+\frac{n}{n-1}\left(X_n-\bar{X}_n\right)^2\\
-  &amp;=(n-2)S^2_{n-1}+\frac{n-1}{n}\left(X_n-\bar{X}_{n-1}\right)^2, \quad n&gt;1.\quad\checkmark
-\end{align*}\]</span>
-</div>
-<p>Dessa forma, aplicando indução matemática, temos que</p>
-<ul>
-<li><p>Para <span class="math inline">\(n=2\)</span>, temos que <span class="math inline">\(S^2_2=\frac{1}{2}\left(X_2-X_1\right)^2\)</span>. Sendo <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span> uma amostra aleatória de uma população com distribuição normal com média <span class="math inline">\(\mu\)</span> e variância <span class="math inline">\(\sigma^2\)</span>, então <span class="math inline">\(X_2-X_1\)</span> segue uma distribuição normal com média <span class="math inline">\(0\)</span> e variância <span class="math inline">\(2\sigma^2\)</span>. Daí, <span class="math inline">\(\frac{\left(X_2-X_1\right)^2}{2\sigma^2}=\frac{S_2^2}{\sigma^2}\)</span> segue uma distribuição <span class="math inline">\(\chi^2_{(1)}\)</span>;</p></li>
-<li><p>Suponha que, para <span class="math inline">\(n=k\)</span>, <span class="math inline">\(\frac{(k-1)S^2_k}{\sigma^2}\)</span> segue uma distribuição <span class="math inline">\(\chi^2_{(k-1)}\)</span>;</p></li>
-<li><p>Provemos para <span class="math inline">\(n=k+1\)</span>,</p></li>
-</ul>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  \frac{kS^2_{k+1}}{\sigma^2}&amp;=\frac{(k-1)S^2_{k}}{\sigma^2}+\frac{1}{\sigma^2}\frac{k}{k+1}\left(X_{k+1}-\bar{X}_{k}\right)^2.
-\end{align*}\]</span>
-</div>
-<p>Observe que, <span class="math inline">\(X_{k+1}-\bar{X}_{k}\)</span> segue uma distribuição normal com média <span class="math inline">\(0\)</span> e variância <span class="math inline">\(\left(\frac{k+1}{k}\right)\sigma^2\)</span>. Daí, <span class="math inline">\(\frac{k}{k+1}\frac{(X_{k+1}-\bar{X}_{k})^2}{\sigma^2}\)</span> segue uma distribuição <span class="math inline">\(\chi^2_{(1)}\)</span>. Pelo <a href="#thm-fgm_distr_chisq" class="quarto-xref">Teorema&nbsp;<span>2.6</span></a>, <span class="math inline">\(\frac{kS^2_{k+1}}{\sigma^2}\)</span> segue uma distribuição <span class="math inline">\(\chi^2_{(k)}\)</span>. <span class="math inline">\(\quad\checkmark\)</span></p>
-</div>
-</div>
-</div>
-<div class="box">
-<div id="thm-xb_e_s2" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 2.7</strong></span> Seja <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span> uma amostra aleatória de uma população com distribuição normal com média <span class="math inline">\(\mu\)</span> e variância <span class="math inline">\(\sigma^2\)</span>. Sejam <span class="math inline">\(\bar{X}_n=\frac1n\sum_{i=1}^nX_i\)</span> e <span class="math inline">\(S^2_n=\frac{1}{n-1}\sum_{i=1}^n\left(X_i-\bar{X}_n\right)^2\)</span>, então</p>
-<ol>
-<li>
-<span class="math inline">\(\bar{X}_n\)</span> segue uma distribuição normal com média <span class="math inline">\(\mu\)</span> e variância <span class="math inline">\(\frac{\sigma^2}{n}\)</span>;
-</li>
-<li>
-<span class="math inline">\(\frac{(n-1)S^2_n}{\sigma^2}\)</span> segue uma distribuição <span class="math inline">\(\chi^2_{(n-1)}\)</span>;
-</li>
-<li>
-<span class="math inline">\(\bar{X}_n\)</span> e <span class="math inline">\(S^2_n\)</span> são variáveis aleatórias independentes.
-</li>
-</ol>
-</div>
-</div>
-<div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<em>Prova.</em>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-23" class="callout-23-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<ol>
-<li>
-Vide <a href="#thm-esperado_momentos" class="quarto-xref">Teorema&nbsp;<span>2.1</span></a> e <a href="#exm-FGM_xbar_normal" class="quarto-xref">Exemplo&nbsp;<span>2.11</span></a>;
-</li>
-<li>
-Vide <a href="#exm-dist_s2" class="quarto-xref">Exemplo&nbsp;<span>2.13</span></a>;
-</li>
-<li>
-<p>Note que</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-S^2_n&amp;=\frac{1}{n-1}\sum_{i=1}^n\left(X_i-\bar{X}_n\right)^2
-=\frac{1}{n-1}\left[(X_1-\bar{X}_n)+\sum_{i=2}^n\left(X_i-\bar{X}_n\right)^2\right]\\
-&amp;=\frac{1}{n-1}\left\{\left[\sum_{i=1}^n(X_i-\bar{X}_n)-(X_1-\bar{X}_n)\right]^2+\sum_{i=2}^n\left(X_i-\bar{X}_n\right)^2\right\}\\
-&amp;=\frac{1}{n-1}\left\{\left[\sum_{i=2}^n(X_i-\bar{X}_n)\right]^2+\sum_{i=2}^n\left(X_i-\bar{X}_n\right)^2\right\}
-\end{align*}\]</span>
-</div>
-<p>Daí, <span class="math inline">\(S^2_n\)</span> pode ser escrito em função de <span class="math inline">\(X_2-\bar{X}_n, X_3-\bar{X}_n, \ldots, X_n-\bar{X}_n\)</span>. Dessa forma, se as variáveis aleatórias <span class="math inline">\(X_2-\bar{X}_n, X_3-\bar{X}_n,\ldots,X_n-\bar{X}_n\)</span> são independentes de <span class="math inline">\(\bar{X}_n\)</span>, obtem-se o resultado requerido.</p>
-<p>Para isso, calcula-se a densidade conjunta das variáveis aleatórias <span class="math inline">\(\bar{X}_n\)</span>, <span class="math inline">\(X_2-\bar{X}_n, X_3-\bar{X}_n,\ldots,X_n-\bar{X}_n\)</span> para verificar se a mesma pode ser escrita como produto das densidades de <span class="math inline">\(\bar{X}_n\)</span> e <span class="math inline">\(X_2-\bar{X}_n, X_3-\bar{X}_n,\ldots,X_n-\bar{X}_n\)</span>. Dessa maneira, para usar o método do jacobiano, considere <span class="math inline">\(y_1=\bar{x}_n\)</span> e <span class="math inline">\(y_i=x_i-\bar{x}_n\)</span> para <span class="math inline">\(i=2,3,\ldots,n\)</span>. Então,</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-    x_1&amp;=y_1-\sum_{i=2}^ny_i; &amp; x_i&amp;=y_i+y_1, \quad i=2,3,4,\ldots.
-\end{align*}\]</span>
-</div>
-<div class="math">
-<span class="math display">\[\begin{align*}
-    \frac{\partial x_1}{\partial y_1}&amp;=1; &amp; \frac{\partial x_2}{\partial y_1}&amp;=1; &amp; \frac{\partial x_3}{\partial y_1}&amp;=1; &amp; \cdots &amp; &amp; \frac{\partial x_n}{\partial y_1}&amp;=1;\\
-    \frac{\partial x_1}{\partial y_2}&amp;=-1; &amp; \frac{\partial x_2}{\partial y_2}&amp;=1; &amp; \frac{\partial x_3}{\partial y_2}&amp;=0; &amp; \cdots &amp; &amp; \frac{\partial x_n}{\partial y_2}&amp;=0;\\
-    \frac{\partial x_1}{\partial y_3}&amp;=-1; &amp; \frac{\partial x_2}{\partial y_3}&amp;=0; &amp; \frac{\partial x_3}{\partial y_3}&amp;=1; &amp; \cdots &amp; &amp; \frac{\partial x_n}{\partial y_3}&amp;=0;\\
-    &amp;\,\,\,\vdots &amp;&amp;\,\,\,\vdots &amp;&amp;\,\,\,\vdots &amp; &amp; &amp;&amp;\,\,\,\vdots\\
-    \frac{\partial x_1}{\partial y_3}&amp;=-1; &amp; \frac{\partial x_2}{\partial y_3}&amp;=0; &amp; \frac{\partial x_3}{\partial y_3}&amp;=0; &amp; \cdots &amp; &amp; \frac{\partial x_n}{\partial y_3}&amp;=1.
-\end{align*}\]</span>
-</div>
-<p>Assim sendo,</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-    |J|&amp;=\begin{vmatrix}
-     1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1\\
-    -1 &amp; 1 &amp; 0 &amp; \cdots &amp; 0\\
-    -1 &amp; 0 &amp; 1 &amp; \cdots &amp; 0\\
-    \vdots &amp;  &amp;  &amp; \ddots &amp; \vdots \\
-    -1 &amp; 0 &amp; 0 &amp; \cdots &amp; 1\\
-    \end{vmatrix}=n.
-\end{align*}\]</span>
-</div>
-<p>Por otro lado, sabemos que a função de densidade conjunta de <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span> é dada por</p>
-<p><span class="math display">\[f(x_1,x_2,\ldots,x_n)=(2\pi)^{-n/2}e^{-\frac12\sum_{i=1}^nx_i}, \quad x_i\in\mathbb{R}.\]</span> Portanto,</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-    f(y_1,y_2,\ldots,y_n)&amp;=\frac{n}{(2\pi)^{-n/2}}e^{-\frac12(y_1-\sum_{i=2}^ny_i)^2}e^{-\frac12\sum_{i=2}^n(y_i+y_1)^2}\\
-    &amp;=\frac{1}{(2\pi n^{-1})^{\frac12}}e^{-\frac12ny_1^2}\frac{1}{(2\pi )^{\frac{n-1}{2}}n^{-1/2}}e^{\left[-\frac12\sum_{i=2}^ny_i^2+(\sum_{i=2}^ny_i)^2\right]}.
-\end{align*}\]</span>
-</div>
-Então, <span class="math inline">\(Y_1\)</span> é independente de <span class="math inline">\(Y_2,Y_3,\ldots,Y_n. \quad \blacksquare\)</span>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<section id="momentos-fatoriais" class="level3" data-number="2.2.1">
-<h3 data-number="2.2.1" class="anchored" data-anchor-id="momentos-fatoriais"><span class="header-section-number">2.2.1</span> Momentos fatoriais</h3>
-<div id="def-fgmf" class="theorem definition">
-<p><span class="theorem-title"><strong>Definição 2.3 (Função geradora de momentos fatoriais)</strong></span> Seja <span class="math inline">\(X\)</span> uma variável aleatória de uma população com função de distribuição <span class="math inline">\(F_X\)</span>. A <em>função geradora de momentos fatoriais</em> (FGMF) de <span class="math inline">\(F_X\)</span>, denotada por <span class="math inline">\(\mathcal{M}_X(t)\)</span>, se existe, define-se como</p>
-<p><span class="math display">\[\mathcal{M}_X(t)=M_X(\log t)=\mathbb{E}\left[t^{X}\right],\]</span></p>
-<p>para todo <span class="math inline">\(t\in\mathbb{R}\)</span>.</p>
-<p>Se <span class="math inline">\(\mathcal{M}_X(t)\)</span> existe em uma vizinhança de <span class="math inline">\(t = 1\)</span>, o <span class="math inline">\(r\)</span>-ésimo momento fatorial é dado por <span class="math display">\[\mathbb{E}\left[(X)_r\right]=\mathbb{E}\left[X(X-1)(X-2)\cdots (X-r+1)\right]=\Biggr.\frac{\partial^r}{\partial t^r}\mathcal{M}_X(t)\Biggr|_{t=1}.\]</span></p>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Dica
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Seja <span class="math inline">\(Y=a+bX\)</span>, onde <span class="math inline">\(X\)</span> é uma variável aleatória, <span class="math inline">\(a\)</span> e <span class="math inline">\(b\)</span> constantes, então <span class="math inline">\(\mathcal{M}_Y(t)=t^a\mathcal{M}_X(t^b)\)</span>.</p>
-</div>
-</div>
-<div id="exm-FGMF_binomial" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.14</strong></span> Seja <span class="math inline">\(X\)</span> uma variável aleatória de uma população com distribuição Binomial com parâmetros <span class="math inline">\(n\)</span> e <span class="math inline">\(p\)</span>, i.e., <span class="math inline">\(\mathbb{P}[X=x]=\binom{n}{x}p^x(1-p)^{n-x}\mathbb{I}_{\{0,1,2,\ldots,n\}}(x)\)</span>. Utilize a FGMF para calcular o <span class="math inline">\(r\)</span>-ésimo momento fatorial da distribuição de <span class="math inline">\(X\)</span>.</p>
-</div>
-<div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<em>Solução.</em>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-25" class="callout-25-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>A FGMF é dada por</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  \mathcal{M}_X(t)&amp;=\mathbb{E}\left[t^{X}\right]=\sum_{j=0}^n t^j \binom{n}{j}p^j(1-p)^{n-j}=\sum_{j=0}^n \binom{n}{j}(tp)^j(1-p)^{n-j}=[(1-p)+tp]^n, \quad t\in\mathbb{R}.
-\end{align*}\]</span>
-</div>
-<p>Daí,</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  \mathbb{E}\left[X\right]&amp;=\frac{\partial}{\partial t}\mathcal{M}_X(t)\Biggr|_{t=1}=n[(1-p)+tp]^{n-1}p\Biggr|_{t=1}=np;\\ \\
-  \mathbb{E}\left[(X)_2\right]&amp;=\frac{\partial^2}{\partial t^2}\mathcal{M}_X(t)\Biggr|_{t=1}=n(n-1)p^2[(1-p)+tp]^{n-2}\Biggr|_{t=1}=n(n-1)p^2;\\ \\
-  &amp;\,\,\,\,\vdots \\ \\
-  \mathbb{E}\left[(X)_r\right]&amp;=\frac{\partial^r}{\partial t^r}\mathcal{M}_X(t)\Biggr|_{t=1}=n(n-1)\cdots(n-r+1)p^r=\frac{n!}{(n-r)!}p^r=(n)_r\,p^r. \quad\checkmark
-\end{align*}\]</span>
-</div>
-</div>
-</div>
-</div>
-<div class="{exm-fgmf_poisson}">
-<p>Seja <span class="math inline">\(X\)</span> uma variável aleatória de uma população com distribuição Poisson com parâmetro <span class="math inline">\(\lambda\)</span>, i.e. <span class="math inline">\(\mathbb{P}[X=x]=\frac{e^{-\lambda}\lambda^x}{x!}\mathbb{I}_{\{0,1,2,\ldots\}}(x)\)</span>. Utilize a FGMF para calcular o <span class="math inline">\(r\)</span>-ésimo momento fatorial da distribuição de <span class="math inline">\(X\)</span>.</p>
-</div>
-<div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<em>Solução.</em>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-26" class="callout-26-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>A FGMF é dada por</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  \mathcal{M}_X(t)&amp;=\mathbb{E}\left[t^{X}\right]=\sum_{j=0}^\infty t^j \frac{e^{-\lambda}\lambda^j}{\lambda!}=e^{-\lambda}\sum_{j=0}^\infty  \frac{(t\lambda)^j}{\lambda!}=e^{-\lambda}e^{t\lambda}=e^{(t-1)\lambda}, \quad t\in\mathbb{R}.
-\end{align*}\]</span>
-</div>
-<p>Dessa forma,</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  \mathbb{E}\left[X\right]&amp;=e^{(t-1)\lambda}\,\lambda\Biggr|_{t=1}=\lambda;\\ \\
-  \mathbb{E}\left[(X)_2\right]&amp;=e^{(t-1)\lambda}\,\lambda^2\Biggr|_{t=1}=\lambda^2;\\ \\
-  &amp;\,\,\,\,\vdots \\ \\
-  \mathbb{E}\left[(X)_r\right]&amp;=\frac{\partial^r}{\partial t^r}\mathcal{M}_X(t)\Biggr|_{t=1}=e^{(t-1)\lambda}\,\lambda^r\Biggr|_{t=1}=\lambda^r. \quad\checkmark
-\end{align*}\]</span>
-</div>
-</div>
-</div>
-</div>
-<div id="exm-FGMF_binomial_negativa" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.15</strong></span> Seja <span class="math inline">\(X\)</span> uma variável aleatória de uma população com distribuição Binomial negativa com parâmetros <span class="math inline">\(n\)</span> e <span class="math inline">\(p\)</span>, i.e., <span class="math inline">\(\mathbb{P}[X=x]=\binom{x+n-1}{x}p^n(1-p)^{x}\mathbb{I}_{\{0,1,2,\ldots\}}(x)\)</span>. Calcule a FGMF da distribuição de <span class="math inline">\(X\)</span>.</p>
-</div>
-<div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<em>Solução.</em>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-27" class="callout-27-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>A FGMF é dada por</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  \mathcal{M}_X(t)&amp;=\mathbb{E}\left[t^{X}\right]=\sum_{j=0}^\infty t^j \binom{j+n-1}{j}p^n(1-p)^{j}=\sum_{j=0}^\infty \binom{j+n-1}{j}p^n[t(1-p)]^{j}\\
-  &amp;=p^n\sum_{j=0}^\infty \binom{j+n-1}{j}[t(1-p)]^{j}=p^n[1-(1-p)t]^{-n}=\left[\frac{p}{1-(1-p)t}\right]^n,  \quad |t|&lt;\frac{1}{1-p}. \quad\checkmark
-\end{align*}\]</span>
-<p>A última soma é resultado de aplicar os resultados da <a href="matematica.html#sec-combinatorias" class="quarto-xref"><span>Seção A.2</span></a> do <a href="matematica.html" class="quarto-xref"><span>Apêndice A</span></a>.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Observação
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Se <span class="math inline">\(X\)</span> é uma variável aleatória discreta com valores em <span class="math inline">\(\{0,1,2,\ldots\}\)</span>, então <span class="math inline">\(\mathcal{M}_X(t)\)</span> é chamada de <strong>função geradora de probabilidades</strong> (FGP). Nesse caso, <span class="math inline">\(\mathcal{M}_X(t)\)</span> existe para todo <span class="math inline">\(|t|\le1\)</span>.</p>
-<p>A <span class="math inline">\(r\)</span>-ésima probabilidade de massa de <span class="math inline">\(X\)</span> calcula-se como <span class="math display">\[\mathbb{P}\left[X=r\right]=\frac{1}{k!}\frac{\partial^r}{\partial t^r}\mathcal{M}_X(t)\Biggr|_{t=0}.\]</span></p>
-</div>
-</div>
-<div id="exm-FGP_binomial" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.16</strong></span> Considere o cenário do <a href="#exm-FGMF_binomial" class="quarto-xref">Exemplo&nbsp;<span>2.14</span></a>. Utilize a FGP da distribuição de <span class="math inline">\(X\)</span> para calcular a <span class="math inline">\(r\)</span>-ésima probabilidade de massa.</p>
-</div>
-<div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<em>Solução.</em>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-29" class="callout-29-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Pelo <a href="#exm-FGMF_binomial" class="quarto-xref">Exemplo&nbsp;<span>2.14</span></a>, sabemos que a FGP é dada por <span class="math inline">\(\mathcal{M}_X(t)=[(1-p)+tp]^n\)</span>. Daí,</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  \mathbb{P}\left[X=0\right]&amp;=[(1-p)+tp]^n\Biggr|_{t=0}=(1-p)^n; \\ \\
-  \mathbb{P}\left[X=1\right]&amp;=\frac{\partial}{\partial t}\mathcal{M}_X(t)\Biggr|_{t=0}=np(1-p)^{n-1}; \\ \\
-  &amp;\,\,\,\,\vdots \\ \\
-  \mathbb{P}\left[X=r\right]&amp;=\frac{1}{r!}\frac{\partial^r}{\partial t^r}\mathcal{M}_X(t)\Biggr|_{t=0}=\frac{n(n-1)\cdots(n-r+1)}{r!}p^r(1-p)^{n-r}\\
-  &amp;=\frac{n!}{(n-r)!r!}p^r(1-p)^{n-r}=\binom{n}{r}p^r(1-p)^{n-r}. \quad\checkmark
-\end{align*}\]</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="cumulantes" class="level3" data-number="2.2.2">
-<h3 data-number="2.2.2" class="anchored" data-anchor-id="cumulantes"><span class="header-section-number">2.2.2</span> Cumulantes</h3>
-<div id="def-fgc" class="theorem definition">
-<p><span class="theorem-title"><strong>Definição 2.4 (Função geradora de cumulantes)</strong></span> Seja <span class="math inline">\(X\)</span> uma variável aleatória de uma população com função de distribuição <span class="math inline">\(F_X\)</span>. A <em>função geradora de cumulantes</em> (FGC) de <span class="math inline">\(F_X\)</span>, define-se como</p>
-<p><span class="math display">\[K_X(t)=\log M_X(t)=\sum_{j=1}^\infty\kappa_n\frac{t^j}{j!},\]</span></p>
-<p>onde <span class="math inline">\(M_X(t)\)</span> representa a FGM de <span class="math inline">\(F_X\)</span>, <span class="math inline">\(|t|&lt;h\)</span>, <span class="math inline">\(h&gt;0\)</span>. As constantes <span class="math inline">\(\kappa_1,\kappa_2,\kappa_3,\ldots\)</span> são chamados de <em>cumulantes</em> da distribuição <span class="math inline">\(F_X\)</span>.</p>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Dica
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Os cumulantes são funções dos momentos e podem ser obtidos diferenciando a função <span class="math inline">\(K_X(t)\)</span></p>
-<p><span class="math display">\[\kappa_j=K'_X(0)=\frac{\partial^j}{\partial t^j}K_X(t)\Biggr|_{t=0},\]</span> para <span class="math inline">\(j=1,2,3,\ldots\)</span>.</p>
-</div>
-</div>
-<div id="exm-fgc_independentes" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.17</strong></span> Sejam <span class="math inline">\(X_1,X_2\)</span> variáveis aleatórias independentes. Mostre que <span class="math display">\[K_{X+Y}(t)=K_X(t)+K_Y(t).\]</span></p>
-</div>
-<div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<em>Solução.</em>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-31" class="callout-31-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Aplicando a <a href="#def-fgc" class="quarto-xref">Definição&nbsp;<span>2.4</span></a>, temos que</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  K_{X+Y}(t)&amp;=\log\mathbb{E}[e^{t(X+Y)}]=\log\mathbb{E}[e^{tX}e^{tY}]
-  =\log\left(\mathbb{E}[e^{tX}]\mathbb{E}[e^{tY}]\right)\\
-  &amp;=\log\mathbb{E}[e^{tX}]+\log\mathbb{E}[e^{tY}]=K_X(t)+K_Y(t). \quad\checkmark
-\end{align*}\]</span>
-</div>
-</div>
-</div>
-</div>
-<div id="exm-fgc_bernoulli" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.18</strong></span> Seja <span class="math inline">\(X\)</span> uma variável aleatória de uma população com distribuição Bernoulli com parâmetro <span class="math inline">\(p\)</span>. Utilize a FGC para calcular o <span class="math inline">\(r\)</span>-ésimo cumulante da distribuição de <span class="math inline">\(X\)</span>.</p>
-</div>
-<div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<em>Solução.</em>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-32" class="callout-32-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Pela <a href="#def-fgmf" class="quarto-xref">Definição&nbsp;<span>2.3</span></a>, sabemos que <span class="math inline">\(\mathcal{M}_X(t)=M_X(\log t)\)</span>. Pelo <a href="#exm-FGMF_binomial" class="quarto-xref">Exemplo&nbsp;<span>2.14</span></a>, sabemos que a FGMF de uma variável aleatória com distribuição binomial é dada por <span class="math inline">\(\mathcal{M}_X(t)=[(1-p)+tp]^n\)</span>, com <span class="math inline">\(t\in\mathbb{R}\)</span>. Assim, a FGM de uma variável aleatória com distribuição Bernoulli é dada por <span class="math inline">\(M_X(t)=(1-p)+e^tp\)</span>, com <span class="math inline">\(t\in\mathbb{R}\)</span>. Daí, <span class="math inline">\(K_{X}(t)=\log M_X(t)=\log[(1-p)+e^tp]\)</span>.</p>
-<p>Dessa forma,</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  K'_{X}(0)&amp;=\kappa_1=\frac{e^tp}{(1-p)+e^tp}\Biggr|_{t=0}=p\\
-  K''_{X}(0)&amp;=\kappa_2=e^tp\frac{(1-p)+e^tp-e^tp}{((1-p)+e^tp)^2}\Biggr|_{t=0}=p(1-p)\\
-  K'''_{X}(0)&amp;=\kappa_3=\frac{[(1-p)+e^tp]^2p(1-p)e^t-2p(1-p)e^t(e^tp+p(1-p)e^t)}{((1-p)+e^tp)^4}\Biggr|_{t=0}=p(1-p)(1-2p)\\
-  &amp;\,\,\,\,\vdots \\ \\
-  K^{(r)}_X(0)&amp;=\kappa_r=\frac{\partial^r}{\partial t^r}K_X(t)\Biggr|_{t=0}.
-\end{align*}\]</span>
-</div>
-<p>Para calcular a <span class="math inline">\(r\)</span>-ésima derivada de <span class="math inline">\(K_X(t)\)</span>, note que</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  \frac{\partial\kappa_r}{\partial p}&amp;=\frac{\partial}{\partial p}\left[\frac{\partial^r}{\partial t^r}\log[(1-p)+e^tp]\Biggr|_{t=0}\right]
-  =\frac{\partial^r}{\partial t^r}\left[\frac{\partial}{\partial p}\log[(1-p)+e^tp]\Biggr|_{t=0}\right]\\
-  &amp;=\frac{\partial^r}{\partial t^r}\left[\frac{e^t-1}{(1-p)+e^tp}\Biggr|_{t=0}\right]. \quad\checkmark
-\end{align*}\]</span>
-</div>
-<p>Por outra parte,</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  \kappa_{r+1}&amp;=\frac{\partial^{r+1}}{\partial t^{n+1}}K_X(t)\Biggr|_{t=0}
-  =\frac{\partial^r}{\partial t^r}\left[\frac{\partial}{\partial t}K_X(t)\Biggr|_{t=0}\right]\\
-  &amp;=\frac{\partial^r}{\partial t^r}\left[\frac{e^tp}{(1-p)+e^tp}\Biggr|_{t=0}\right]. \quad\checkmark
-\end{align*}\]</span>
-</div>
-<p>Daí,</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  \kappa_{r+1}-p(1-p)\frac{\partial\kappa_r}{\partial p}&amp;=\frac{\partial^r}{\partial t^r}\left[\frac{e^tp}{(1-p)+e^tp}-p(1-p)\frac{e^t-1}{(1-p)+e^tp}\Biggr|_{t=0}\right]\\
-  &amp;=\frac{\partial^r}{\partial t^r}\left[\frac{e^tp^2+p(1-p)}{(1-p)+e^tp}\Biggr|_{t=0}\right]=\frac{\partial^r}{\partial t^r}p=0. \quad\checkmark
-\end{align*}\]</span>
-</div>
-<p>Dessa forma, para <span class="math inline">\(r&gt;1\)</span> <span class="math display">\[\kappa_{r+1}=p(1-p)\frac{\partial}{\partial p}\kappa_r. \quad\checkmark\]</span></p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Observação
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Da <a href="#def-fgm" class="quarto-xref">Definição&nbsp;<span>2.2</span></a>, sabemos que <span class="math inline">\(M_X(t)=\mathbb{E}\left[e^{tX}\right]\)</span> existe para todo <span class="math inline">\(|t|&lt;h\)</span>, para algum <span class="math inline">\(h&gt;0\)</span>. Se <span class="math inline">\(\mathbb{E}X^r\)</span> existe para todo <span class="math inline">\(r=1,2,\ldots\)</span>, então</p>
-<p><span class="math display">\[M_X(t)=\sum_{r=0}^\infty \frac{t^r}{r!}\mathbb{E}X^r, \quad |t|&lt;h.\]</span> Dessa forma,</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  K_X(t)&amp;=\log M_X(t)=\log\left[\sum_{r=0}^\infty \frac{t^r}{r!}\mathbb{E}X^r\right]
-  =\log\left[1+\sum_{r=1}^\infty \frac{t^r}{r!}\mathbb{E}X^r\right]\\
-  &amp;=\mathbb{E}[X]\, t+\frac{1}{2!}\left[\mathbb{E}X^2-(\mathbb{E}X)^2\right]t^2
-  +\frac{1}{3!}\left[\mathbb{E}X^3-\mathbb{E}X\mathbb{E}X^2-2\left(\mathbb{E}X^2-(\mathbb{E}X)^2\right)\mathbb{E}X\right]t^3+\cdots.
-\end{align*}\]</span>
-</div>
-<p>Daí, <span class="math inline">\(\kappa_1=\mathbb{E}X\)</span>, <span class="math inline">\(\kappa_2=\mathbb{E}X^2-(\mathbb{E}X)^2\)</span>, <span class="math inline">\(\kappa_3=\mathbb{E}X^3-\mathbb{E}X\mathbb{E}X^2-2\left(\mathbb{E}X^2-(\mathbb{E}X)^2\right)\mathbb{E}X=\mathbb{E}\left[(X-\mathbb{E}X)^3\right]\)</span>, <span class="math inline">\(\kappa_4=\mathbb{E}\left[(X-\mathbb{E}X)^4\right]-3\kappa_2^2\)</span>, etc.</p>
-</div>
-</div>
-</section>
-</section>
-<section id="função-geradora-de-momentos-conjunta" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="função-geradora-de-momentos-conjunta"><span class="header-section-number">2.3</span> Função geradora de momentos conjunta</h2>
-<div id="def-fgm_conjunta" class="theorem definition">
-<p><span class="theorem-title"><strong>Definição 2.5</strong></span> Seja <span class="math inline">\(\mathbf{X}=(X_1,X_2,\ldots,X_n)^\intercal\)</span> uma vetor aleatório de tamanho <span class="math inline">\(n\times1\)</span>. A <em>função geradora de momentos conjunta</em> (FGMC) define-se, como</p>
-<p><span class="math display">\[M_{\mathbf{X}}(\mathbf{t})=\mathbb{E}\left[e^{\mathbf{t}^{\intercal}\mathbf{X}}\right]=\mathbb{E}\left[e^{\sum_{i=1}^nt_iX_i}\right],\]</span> se existe para todos os vetores reais <span class="math inline">\(\mathbf{t}=(t_1,t_2,\ldots,t_n)\)</span> que pertencem a um retângulo rechado <span class="math inline">\(H\)</span>, tal que</p>
-<p><span class="math display">\[H=[-h_1,h_1]\times[-h_2,h_2]\times\cdots\times[-h_n,h_n]\subset\mathbb{R}^n,\]</span> com <span class="math inline">\(h_i&gt;0\)</span> para todo <span class="math inline">\(i=1,2,3,\ldots, n\)</span>.</p>
-</div>
-<div id="exm-fgmc_exponencial" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.19</strong></span> Seja <span class="math inline">\(\mathbf{X}=(X_1,X_2)\)</span> um vetor aleatório de uma população com função de densidade conjunta dada por</p>
-<p><span class="math display">\[f(x_1,x_2)=e^{-(x_1+x_2)}, \quad x_1&gt;0, x_2&gt;0.\]</span></p>
-<p>Calcule a FGMC da distribuição de <span class="math inline">\(\mathbf{X}=(X_1,X_2)\)</span>.</p>
-</div>
-<div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<em>Solução.</em>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-34" class="callout-34-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Pela <a href="#def-fgm_conjunta" class="quarto-xref">Definição&nbsp;<span>2.5</span></a>, sabemos que</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  M_{\mathbf{X}}(\mathbf{t}) &amp;= \mathbb{E}\left[e^{\mathbf{t}^{\intercal}\mathbf{X}}\right]
-  = \mathbb{E}[e^{t_1X_1+t_2X_2}] = \int_{0}^\infty \int_{0}^\infty  e^{t_1x_1+t_2x_2}e^{-(x_1+x_2)}\,dx_1dx_2 \\
-  &amp;= \int_{0}^\infty \int_{0}^\infty e^{(t_1-1)x_1}e^{(t_2-1)x_2}\,dx_1dx_2
-  = \int_{0}^\infty e^{(t_1-1)x_1}\,dx_1 \int_{0}^\infty e^{(t_2-1)x_2}\,dx_2\\
-  &amp;= \frac{1}{(1-t_1)(1-t_2)}. \quad\checkmark
-\end{align*}\]</span>
-</div>
-</div>
-</div>
-</div>
-<div id="exm-fgmc_chisq" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.20</strong></span> Seja <span class="math inline">\(X_1,X_2\)</span> uma amostra aleatória de uma população com distribuição normal padrão. Encontre as distribuições de <span class="math inline">\(2X_1X_2\)</span> e <span class="math inline">\(X_2^2-X_1^2\)</span>.</p>
-</div>
-<div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<em>Solução.</em>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-35" class="callout-35-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Sabemos que <span class="math inline">\(X_1\)</span> e <span class="math inline">\(X_2\)</span> são variáveis aleatórias independentes e identicamente distribuidas com distribuição <span class="math inline">\(N(0,1)\)</span>. Dessa forma, <span class="math inline">\(2X_1X_2\)</span> tem distribuição <span class="math inline">\(2\chi_{(1)}^2\)</span>, ou seja <span class="math inline">\(Gama\left(\frac12,\frac14\right)\)</span>.</p>
-<p>Seja <span class="math inline">\(U=2X_1X_2\)</span>, então</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-  \mathbb{E}\left[e^{tU}\right]&amp;=\mathbb{E}\left[e^{2tX_1X_2}\right]=
-      \frac{1}{2\pi}\int_{-\infty}^\infty\int_{-\infty}^\infty e^{2tx_1x_2}e^{-\frac12(x_1^2+x_2^2)}\,dx_1dx_2\\
-      &amp;=\frac{1}{2\pi}\int_{-\infty}^\infty e^{-\frac12x_2^2}\int_{-\infty}^\infty e^{-\frac12x_1^2}e^{2tx_1x_2}\,dx_1dx_2\\
-      &amp;=\frac{1}{2\pi}\int_{-\infty}^\infty \exp\left\{-\frac12x_2^2\right\}\exp\left\{2t^2x_2^2\right\}\int_{-\infty}^\infty \exp\left\{-\frac12\left(x_1-2tx_2\right)^2\right\}\,dx_1dx_2\\
-      &amp;=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty \exp\left\{-\frac12\left(1-4t^2\right)x_ 2^2\right\}\,dx_2\\
-      &amp;=\left(1-4t^2\right)^{-\frac12}, \quad t^2&lt;\frac14 \text{ ou } |t|&lt;\frac12. \quad\checkmark
-\end{align*}\]</span>
-</div>
-<p>Seja <span class="math inline">\(t^*=t^2\)</span>, então <span class="math inline">\(\mathbb{E}\left[e^{t^*U}\right]=\left(1-4t^*\right)^{-\frac12}\)</span>, com <span class="math inline">\(t^*&lt;\frac{1}{4}\)</span>, i.e., a função geradora de momentos de uma <span class="math inline">\(Gama(\frac12,\frac14)\)</span>.</p>
-<p>Considere <span class="math inline">\(V=X_2^2-X_1^2\)</span>, então</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-      \mathbb{E}\left[e^{tV}\right]&amp;=\mathbb{E}\left[e^{t\left(X_2^2-X_1^2\right)}\right]=\mathbb{E}\left[e^{tX_2^2}\right]\mathbb{E}\left[e^{- tX_1^2}\right]=\left(1-2t\right)^{-\frac12}\left(1+2t\right)^{-\frac12}\\
-      &amp;=\left[\left(1-2t\right)\left(1+2t\right)\right]^{-\frac12}=\left(1-4t^2\right)^{-\frac12}, \quad t^2&lt;\frac14 \text{ ou } |t|&lt;\frac12.
-\end{align*}\]</span>
-</div>
-<p>Pelo @-fgm_unicidade, temos que <span class="math inline">\(U\)</span> e <span class="math inline">\(V\)</span> seguem a mesma distribuição <span class="math inline">\(2\chi_{(1)}^2\)</span> ou <span class="math inline">\(gama(\frac12,\frac14)\quad\checkmark\)</span>.</p>
-</div>
-</div>
-</div>
-<div id="exm-fgmc_normalp" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2.21</strong></span> Seja <span class="math inline">\(X_1,X_2\)</span> uma amostra aleatória de uma população com distribuição normal padrão. Calcule a FGMC do vetor <span class="math inline">\((Y,Z)\)</span>, onde <span class="math inline">\(Y=X_1+X_2\)</span> e <span class="math inline">\(Z=X_1^2+X_2^2\)</span>. As variáveis <span class="math inline">\(Y\)</span> e <span class="math inline">\(Z\)</span> são correlacionadas?</p>
-</div>
-<div class="callout callout-style-default callout-proof no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<em>Solução.</em>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-36" class="callout-36-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Sabemos que,</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-      M(t_1,t_2)&amp;=\mathbb{E}\left[e^{t_1Y+t_2Z}\right]=\mathbb{E}\left[e^{t_1(X_1+X_2)+t_2\left(X_1^2+X_2^2\right)}\right]\\
-      &amp;=\mathbb{E}\left[\exp\left\{t_1X_1+t_1X_2+t_2X_1^2+t_2X_2^2\right\}\right]\\
-      &amp;=\mathbb{E}\left[\exp\left\{t_1X_1+t_2X_1^2\right\}\right]\mathbb{E}\left[\exp\left\{t_1X_2+t_2X_2^2\right\}\right].
-\end{align*}\]</span>
-</div>
-<p>Por outra parte, temos que</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-      \mathbb{E}\left[\exp\left\{t_1X_1+t_2X_1^2\right\}\right]&amp;=\int_{-\infty}^\infty e^{t_1x_1+t_2x_1^2}\frac{1}{\sqrt{2\pi}} e^{-\frac12x_1^2}\,dx_1\\
-      &amp;=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty \exp\left\{t_1x_1+\left(t_2-\frac12\right)x_1^2\right\}\,dx_1\\
-      &amp;=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty \exp\left\{-\frac12(1-2t_2)\left(x_1^2-\frac{2t_1}{1-2t_2}x_1\right)\right\}\,dx_1, \quad t_1\in\mathbb{R}, t_2\in\left(-\infty,\frac12\right)\\
-      &amp;=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty \exp\left\{-\frac12(1-2t_2)\left[\left(x_1-\frac{t_1}{1-2t_2}\right)^2-\frac{t_1^2}{(1-2t_2)^2}\right]\right\}\,dx_1\\
-      &amp;=\frac{1}{\sqrt{1-2t_2}}\exp\left\{\frac12\frac{t_1^2}{1-2t_2}\right\}. \quad \checkmark
-\end{align*}\]</span>
-</div>
-<p>Daí,</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-      M(t_1,t_2)&amp;=\mathbb{E}\left[\exp\left\{t_1X_1+t_2X_1^2\right\}\right]\mathbb{E}\left[\exp\left\{t_1X_2+t_2X_2^2\right\}\right]\\
-      &amp;=\left(\frac{1}{\sqrt{1-2t_2}}\exp\left\{\frac12\frac{t_1^2}{1-2t_2}\right\}\right)^2\\
-      &amp;=\frac{1}{1-2t_2}\exp\left\{\frac{t_1^2}{1-2t_2}\right\}, \quad t_1\in\mathbb{R}, t_2\in\left(-\infty,\frac12\right). \quad\checkmark
-\end{align*}\]</span>
-</div>
-<p>Observe que, <span class="math inline">\(M(t_1,0)=M(t_1)=e^{t_1^2}\)</span>, para <span class="math inline">\(t_1\in\mathbb{R}\)</span>, i.e. <span class="math inline">\(Y\)</span> é uma variável aleatória de uma população com distribuição normal com média <span class="math inline">\(0\)</span> e variância <span class="math inline">\(2\)</span>. Por otro lado, <span class="math inline">\(M(,t_2)=M(t_2)=\frac{1}{1-2t_2}\)</span>, para <span class="math inline">\(-\infty&lt;t_2&lt;\frac12\)</span>, i.e., <span class="math inline">\(Z\)</span> é uma variável aleatória de uma população com distribuição qui-quadrado com <span class="math inline">\(2\)</span> graus de liberdade.</p>
-<p>Para verificar se <span class="math inline">\(Y\)</span> e <span class="math inline">\(Z\)</span> são correlacionadas, calcula-se a correlação entre as duas variáveis aleatórias. Assim,</p>
-<div class="math">
-<span class="math display">\[\begin{align*}
-      \mathbb{E}YZ=\frac{\partial^2}{\partial t_1\partial t_2}M(t_1,t_2)\Biggr|_{(t_1,t_2)=(0,0)}
-      &amp;=\frac{\partial}{\partial t_1}\left[\frac{\partial}{\partial t_2}M(t_1,t_2)\right]\Biggr|_{(t_1,t_2)=(0,0)}\\       &amp;=\frac{4t_1\exp\left\{\frac{t^2_1}{1-2t_2}\right\}(-4t_2+t_1^2+2)}{(1-2t_2)^4}\Biggr|_{(t_1,t_2)=(0,0)}\\
-      &amp;=0. \quad\checkmark
-\end{align*}\]</span>
-</div>
-<p>Dessa forma, <span class="math inline">\(\mathrm{Cov}[Y,Z]=\mathbb{E}YZ-\mathbb{E}Y\mathbb{E}Z=0\)</span>. Daí, as variáveis <span class="math inline">\(Y\)</span> e <span class="math inline">\(Z\)</span> são não-correlacionadas.</p>
 </div>
 </div>
 </div>
 <p><br><br><br><br></p>
+</section>
 </section>
 <section id="exercícios-sugeridos" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="exercícios-sugeridos">Exercícios sugeridos</h2>
@@ -1762,23 +899,6 @@ Observação
 </ol>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-billingsley:1986" class="csl-entry" role="listitem">
-Billingsley, Patrick. 1986. <em>Probability and Measure</em>. Second. John Wiley; Sons.
-</div>
-<div id="ref-curtiss:1942" class="csl-entry" role="listitem">
-Curtiss, J. H. 1942. <span>“A note on the theory moment generating functions”</span>. <em>The annals of the mathematical statistics</em> 13 (4): 430–33.
-</div>
-<div id="ref-dudewicz:mishra:1988" class="csl-entry" role="listitem">
-Dudewicz, E., e S. Mishra. 1988. <em>Modern mathematical statistics</em>. 1st ed. John Wiley &amp; Sons.
-</div>
-<div id="ref-feller:1971" class="csl-entry" role="listitem">
-Feller, W. 1971. <em>An introduction to probability theory and its applications</em>. 2nd ed. Vol. II. Wiley.
-</div>
-<div id="ref-shohat:tamarkin:1970" class="csl-entry" role="listitem">
-Shohat, J. A., e J. D. Tamarkin. 1970. <em>The problem of moments</em>. Vol. I. American Mathematical Society.
-</div>
-</div>
 </section>
 
 </main> <!-- /main -->
