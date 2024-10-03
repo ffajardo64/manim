@@ -32,10 +32,10 @@ book:
     chapters:
       - p1chap01.qmd
       - p1chap02.qmd
-  - part: "II. Atributos básicos"
+  - part: "II. Animações I"
     chapters:
       - p1chap01.qmd
-  - part: "III. Amostragem e distribuições amostrais"
+  - part: "III. Animações II"
     chapters: 
       - p1chap01.qmd
   - references.qmd
