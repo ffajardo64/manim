@@ -6,8 +6,8 @@ bibliography: references.bib
 lang: pt-BR
 
 book:
-  title: "Animações em Estatística com python"
-  subtitle: "Introdução ao manim"
+  title: "Animações em Estatística com Manim"
+  subtitle: "Um Guia Prático em Python"
   author: 
     - name: "Fabio A. Fajardo Molinares"
       orcid: "0000-0002-4952-3975"
@@ -28,14 +28,16 @@ book:
   chapters:
   - index.qmd
   - intro.qmd
-  - part: "I. Elementos básicos"
+  - part: "I. Introdução ao Manim e à Animação Matemática"
     chapters:
       - p1chap01.qmd
       - p1chap02.qmd
-  - part: "II. Animações I"
+      - p1chap03.qmd
+      - p1chap04.qmd
+  - part: "II. Criando suas primeiras animações"
     chapters:
       - p1chap01.qmd
-  - part: "III. Animações II"
+  - part: "III. Animações avançadas e visualização de dados"
     chapters: 
       - p1chap01.qmd
   - references.qmd
