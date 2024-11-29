@@ -293,10 +293,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#sec-mcs" id="toc-sec-mcs" class="nav-link" data-scroll-target="#sec-mcs"><span class="header-section-number">4.2.1</span> <code>moving_camera_scene</code></a></li>
   <li><a href="#sec-scene" id="toc-sec-scene" class="nav-link" data-scroll-target="#sec-scene"><span class="header-section-number">4.2.2</span> <code>scene</code></a></li>
-  <li><a href="#sec-sfw" id="toc-sec-sfw" class="nav-link" data-scroll-target="#sec-sfw"><span class="header-section-number">4.2.3</span> <code>scene_file_writer</code></a></li>
-  <li><a href="#sec-3dscene" id="toc-sec-3dscene" class="nav-link" data-scroll-target="#sec-3dscene"><span class="header-section-number">4.2.4</span> <code>three_d_scene</code></a></li>
-  <li><a href="#sec-vss" id="toc-sec-vss" class="nav-link" data-scroll-target="#sec-vss"><span class="header-section-number">4.2.5</span> <code>vector_space_scene</code></a></li>
-  <li><a href="#sec-zs" id="toc-sec-zs" class="nav-link" data-scroll-target="#sec-zs"><span class="header-section-number">4.2.6</span> <code>zoomed_scene</code></a></li>
+  <li><a href="#sec-3dscene" id="toc-sec-3dscene" class="nav-link" data-scroll-target="#sec-3dscene"><span class="header-section-number">4.2.3</span> <code>three_d_scene</code></a></li>
+  <li><a href="#sec-zs" id="toc-sec-zs" class="nav-link" data-scroll-target="#sec-zs"><span class="header-section-number">4.2.4</span> <code>zoomed_scene</code></a></li>
   </ul></li>
   <li><a href="#sec-scenes2" id="toc-sec-scenes2" class="nav-link" data-scroll-target="#sec-scenes2"><span class="header-section-number">4.3</span> Cenas da câmera</a></li>
   <li><a href="#exercícios-sugeridos" id="toc-exercícios-sugeridos" class="nav-link" data-scroll-target="#exercícios-sugeridos">Exercícios sugeridos</a></li>
@@ -348,7 +346,7 @@ Figura&nbsp;4.1: Dimensão da câmera em unidades e pixels.
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="e1a45cde" class="cell" data-execution_count="1">
+<div id="fb992cc7" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">from</span> manim <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a></span>
 <span id="cb1-3"><a href="#cb1-3"></a></span>
@@ -528,7 +526,7 @@ Figura&nbsp;4.9: <code>config.frame_height=30</code>.
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="65757b23" class="cell" data-execution_count="2">
+<div id="eda68cc0" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">from</span> manim <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a></span>
 <span id="cb2-3"><a href="#cb2-3"></a></span>
@@ -566,7 +564,7 @@ Figura&nbsp;4.9: <code>config.frame_height=30</code>.
 </section>
 <section id="sec-scenes" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="sec-scenes"><span class="header-section-number">4.2</span> Cenas da câmera</h2>
-<p>Em todos os exemplos apresentados até agora, utilizamos um tipo de cena chamado <code>Scene</code>, que é o tipo básico para realizar animações. Agora, vamos explorar mais tipos de cenas que o <code>manim</code> oferece.</p>
+<p>Em todos os exemplos apresentados até agora, utilizamos um tipo de cena chamado <code>Scene</code>, que é o tipo básico para realizar animações. Agora, vamos explorar os tipos de cenas mais utilizados no <code>manim</code>.</p>
 <section id="sec-mcs" class="level3" data-number="4.2.1">
 <h3 data-number="4.2.1" class="anchored" data-anchor-id="sec-mcs"><span class="header-section-number">4.2.1</span> <code>moving_camera_scene</code></h3>
 <p>Uma cena com configurações e propriedades especiais que a tornam adequada para casos em que a câmera deve ser movimentada.</p>
@@ -601,26 +599,308 @@ Figura&nbsp;4.11: Distribuição Qui-quadrado com diferentes graus de liberdade.
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-proof no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<em>Código</em> <a href="#fig-chisquare" class="quarto-xref">Figura&nbsp;<span>4.11</span></a>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="948009b5" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">from</span> manim <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="im">from</span> scipy.stats <span class="im">import</span> chi2</span>
+<span id="cb3-3"><a href="#cb3-3"></a></span>
+<span id="cb3-4"><a href="#cb3-4"></a></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="kw">class</span> ChiSquare(MovingCameraScene):</span>
+<span id="cb3-6"><a href="#cb3-6"></a>    <span class="kw">def</span> construct(<span class="va">self</span>):</span>
+<span id="cb3-7"><a href="#cb3-7"></a>        <span class="va">self</span>.camera.frame.save_state()</span>
+<span id="cb3-8"><a href="#cb3-8"></a>        </span>
+<span id="cb3-9"><a href="#cb3-9"></a>        colors <span class="op">=</span> [PINK, PURE_RED, PURE_GREEN, YELLOW]</span>
+<span id="cb3-10"><a href="#cb3-10"></a></span>
+<span id="cb3-11"><a href="#cb3-11"></a>        <span class="co"># Textos</span></span>
+<span id="cb3-12"><a href="#cb3-12"></a>        main <span class="op">=</span> Tex(<span class="st">"Distribuição $\chi^2$ com $k$ graus de liberdade"</span>, tex_template<span class="op">=</span>TexFontTemplates.comic_sans)</span>
+<span id="cb3-13"><a href="#cb3-13"></a>        </span>
+<span id="cb3-14"><a href="#cb3-14"></a>        equation <span class="op">=</span> MathTex(<span class="st">"f(x)=</span><span class="ch">\\</span><span class="st">frac{x^{k/2-1}e^{-x/2</span><span class="sc">}}</span><span class="st">{2^{k/2}</span><span class="ch">\\</span><span class="st">Gamma(k/2)}, \quad x</span><span class="ch">\\</span><span class="st">ge0"</span>).scale(<span class="fl">0.8</span>)</span>
+<span id="cb3-15"><a href="#cb3-15"></a></span>
+<span id="cb3-16"><a href="#cb3-16"></a>        framebox <span class="op">=</span> SurroundingRectangle(equation, buff <span class="op">=</span> <span class="fl">.1</span>, color<span class="op">=</span><span class="st">"#49A88F"</span>)</span>
+<span id="cb3-17"><a href="#cb3-17"></a></span>
+<span id="cb3-18"><a href="#cb3-18"></a>        <span class="co">########################################################################</span></span>
+<span id="cb3-19"><a href="#cb3-19"></a>        <span class="co">### Gráfico qui-quadrado</span></span>
+<span id="cb3-20"><a href="#cb3-20"></a>        <span class="co">########################################################################</span></span>
+<span id="cb3-21"><a href="#cb3-21"></a></span>
+<span id="cb3-22"><a href="#cb3-22"></a>        ax <span class="op">=</span> Axes(x_range<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">20</span>], y_range<span class="op">=</span>[<span class="dv">0</span>, <span class="fl">0.2</span>], tips <span class="op">=</span> <span class="va">False</span>)</span>
+<span id="cb3-23"><a href="#cb3-23"></a>        graph <span class="op">=</span> ax.plot(<span class="kw">lambda</span> x: chi2.pdf(x, df<span class="op">=</span><span class="dv">4</span>), color<span class="op">=</span>BLUE, x_range<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">20</span>])</span>
+<span id="cb3-24"><a href="#cb3-24"></a>        </span>
+<span id="cb3-25"><a href="#cb3-25"></a>        <span class="va">self</span>.play(FadeIn(main), FadeIn(txt[<span class="dv">2</span>:], shift<span class="op">=</span>UP))</span>
+<span id="cb3-26"><a href="#cb3-26"></a>        <span class="va">self</span>.wait()</span>
+<span id="cb3-27"><a href="#cb3-27"></a>        <span class="va">self</span>.play(main.animate.to_edge(UP), run_time<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb3-28"><a href="#cb3-28"></a>        <span class="va">self</span>.play(FadeIn(ax, graph), equation.animate.move_to(RIGHT<span class="op">*</span><span class="fl">2.5</span>), run_time<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb3-29"><a href="#cb3-29"></a>        <span class="va">self</span>.play(<span class="va">self</span>.camera.frame.animate.scale(<span class="fl">0.5</span>).move_to(RIGHT<span class="op">*</span><span class="fl">2.5</span>), </span>
+<span id="cb3-30"><a href="#cb3-30"></a>                  Create(framebox.move_to(RIGHT<span class="op">*</span><span class="fl">2.5</span>)), run_time<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb3-31"><a href="#cb3-31"></a>        <span class="va">self</span>.wait(<span class="dv">2</span>)</span>
+<span id="cb3-32"><a href="#cb3-32"></a>        <span class="va">self</span>.play(Restore(<span class="va">self</span>.camera.frame), FadeOut(framebox), run_time<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb3-33"><a href="#cb3-33"></a>        <span class="va">self</span>.wait(<span class="dv">2</span>)</span>
+<span id="cb3-34"><a href="#cb3-34"></a>        <span class="va">self</span>.play(FadeOut(graph), FadeOut(equation))</span>
+<span id="cb3-35"><a href="#cb3-35"></a>                </span>
+<span id="cb3-36"><a href="#cb3-36"></a>        <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">5</span>):</span>
+<span id="cb3-37"><a href="#cb3-37"></a>            graph2 <span class="op">=</span> ax.plot(<span class="kw">lambda</span> x: chi2.pdf(x, df<span class="op">=</span><span class="dv">2</span><span class="op">*</span>i), color<span class="op">=</span>colors[<span class="dv">1</span><span class="op">*</span>i<span class="op">-</span><span class="dv">1</span>], x_range<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">20</span>])</span>
+<span id="cb3-38"><a href="#cb3-38"></a>            gl <span class="op">=</span> Group(Tex(<span class="st">"$k= $"</span>).shift(RIGHT<span class="op">*</span><span class="fl">2.</span>), Integer(<span class="dv">2</span><span class="op">*</span>i).shift(RIGHT<span class="op">*</span><span class="fl">2.7</span>)).move_to(UR<span class="op">*</span><span class="dv">3</span>)</span>
+<span id="cb3-39"><a href="#cb3-39"></a>            <span class="va">self</span>.play(FadeIn(Group(graph2, gl.shift(DOWN<span class="op">*</span>i).set_color(colors[<span class="dv">1</span><span class="op">*</span>i<span class="op">-</span><span class="dv">1</span>]))))</span>
+<span id="cb3-40"><a href="#cb3-40"></a>            <span class="va">self</span>.wait()</span>
+<span id="cb3-41"><a href="#cb3-41"></a></span>
+<span id="cb3-42"><a href="#cb3-42"></a>        <span class="va">self</span>.wait(<span class="dv">2</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="sec-scene" class="level3" data-number="4.2.2">
 <h3 data-number="4.2.2" class="anchored" data-anchor-id="sec-scene"><span class="header-section-number">4.2.2</span> <code>scene</code></h3>
 <p>Tela básica para animações.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-pontos" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pontos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/PontosAleatorios_ManimCE_v0.18.1.gif" class="img-fluid figure-img" width="600">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pontos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;4.12: Movimento aleatório de pontos.
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-galton" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-galton-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/GaltonBoard_ManimCE_v0.18.1.gif" class="img-fluid figure-img" width="600">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-galton-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;4.13: Tábua de Galton.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-proof no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<em>Código</em> <a href="#fig-pontos" class="quarto-xref">Figura&nbsp;<span>4.12</span></a>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="c3fcf9da" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">from</span> manim <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="im">import</span> itertools</span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="im">import</span> random</span>
+<span id="cb4-4"><a href="#cb4-4"></a></span>
+<span id="cb4-5"><a href="#cb4-5"></a></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="kw">class</span> PontosAleatorios(Scene):</span>
+<span id="cb4-7"><a href="#cb4-7"></a>    config <span class="op">=</span> {</span>
+<span id="cb4-8"><a href="#cb4-8"></a>        <span class="st">"PontosTotal"</span> : <span class="dv">9</span>,</span>
+<span id="cb4-9"><a href="#cb4-9"></a>        }</span>
+<span id="cb4-10"><a href="#cb4-10"></a>    <span class="kw">def</span> construct(<span class="va">self</span>):</span>
+<span id="cb4-11"><a href="#cb4-11"></a>       </span>
+<span id="cb4-12"><a href="#cb4-12"></a>       colors <span class="op">=</span> itertools.cycle([PURE_RED, PURE_GREEN, PURE_BLUE, YELLOW, PURPLE, PINK, ORANGE, TEAL, GOLD])</span>
+<span id="cb4-13"><a href="#cb4-13"></a>       itemsTotal <span class="op">=</span> PontosAleatorios.config[<span class="st">"PontosTotal"</span>]</span>
+<span id="cb4-14"><a href="#cb4-14"></a></span>
+<span id="cb4-15"><a href="#cb4-15"></a>       d <span class="op">=</span> VGroup()</span>
+<span id="cb4-16"><a href="#cb4-16"></a>       <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(itemsTotal):</span>
+<span id="cb4-17"><a href="#cb4-17"></a>            d <span class="op">=</span> d.add(Dot(color <span class="op">=</span> <span class="bu">next</span>(colors)).copy().scale(<span class="dv">10</span>))</span>
+<span id="cb4-18"><a href="#cb4-18"></a></span>
+<span id="cb4-19"><a href="#cb4-19"></a>       d.arrange_in_grid(cols<span class="op">=</span><span class="dv">3</span>, buff<span class="op">=</span><span class="fl">0.1</span>)</span>
+<span id="cb4-20"><a href="#cb4-20"></a>       <span class="va">self</span>.play(Write(d))</span>
+<span id="cb4-21"><a href="#cb4-21"></a>       </span>
+<span id="cb4-22"><a href="#cb4-22"></a>       [<span class="va">self</span>.play(CyclicReplace(d[i], d[j])) <span class="cf">for</span> i,j <span class="kw">in</span> random.sample(<span class="bu">list</span>(itertools.product(<span class="bu">range</span>(itemsTotal), repeat <span class="op">=</span> <span class="dv">2</span>)), <span class="dv">10</span>)]</span>
+<span id="cb4-23"><a href="#cb4-23"></a>            </span>
+<span id="cb4-24"><a href="#cb4-24"></a>       [<span class="va">self</span>.play(Unwrite(d[i])) <span class="cf">for</span> i <span class="kw">in</span> random.sample(<span class="bu">range</span>(itemsTotal),itemsTotal)]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="sec-sfw" class="level3" data-number="4.2.3">
-<h3 data-number="4.2.3" class="anchored" data-anchor-id="sec-sfw"><span class="header-section-number">4.2.3</span> <code>scene_file_writer</code></h3>
-<p>A interface entre cenas e ffmpeg.</p>
-</section>
-<section id="sec-3dscene" class="level3" data-number="4.2.4">
-<h3 data-number="4.2.4" class="anchored" data-anchor-id="sec-3dscene"><span class="header-section-number">4.2.4</span> <code>three_d_scene</code></h3>
+<section id="sec-3dscene" class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" data-anchor-id="sec-3dscene"><span class="header-section-number">4.2.3</span> <code>three_d_scene</code></h3>
 <p>Uma cena adequada para renderizar objetos e animações tridimensionais.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-normalbi" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-normalbi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/NormalBivariada_ManimCE_v0.18.1.gif" class="img-fluid figure-img" width="600">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-normalbi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;4.14: Distribuição oral bivariada
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-quadricas" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-quadricas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/Quadricas_ManimCE_v0.18.1.gif" class="img-fluid figure-img" width="600">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-quadricas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;4.15: Superfícies Quádricas.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-proof no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<em>Código</em> <a href="#fig-quadricas" class="quarto-xref">Figura&nbsp;<span>4.15</span></a>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="be03cb2e" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="im">from</span> manim <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a></span>
+<span id="cb5-3"><a href="#cb5-3"></a></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="kw">class</span> Quadricas(ThreeDScene):</span>
+<span id="cb5-5"><a href="#cb5-5"></a>    <span class="kw">def</span> construct(<span class="va">self</span>):</span>
+<span id="cb5-6"><a href="#cb5-6"></a></span>
+<span id="cb5-7"><a href="#cb5-7"></a>        eixos <span class="op">=</span> ThreeDAxes()</span>
+<span id="cb5-8"><a href="#cb5-8"></a></span>
+<span id="cb5-9"><a href="#cb5-9"></a>        <span class="kw">def</span> param_cilindro(u, v):</span>
+<span id="cb5-10"><a href="#cb5-10"></a>            x, y <span class="op">=</span> np.cos(TAU <span class="op">*</span> v), np.sin(TAU <span class="op">*</span> v)</span>
+<span id="cb5-11"><a href="#cb5-11"></a>            z <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> u)</span>
+<span id="cb5-12"><a href="#cb5-12"></a>            <span class="cf">return</span> np.array([x, y, z])</span>
+<span id="cb5-13"><a href="#cb5-13"></a>        </span>
+<span id="cb5-14"><a href="#cb5-14"></a>        cilindro <span class="op">=</span> Surface(</span>
+<span id="cb5-15"><a href="#cb5-15"></a>            param_cilindro,</span>
+<span id="cb5-16"><a href="#cb5-16"></a>            resolution<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">32</span>),</span>
+<span id="cb5-17"><a href="#cb5-17"></a>            v_range<span class="op">=</span>[<span class="op">-</span>PI, PI],</span>
+<span id="cb5-18"><a href="#cb5-18"></a>            u_range<span class="op">=</span>[<span class="dv">0</span>, PI<span class="op">/</span><span class="dv">2</span>],</span>
+<span id="cb5-19"><a href="#cb5-19"></a>            checkerboard_colors<span class="op">=</span>[BLUE, GREEN_E])</span>
+<span id="cb5-20"><a href="#cb5-20"></a></span>
+<span id="cb5-21"><a href="#cb5-21"></a>        <span class="kw">def</span> param_paraboloide(u, v):</span>
+<span id="cb5-22"><a href="#cb5-22"></a>            x, y <span class="op">=</span> np.cos(v)<span class="op">*</span>u, np.sin(v)<span class="op">*</span>u</span>
+<span id="cb5-23"><a href="#cb5-23"></a>            z <span class="op">=</span> u<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb5-24"><a href="#cb5-24"></a>            <span class="cf">return</span> np.array([x, y, z])</span>
+<span id="cb5-25"><a href="#cb5-25"></a>        </span>
+<span id="cb5-26"><a href="#cb5-26"></a>        paraboloide <span class="op">=</span> Surface(</span>
+<span id="cb5-27"><a href="#cb5-27"></a>            param_paraboloide,</span>
+<span id="cb5-28"><a href="#cb5-28"></a>            resolution<span class="op">=</span>(<span class="dv">15</span>, <span class="dv">32</span>),</span>
+<span id="cb5-29"><a href="#cb5-29"></a>            v_range<span class="op">=</span>[<span class="op">-</span>PI, PI],</span>
+<span id="cb5-30"><a href="#cb5-30"></a>            u_range<span class="op">=</span>[<span class="dv">0</span>, PI<span class="op">/</span><span class="dv">2</span>],</span>
+<span id="cb5-31"><a href="#cb5-31"></a>            checkerboard_colors<span class="op">=</span>[BLUE, TEAL])</span>
+<span id="cb5-32"><a href="#cb5-32"></a></span>
+<span id="cb5-33"><a href="#cb5-33"></a>        <span class="kw">def</span> param_hyperboloide(u, v):</span>
+<span id="cb5-34"><a href="#cb5-34"></a>            x, y <span class="op">=</span> u, v</span>
+<span id="cb5-35"><a href="#cb5-35"></a>            z <span class="op">=</span> u<span class="op">**</span><span class="dv">2</span><span class="op">-</span>v<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb5-36"><a href="#cb5-36"></a>            <span class="cf">return</span> np.array([x, y, z])</span>
+<span id="cb5-37"><a href="#cb5-37"></a>        </span>
+<span id="cb5-38"><a href="#cb5-38"></a>        hyperboloide <span class="op">=</span> Surface(</span>
+<span id="cb5-39"><a href="#cb5-39"></a>            param_hyperboloide,</span>
+<span id="cb5-40"><a href="#cb5-40"></a>            resolution<span class="op">=</span>(<span class="dv">15</span>, <span class="dv">32</span>),</span>
+<span id="cb5-41"><a href="#cb5-41"></a>            v_range<span class="op">=</span>[<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>],</span>
+<span id="cb5-42"><a href="#cb5-42"></a>            u_range<span class="op">=</span>[<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>],</span>
+<span id="cb5-43"><a href="#cb5-43"></a>            checkerboard_colors<span class="op">=</span>[YELLOW_A, YELLOW_E]).scale(<span class="fl">0.5</span>)</span>
+<span id="cb5-44"><a href="#cb5-44"></a>        </span>
+<span id="cb5-45"><a href="#cb5-45"></a>        <span class="kw">def</span> param_cone(u, v):</span>
+<span id="cb5-46"><a href="#cb5-46"></a>            x, y <span class="op">=</span> u<span class="op">*</span>np.cos(v), u<span class="op">*</span>np.sin(v)</span>
+<span id="cb5-47"><a href="#cb5-47"></a>            z <span class="op">=</span> u</span>
+<span id="cb5-48"><a href="#cb5-48"></a>            <span class="cf">return</span> np.array([x, y, z])</span>
+<span id="cb5-49"><a href="#cb5-49"></a>        </span>
+<span id="cb5-50"><a href="#cb5-50"></a>        cone <span class="op">=</span> Surface(</span>
+<span id="cb5-51"><a href="#cb5-51"></a>            param_cone,</span>
+<span id="cb5-52"><a href="#cb5-52"></a>            resolution<span class="op">=</span>(<span class="dv">15</span>, <span class="dv">32</span>),</span>
+<span id="cb5-53"><a href="#cb5-53"></a>            v_range<span class="op">=</span>[<span class="dv">0</span>, TAU],</span>
+<span id="cb5-54"><a href="#cb5-54"></a>            u_range<span class="op">=</span>[<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>],</span>
+<span id="cb5-55"><a href="#cb5-55"></a>            checkerboard_colors<span class="op">=</span>[GREEN_A, GREEN_B]).scale(<span class="dv">1</span>)</span>
+<span id="cb5-56"><a href="#cb5-56"></a>        </span>
+<span id="cb5-57"><a href="#cb5-57"></a>        <span class="kw">def</span> param_hip_uma_face(u, v):</span>
+<span id="cb5-58"><a href="#cb5-58"></a>            x, y <span class="op">=</span> np.cosh(u)<span class="op">*</span>np.cos(v), np.cosh(u)<span class="op">*</span>np.sin(v)</span>
+<span id="cb5-59"><a href="#cb5-59"></a>            z <span class="op">=</span> np.sinh(u)</span>
+<span id="cb5-60"><a href="#cb5-60"></a>            <span class="cf">return</span> np.array([x, y, z])</span>
+<span id="cb5-61"><a href="#cb5-61"></a>        </span>
+<span id="cb5-62"><a href="#cb5-62"></a>        hip_uma_face <span class="op">=</span> Surface(</span>
+<span id="cb5-63"><a href="#cb5-63"></a>            param_hip_uma_face,</span>
+<span id="cb5-64"><a href="#cb5-64"></a>            resolution<span class="op">=</span>(<span class="dv">15</span>, <span class="dv">32</span>),</span>
+<span id="cb5-65"><a href="#cb5-65"></a>            v_range<span class="op">=</span>[<span class="dv">0</span>, TAU],</span>
+<span id="cb5-66"><a href="#cb5-66"></a>            u_range<span class="op">=</span>[<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>],</span>
+<span id="cb5-67"><a href="#cb5-67"></a>            checkerboard_colors<span class="op">=</span>[PINK, LIGHT_PINK]).scale(<span class="fl">0.5</span>)</span>
+<span id="cb5-68"><a href="#cb5-68"></a>        </span>
+<span id="cb5-69"><a href="#cb5-69"></a>        <span class="kw">def</span> param_elipsoide(u, v):</span>
+<span id="cb5-70"><a href="#cb5-70"></a>            x, y <span class="op">=</span> <span class="dv">1</span><span class="op">*</span>np.cos(u)<span class="op">*</span>np.cos(v), <span class="dv">2</span><span class="op">*</span>np.cos(u)<span class="op">*</span>np.sin(v)</span>
+<span id="cb5-71"><a href="#cb5-71"></a>            z <span class="op">=</span> <span class="fl">0.5</span><span class="op">*</span>np.sin(u)</span>
+<span id="cb5-72"><a href="#cb5-72"></a>            <span class="cf">return</span> np.array([x, y, z])</span>
+<span id="cb5-73"><a href="#cb5-73"></a>        </span>
+<span id="cb5-74"><a href="#cb5-74"></a>        elipsoide <span class="op">=</span> Surface(</span>
+<span id="cb5-75"><a href="#cb5-75"></a>            param_elipsoide,</span>
+<span id="cb5-76"><a href="#cb5-76"></a>            resolution<span class="op">=</span>(<span class="dv">15</span>, <span class="dv">32</span>),</span>
+<span id="cb5-77"><a href="#cb5-77"></a>            v_range<span class="op">=</span>[<span class="dv">0</span>, TAU],</span>
+<span id="cb5-78"><a href="#cb5-78"></a>            u_range<span class="op">=</span>[<span class="op">-</span>PI<span class="op">/</span><span class="dv">2</span>, PI<span class="op">/</span><span class="dv">2</span>],</span>
+<span id="cb5-79"><a href="#cb5-79"></a>            checkerboard_colors<span class="op">=</span>[PURPLE, PURPLE_A]).scale(<span class="fl">1.5</span>)</span>
+<span id="cb5-80"><a href="#cb5-80"></a>        </span>
+<span id="cb5-81"><a href="#cb5-81"></a>        <span class="kw">def</span> param_esfera(u, v):</span>
+<span id="cb5-82"><a href="#cb5-82"></a>            x, y <span class="op">=</span> <span class="fl">1.5</span><span class="op">*</span>np.cos(u)<span class="op">*</span>np.cos(v), <span class="fl">1.5</span><span class="op">*</span>np.cos(u)<span class="op">*</span>np.sin(v)</span>
+<span id="cb5-83"><a href="#cb5-83"></a>            z <span class="op">=</span> <span class="fl">1.5</span><span class="op">*</span>np.sin(u)</span>
+<span id="cb5-84"><a href="#cb5-84"></a>            <span class="cf">return</span> np.array([x, y, z])</span>
+<span id="cb5-85"><a href="#cb5-85"></a>        </span>
+<span id="cb5-86"><a href="#cb5-86"></a>        esfera <span class="op">=</span> Surface(</span>
+<span id="cb5-87"><a href="#cb5-87"></a>            param_esfera,</span>
+<span id="cb5-88"><a href="#cb5-88"></a>            resolution<span class="op">=</span>(<span class="dv">15</span>, <span class="dv">32</span>),</span>
+<span id="cb5-89"><a href="#cb5-89"></a>            v_range<span class="op">=</span>[<span class="dv">0</span>, TAU],</span>
+<span id="cb5-90"><a href="#cb5-90"></a>            u_range<span class="op">=</span>[<span class="op">-</span>PI<span class="op">/</span><span class="dv">2</span>, PI<span class="op">/</span><span class="dv">2</span>],</span>
+<span id="cb5-91"><a href="#cb5-91"></a>            checkerboard_colors<span class="op">=</span>[ORANGE, RED]).scale(<span class="dv">1</span>)</span>
+<span id="cb5-92"><a href="#cb5-92"></a>        </span>
+<span id="cb5-93"><a href="#cb5-93"></a>        <span class="va">self</span>.set_camera_orientation(phi<span class="op">=</span><span class="dv">75</span> <span class="op">*</span> DEGREES)</span>
+<span id="cb5-94"><a href="#cb5-94"></a>        <span class="va">self</span>.begin_ambient_camera_rotation(rate<span class="op">=</span><span class="fl">0.2</span>)</span>
+<span id="cb5-95"><a href="#cb5-95"></a></span>
+<span id="cb5-96"><a href="#cb5-96"></a></span>
+<span id="cb5-97"><a href="#cb5-97"></a>        <span class="va">self</span>.add(eixos,cone)</span>
+<span id="cb5-98"><a href="#cb5-98"></a>        <span class="va">self</span>.wait(<span class="dv">2</span>)</span>
+<span id="cb5-99"><a href="#cb5-99"></a>        <span class="va">self</span>.play(ReplacementTransform(cone, hip_uma_face))</span>
+<span id="cb5-100"><a href="#cb5-100"></a>        <span class="va">self</span>.wait()</span>
+<span id="cb5-101"><a href="#cb5-101"></a>        <span class="va">self</span>.play(ReplacementTransform(hip_uma_face, cilindro))</span>
+<span id="cb5-102"><a href="#cb5-102"></a>        <span class="va">self</span>.wait()</span>
+<span id="cb5-103"><a href="#cb5-103"></a>        <span class="va">self</span>.play(ReplacementTransform(cilindro, hyperboloide))</span>
+<span id="cb5-104"><a href="#cb5-104"></a>        <span class="va">self</span>.wait()</span>
+<span id="cb5-105"><a href="#cb5-105"></a>        <span class="va">self</span>.play(ReplacementTransform(hyperboloide, paraboloide))</span>
+<span id="cb5-106"><a href="#cb5-106"></a>        <span class="va">self</span>.wait()</span>
+<span id="cb5-107"><a href="#cb5-107"></a>        <span class="va">self</span>.play(ReplacementTransform(paraboloide, elipsoide))</span>
+<span id="cb5-108"><a href="#cb5-108"></a>        <span class="va">self</span>.wait()</span>
+<span id="cb5-109"><a href="#cb5-109"></a>        <span class="va">self</span>.play(ReplacementTransform(elipsoide, esfera))</span>
+<span id="cb5-110"><a href="#cb5-110"></a>        <span class="va">self</span>.wait(<span class="dv">2</span>)</span>
+<span id="cb5-111"><a href="#cb5-111"></a>        <span class="va">self</span>.play(FadeOut(eixos, esfera))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="sec-vss" class="level3" data-number="4.2.5">
-<h3 data-number="4.2.5" class="anchored" data-anchor-id="sec-vss"><span class="header-section-number">4.2.5</span> <code>vector_space_scene</code></h3>
-<p>Uma cena adequada para espaços vetoriais.</p>
-</section>
-<section id="sec-zs" class="level3" data-number="4.2.6">
-<h3 data-number="4.2.6" class="anchored" data-anchor-id="sec-zs"><span class="header-section-number">4.2.6</span> <code>zoomed_scene</code></h3>
-<p>Uma cena que suporta o zoom em uma seção especificada.</p>
+<section id="sec-zs" class="level3" data-number="4.2.4">
+<h3 data-number="4.2.4" class="anchored" data-anchor-id="sec-zs"><span class="header-section-number">4.2.4</span> <code>zoomed_scene</code></h3>
+<p>Esta é uma cena com configurações especiais feitas para quando uma determinada parte da cena precisa ser ampliada e exibida separadamente.</p>
 </section>
 </section>
 <section id="sec-scenes2" class="level2" data-number="4.3">
